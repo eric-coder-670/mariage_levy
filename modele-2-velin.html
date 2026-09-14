@@ -1629,9 +1629,10 @@ function initFinale() {
 }
 
 /* ---------- Musique gospel ----------
-   1) si le fichier MARIAGE.musique.fichier existe (Joe Mettle — My Everything), il est joué en boucle ;
-   2) sinon, une ballade gospel originale est synthétisée en direct :
-      orgue à tirettes, piano en triolets (12/8), chœur « aah », basse, réverbe d'église. */
+   1) si le fichier MARIAGE.musique.fichier existe, il est joué en boucle ;
+   2) sinon, une ballade gospel originale est PRÉ-CALCULÉE une seule fois (OfflineAudioContext),
+      puis lue comme un simple fichier en boucle : aucun calcul audio en direct,
+      donc pas de grésillement, même sur téléphone et pendant les animations 3D. */
 const musique = (() => {
   const bouton = document.getElementById('music-toggle');
   const TEMPO = 64, NOIRE = 60 / TEMPO, MESURE = NOIRE * 4;
@@ -1639,16 +1640,15 @@ const musique = (() => {
 
   // Grille originale en do majeur — par mesure : [temps, durée (noires), basse, voix]
   const GRILLE = [
-    [[0, 4, 36, [64, 67, 71, 74]]],                              // Cmaj9
-    [[0, 4, 33, [64, 67, 71, 72]]],                              // Am9
-    [[0, 4, 38, [65, 69, 72, 76]]],                              // Dm9
-    [[0, 2, 43, [65, 69, 72, 76]], [2, 2, 31, [65, 68, 71, 74]]], // G13sus → G7(b9)
-    [[0, 2, 40, [67, 71, 74]], [2, 2, 33, [67, 73, 77]]],         // Em7 → A7(b13)
-    [[0, 4, 38, [65, 69, 72, 76]]],                              // Dm9
-    [[0, 2, 41, [64, 69, 72]], [2, 2, 41, [68, 72, 74]]],         // Fmaj7 → Fm6
-    [[0, 2, 43, [64, 67, 72]], [2, 2, 31, [65, 69, 72, 74]]]      // C/G → G9sus
+    [[0, 4, 36, [64, 67, 71, 74]]],
+    [[0, 4, 33, [64, 67, 71, 72]]],
+    [[0, 4, 38, [65, 69, 72, 76]]],
+    [[0, 2, 43, [65, 69, 72, 76]], [2, 2, 31, [65, 68, 71, 74]]],
+    [[0, 2, 40, [67, 71, 74]], [2, 2, 33, [67, 73, 77]]],
+    [[0, 4, 38, [65, 69, 72, 76]]],
+    [[0, 2, 41, [64, 69, 72]], [2, 2, 41, [68, 72, 74]]],
+    [[0, 2, 43, [64, 67, 72]], [2, 2, 31, [65, 69, 72, 74]]]
   ];
-  // Mélodie (une boucle sur deux) — [temps, durée, note]
   const MELODIE = [
     [[0, 1.5, 76], [1.5, .5, 74], [2, 2, 79]],
     [[0, 1, 76], [1, 1, 72], [2, 2, 71]],
@@ -1660,109 +1660,115 @@ const musique = (() => {
     [[0, 2, 72], [2, 2, 74]]
   ];
 
-  let ctx = null, maitre, sec, reverb;
-  let enCours = false, modeSynthe = false, fichier = null, essai = 0;
-  let prochain = 0, boucle = 0, minuteur = 0, repriseAuRetour = false;
+  let ctx = null, maitre = null, source = null, tampon = null, rendu = null;
+  let enCours = false, modeSynthe = false, fichier = null, fichierDispo = null, essai = 0, repriseAuRetour = false;
 
+  /* ---- Contexte de lecture (créé pendant le geste de l'invité) ---- */
   function deverrouiller() {
-    if (ctx) { ctx.resume(); return; }
+    if (ctx) { if (ctx.state === 'suspended' && enCours) ctx.resume(); return; }
     const AC = window.AudioContext || window.webkitAudioContext;
     if (!AC) return;
-    ctx = new AC();
-    maitre = ctx.createGain(); maitre.gain.value = 0;
-    const comp = ctx.createDynamicsCompressor();
-    comp.threshold.value = -16; comp.ratio.value = 3;
-    maitre.connect(comp); comp.connect(ctx.destination);
-    sec = ctx.createGain(); sec.connect(maitre);
-    reverb = ctx.createConvolver();
-    const duree = 3.4, len = Math.floor(ctx.sampleRate * duree), buf = ctx.createBuffer(2, len, ctx.sampleRate);
-    for (let c = 0; c < 2; c++) {
-      const d = buf.getChannelData(c);
-      for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 2.8);
-    }
-    reverb.buffer = buf;
-    const humide = ctx.createGain(); humide.gain.value = .5;
-    reverb.connect(humide); humide.connect(maitre);
+    try { ctx = new AC({ latencyHint: 'playback' }); } catch (e) { ctx = new AC(); }
+    maitre = ctx.createGain();
+    maitre.gain.value = 0;
+    maitre.connect(ctx.destination);
+    // Tampon silencieux : débloque la sortie audio sur iPhone pendant le geste
+    const vide = ctx.createBufferSource();
+    vide.buffer = ctx.createBuffer(1, 1, 22050);
+    vide.connect(ctx.destination);
+    vide.start(0);
     ctx.resume();
   }
 
-  function sortie(node, avecReverbe = true) { node.connect(sec); if (avecReverbe) node.connect(reverb); }
-  function enveloppe(g, t, attaque, tenue, relache, niveau) {
-    const fin = t + Math.max(attaque, tenue);
-    g.gain.setValueAtTime(0, t);
-    g.gain.linearRampToValueAtTime(niveau, t + attaque);
-    g.gain.setValueAtTime(niveau, fin);
-    g.gain.exponentialRampToValueAtTime(.0001, fin + relache);
-    return fin + relache + .05;
-  }
-  function osc(type, f, t, stop, dest, amp = 1, detune = 0) {
-    const o = ctx.createOscillator(), g = ctx.createGain();
-    o.type = type; o.frequency.value = f; o.detune.value = detune; g.gain.value = amp;
-    o.connect(g); g.connect(dest); o.start(t); o.stop(stop);
-    return o;
-  }
+  /* ---- Rendu hors ligne de la boucle (≈ 30 s, mélodie sur la seconde moitié) ---- */
+  function calculer() {
+    if (rendu) return rendu;
+    const OAC = window.OfflineAudioContext || window.webkitOfflineAudioContext;
+    if (!OAC) return (rendu = Promise.resolve(null));
+    const TAUX = 22050, QUEUE = 3, DUREE = GRILLE.length * MESURE;
+    let oc;
+    try { oc = new OAC(2, Math.ceil(TAUX * (DUREE + QUEUE)), TAUX); } catch (e) { return (rendu = Promise.resolve(null)); }
 
-  function orgue(n, t, d) {
-    const g = ctx.createGain();
-    const stop = enveloppe(g, t, .4, d, .9, .026);
-    [[1, 1], [2, .5], [3, .28], [4, .18]].forEach(([m, a]) => osc('sine', hz(n) * m, t, stop, g, a));
-    const lfo = ctx.createOscillator(), lg = ctx.createGain();
-    lfo.frequency.value = 5.8; lg.gain.value = .005;
-    lfo.connect(lg); lg.connect(g.gain); lfo.start(t); lfo.stop(stop);
-    sortie(g);
-  }
-  function piano(n, t, niveau) {
-    const g = ctx.createGain(), f = ctx.createBiquadFilter();
-    g.gain.setValueAtTime(0, t);
-    g.gain.linearRampToValueAtTime(niveau, t + .006);
-    g.gain.exponentialRampToValueAtTime(niveau * .3, t + .4);
-    g.gain.exponentialRampToValueAtTime(.0001, t + 2.4);
-    f.type = 'lowpass';
-    f.frequency.setValueAtTime(4200, t);
-    f.frequency.exponentialRampToValueAtTime(900, t + 1.4);
-    const stop = t + 2.5;
-    osc('triangle', hz(n), t, stop, f, 1, (Math.random() - .5) * 5);
-    osc('sine', hz(n) * 2, t, stop, f, .3);
-    osc('sine', hz(n) * 3, t, stop, f, .1);
-    f.connect(g); sortie(g);
-  }
-  function choeur(n, t, d) {
-    const g = ctx.createGain();
-    const stop = enveloppe(g, t, 1.3, d, 1.5, .045);
-    const bas = ctx.createBiquadFilter(); bas.type = 'lowpass'; bas.frequency.value = 2600;
-    const f1 = ctx.createBiquadFilter(); f1.type = 'bandpass'; f1.frequency.value = 760; f1.Q.value = 3;
-    const f2 = ctx.createBiquadFilter(); f2.type = 'bandpass'; f2.frequency.value = 1150; f2.Q.value = 4;
-    const f2g = ctx.createGain(); f2g.gain.value = .6;
-    bas.connect(f1); bas.connect(f2); f1.connect(g); f2.connect(f2g); f2g.connect(g);
-    const vib = ctx.createOscillator(), vg = ctx.createGain();
-    vib.frequency.value = 5; vg.gain.value = 8; vib.connect(vg); vib.start(t); vib.stop(stop);
-    [-8, 0, 8].forEach(det => { const o = osc('sawtooth', hz(n), t, stop, bas, 1, det); vg.connect(o.detune); });
-    sortie(g);
-  }
-  function basse(n, t, d) {
-    const g = ctx.createGain();
-    const stop = enveloppe(g, t, .03, d * .9, .6, .11);
-    osc('sine', hz(n), t, stop, g, 1);
-    osc('sine', hz(n) * 2, t, stop, g, .3);
-    sortie(g, false);
-  }
-  function voix(n, t, d) {
-    const g = ctx.createGain(), f = ctx.createBiquadFilter();
-    const stop = enveloppe(g, t, .09, d * .92, .7, .06);
-    f.type = 'lowpass'; f.frequency.value = 2200;
-    const vib = ctx.createOscillator(), vg = ctx.createGain();
-    vib.frequency.value = 5.2; vg.gain.setValueAtTime(0, t); vg.gain.linearRampToValueAtTime(12, t + Math.min(d, 1));
-    vib.connect(vg); vib.start(t); vib.stop(stop);
-    const o1 = osc('triangle', hz(n), t, stop, f, 1);
-    const o2 = osc('sine', hz(n) * 2, t, stop, f, .15);
-    vg.connect(o1.detune); vg.connect(o2.detune);
-    f.connect(g); sortie(g);
-  }
+    const sortie = oc.createGain(); sortie.gain.value = .8; sortie.connect(oc.destination);
+    const sec = oc.createGain(); sec.connect(sortie);
+    const reverb = oc.createConvolver();
+    const lenIR = Math.floor(TAUX * 2.2), ir = oc.createBuffer(2, lenIR, TAUX);
+    for (let c = 0; c < 2; c++) {
+      const d = ir.getChannelData(c);
+      for (let i = 0; i < lenIR; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / lenIR, 2.8);
+    }
+    reverb.buffer = ir;
+    const humide = oc.createGain(); humide.gain.value = .42;
+    reverb.connect(humide); humide.connect(sortie);
+    const vers = (node, avecReverbe = true) => { node.connect(sec); if (avecReverbe) node.connect(reverb); };
 
-  function planifierBoucle(debut, avecMelodie) {
+    // Bus partagés : un seul trémolo pour l'orgue, un seul vibrato pour les voix
+    const busOrgue = oc.createGain(); busOrgue.gain.value = .9; vers(busOrgue);
+    const tremolo = oc.createOscillator(), tremoloG = oc.createGain();
+    tremolo.frequency.value = 5.6; tremoloG.gain.value = .1;
+    tremolo.connect(tremoloG); tremoloG.connect(busOrgue.gain); tremolo.start(0);
+    const vibrato = oc.createOscillator(), vibratoG = oc.createGain();
+    vibrato.frequency.value = 5; vibratoG.gain.value = 7;
+    vibrato.connect(vibratoG); vibrato.start(0);
+
+    function enveloppe(g, t, attaque, tenue, relache, niveau) {
+      const fin = t + Math.max(attaque, tenue);
+      g.gain.setValueAtTime(0, t);
+      g.gain.linearRampToValueAtTime(niveau, t + attaque);
+      g.gain.setValueAtTime(niveau, fin);
+      g.gain.exponentialRampToValueAtTime(.0001, fin + relache);
+      return fin + relache + .05;
+    }
+    function osc(type, f, t, stop, dest, amp = 1, detune = 0) {
+      const o = oc.createOscillator(), g = oc.createGain();
+      o.type = type; o.frequency.value = f; o.detune.value = detune; g.gain.value = amp;
+      o.connect(g); g.connect(dest); o.start(t); o.stop(stop);
+      return o;
+    }
+    function orgue(n, t, d) {
+      const g = oc.createGain();
+      const stop = enveloppe(g, t, .4, d, .9, .026);
+      [[1, 1], [2, .45], [3, .22]].forEach(([m, a]) => osc('sine', hz(n) * m, t, stop, g, a));
+      g.connect(busOrgue);
+    }
+    function piano(n, t, niveau) {
+      const g = oc.createGain(), f = oc.createBiquadFilter();
+      g.gain.setValueAtTime(0, t);
+      g.gain.linearRampToValueAtTime(niveau, t + .008);
+      g.gain.exponentialRampToValueAtTime(niveau * .3, t + .4);
+      g.gain.exponentialRampToValueAtTime(.0001, t + 2.3);
+      f.type = 'lowpass';
+      f.frequency.setValueAtTime(3800, t);
+      f.frequency.exponentialRampToValueAtTime(900, t + 1.4);
+      osc('triangle', hz(n), t, t + 2.4, f, 1, (Math.random() - .5) * 5);
+      f.connect(g); vers(g);
+    }
+    function choeur(n, t, d) {
+      const g = oc.createGain(), f = oc.createBiquadFilter();
+      const stop = enveloppe(g, t, 1.3, d, 1.5, .05);
+      f.type = 'lowpass'; f.frequency.value = 1150; f.Q.value = 1.4;
+      [-7, 7].forEach(det => { const o = osc('sawtooth', hz(n), t, stop, f, .5, det); vibratoG.connect(o.detune); });
+      f.connect(g); vers(g);
+    }
+    function basse(n, t, d) {
+      const g = oc.createGain();
+      const stop = enveloppe(g, t, .03, d * .9, .6, .11);
+      osc('sine', hz(n), t, stop, g, 1);
+      osc('sine', hz(n) * 2, t, stop, g, .3);
+      vers(g, false);
+    }
+    function voix(n, t, d) {
+      const g = oc.createGain(), f = oc.createBiquadFilter();
+      const stop = enveloppe(g, t, .09, d * .92, .7, .06);
+      f.type = 'lowpass'; f.frequency.value = 2200;
+      const o = osc('triangle', hz(n), t, stop, f, 1);
+      vibratoG.connect(o.detune);
+      f.connect(g); vers(g);
+    }
+
     const ordre = [0, 1, 2, 3, 2, 1];
     GRILLE.forEach((mesure, i) => {
-      const t0 = debut + i * MESURE;
+      const t0 = i * MESURE;
       mesure.forEach(([temps, duree, b, notes]) => {
         const t = t0 + temps * NOIRE, d = duree * NOIRE;
         basse(b, t, d);
@@ -1770,20 +1776,55 @@ const musique = (() => {
         notes.slice(-3).forEach(n => choeur(n - 12, t, d));
         piano(b + 12, t, .06);
         for (let k = 0; k < duree * 3; k++) {
-          const n = notes[ordre[k % 6] % notes.length];
-          piano(n, t + k * NOIRE / 3 + Math.random() * .012, k % 3 === 0 ? .07 : .042);
+          piano(notes[ordre[k % 6] % notes.length], t + k * NOIRE / 3 + Math.random() * .01, k % 3 === 0 ? .07 : .042);
         }
       });
-      if (avecMelodie) MELODIE[i].forEach(([temps, duree, n]) => voix(n, t0 + temps * NOIRE, duree * NOIRE));
+      if (i >= 4) MELODIE[i].forEach(([temps, duree, n]) => voix(n, t0 + temps * NOIRE, duree * NOIRE));
     });
+    tremolo.stop(DUREE + QUEUE);
+    vibrato.stop(DUREE + QUEUE);
+
+    rendu = oc.startRendering().then(buf => {
+      const n = Math.floor(DUREE * TAUX);
+      let crete = 0;
+      const canaux = [0, 1].map(c => {
+        const src = buf.getChannelData(c), dst = new Float32Array(n);
+        dst.set(src.subarray(0, n));
+        for (let i = n; i < src.length; i++) dst[i - n] += src[i]; // la queue revient au début : boucle sans coupure
+        for (let i = 0; i < n; i++) { const a = Math.abs(dst[i]); if (a > crete) crete = a; }
+        return dst;
+      });
+      const k = crete > 0 ? .78 / crete : 1; // normalisation : jamais de saturation
+      canaux.forEach(d => { for (let i = 0; i < d.length; i++) d[i] *= k; });
+      return { canaux, taux: TAUX, longueur: n };
+    }).catch(() => null);
+    return rendu;
   }
-  function planifier() {
-    if (!ctx || !enCours || !modeSynthe) return;
-    while (prochain < ctx.currentTime + 3) {
-      planifierBoucle(prochain, boucle % 2 === 1);
-      prochain += GRILLE.length * MESURE;
-      boucle++;
+
+  /* ---- Lecture ---- */
+  async function demarrerSynthe(monEssai) {
+    deverrouiller();
+    if (!ctx) return;
+    modeSynthe = true;
+    const r = await calculer();
+    if (!r || monEssai !== essai || !enCours) return;
+    if (!tampon) {
+      tampon = ctx.createBuffer(2, r.longueur, r.taux);
+      r.canaux.forEach((d, c) => tampon.getChannelData(c).set(d));
     }
+    try { await ctx.resume(); } catch (e) { /* reprise refusée : le bouton permettra de relancer */ }
+    if (monEssai !== essai || !enCours) return;
+    if (!source) {
+      source = ctx.createBufferSource();
+      source.buffer = tampon;
+      source.loop = true;
+      source.connect(maitre);
+      source.start();
+    }
+    const t = ctx.currentTime;
+    maitre.gain.cancelScheduledValues(t);
+    maitre.gain.setValueAtTime(maitre.gain.value, t);
+    maitre.gain.linearRampToValueAtTime(.9, t + 2.5);
   }
 
   let fondu = 0;
@@ -1796,28 +1837,13 @@ const musique = (() => {
       if (k < 1) requestAnimationFrame(pas); else if (apres) apres();
     })(t0);
   }
-  function demarrerSynthe() {
-    deverrouiller();
-    if (!ctx) return;
-    modeSynthe = true;
-    ctx.resume();
-    const t = ctx.currentTime;
-    if (prochain < t) prochain = t + .25;
-    maitre.gain.cancelScheduledValues(t);
-    maitre.gain.setValueAtTime(maitre.gain.value, t);
-    maitre.gain.linearRampToValueAtTime(.9, t + 3);
-    planifier();
-    clearInterval(minuteur);
-    minuteur = setInterval(planifier, 1000);
-  }
   function majBouton() {
     bouton.classList.toggle('is-playing', enCours);
     bouton.setAttribute('aria-pressed', String(enCours));
     bouton.setAttribute('aria-label', enCours ? 'Couper la musique' : 'Lancer la musique');
   }
 
-  // Détection du fichier de la chanson dès le chargement (métadonnées seulement)
-  let fichierDispo = null;
+  // Détection du fichier de la chanson ; s'il manque, la ballade est pré-calculée tout de suite
   const choix = MARIAGE.musique || {};
   if (choix.fichier) {
     fichier = new Audio();
@@ -1827,18 +1853,22 @@ const musique = (() => {
     fichier.addEventListener('loadedmetadata', () => {
       fichierDispo = true;
       if (choix.depart) fichier.currentTime = choix.depart;
-      document.getElementById('music-title').textContent = `${choix.titre} · ${choix.artiste}`;
-      document.getElementById('seal-sound-text').textContent = `Montez le son — « ${choix.titre} » de ${choix.artiste} vous accompagne`;
+      const titre = document.getElementById('music-title');
+      const annonce = document.getElementById('seal-sound-text');
+      if (titre) titre.textContent = `${choix.titre} · ${choix.artiste}`;
+      if (annonce) annonce.textContent = `Montez le son — « ${choix.titre} » de ${choix.artiste} vous accompagne`;
     }, { once: true });
-    fichier.addEventListener('error', () => { fichierDispo = false; fichier = null; }, { once: true });
+    fichier.addEventListener('error', () => { fichierDispo = false; fichier = null; calculer(); }, { once: true });
     fichier.src = choix.fichier;
+  } else {
+    setTimeout(calculer, 800);
   }
 
   async function lancer() {
     enCours = true;
     majBouton();
     const monEssai = ++essai;
-    if (modeSynthe) { demarrerSynthe(); return; }
+    if (modeSynthe) { demarrerSynthe(monEssai); return; }
     if (fichier && fichierDispo !== false) {
       try {
         await fichier.play();
@@ -1850,7 +1880,7 @@ const musique = (() => {
         if (fichierDispo !== true) fichier = null;
       }
     }
-    if (monEssai === essai && enCours) demarrerSynthe();
+    if (monEssai === essai && enCours) demarrerSynthe(monEssai);
   }
   function couper() {
     enCours = false;
