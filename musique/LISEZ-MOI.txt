@@ -1,0 +1,26 @@
+MUSIQUE DU FAIRE-PART — Levy & Adrienne
+========================================
+
+Chanson choisie : Joe Mettle — « My Everything »
+
+1. Procurez-vous le titre en MP3 de façon légale
+   (achat sur iTunes / Amazon Music, ou fichier fourni par l'artiste ou votre DJ).
+
+2. Renommez le fichier exactement ainsi :
+      joe-mettle-my-everything.mp3
+
+3. Placez-le dans CE dossier :
+      F:\faire-part-mariage\musique\joe-mettle-my-everything.mp3
+
+C'est tout : à l'ouverture de l'enveloppe, la chanson démarre en fondu,
+et le bouton en bas à droite affiche « My Everything · Joe Mettle ».
+
+Réglages (en haut du script, dans index.html, objet MARIAGE.musique) :
+  - depart : seconde à laquelle la chanson commence (ex. 15 pour passer l'introduction)
+  - fichier : à modifier si vous préférez un autre nom de fichier
+
+Tant que le fichier est absent, une ballade gospel originale (générée par
+le navigateur) est jouée à la place, pour que le faire-part ne soit jamais muet.
+
+Important : si le faire-part est mis en ligne publiquement, la diffusion d'une
+chanson commerciale nécessite d'en avoir les droits.
