@@ -1,0 +1,1903 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Levy &amp; Adrienne · Vélin</title>
+<meta name="description" content="Faire-part de mariage de Levy & Adrienne — dimanche 31 janvier 2027, Kribi.">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@400;500&family=Pinyon+Script&display=swap">
+<style>
+/* =========================================================
+   « Vélin & ciel » — suite de papeterie de mariage
+   Blanc coton, calque, aquarelle bleu ciel, ruban de soie
+   ========================================================= */
+:root{
+  --coton:#FBFCFE;
+  --brume:#EFF6FC;
+  --ciel-pale:#DCEEFA;
+  --ciel:#A9D5F3;
+  --ciel-vif:#7DBAE6;
+  --azur:#2C6397;
+  --azur-fonce:#1E4C78;
+  --encre:#18344F;
+  --encre-douce:#4E6781;
+  --filet:#D4E4F1;
+  --blanc:#FFFFFF;
+
+  --f-display:"Bodoni Moda",Didot,"Bodoni 72",Georgia,serif;
+  --f-texte:"EB Garamond",Garamond,Georgia,serif;
+  --f-capitales:Jost,"Futura","Century Gothic",system-ui,sans-serif;
+  --f-script:"Pinyon Script","Snell Roundhand",cursive;
+
+  --ease:cubic-bezier(.22,1,.36,1);
+  --r:3px;
+  --ombre-papier:0 1px 2px rgba(24,52,79,.08),0 26px 60px -30px rgba(24,52,79,.42);
+  --satin:linear-gradient(180deg,#D9EEFB 0%,#9FCDEF 38%,#C6E3F7 52%,#86BDE6 78%,#B3D9F2 100%);
+  color-scheme:light;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--coton);color:var(--encre);font-family:var(--f-texte);font-size:1.16rem;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body.is-sealed{overflow:hidden}
+img,svg,canvas{display:block;max-width:100%}
+p{margin:0}
+a{color:inherit}
+[hidden]{display:none!important}
+:focus-visible{outline:2px solid var(--azur);outline-offset:3px}
+main:focus{outline:none}
+
+.shell{width:min(1140px,100%);margin-inline:auto;padding-inline:clamp(20px,5vw,48px)}
+.section{position:relative;padding-block:clamp(90px,11vw,146px)}
+.section--brume{background:var(--brume)}
+
+.capitales{margin:0;font-family:var(--f-capitales);font-size:.7rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--azur)}
+.titre{margin:0;font-family:var(--f-display);font-weight:400;font-size:clamp(2.4rem,5.2vw,4rem);line-height:1.04;letter-spacing:-.015em;text-wrap:balance}
+.titre em{font-style:italic;color:var(--azur)}
+.chapeau{font-size:clamp(1.2rem,2vw,1.38rem);line-height:1.5;color:var(--encre-douce);max-width:36em;text-wrap:pretty}
+.entete{display:grid;justify-items:center;gap:16px;text-align:center;max-width:760px;margin:0 auto clamp(48px,6vw,80px)}
+.fleuron{width:120px;height:18px;color:var(--ciel-vif)}
+.script{font-family:var(--f-script);font-weight:400;line-height:1}
+
+.btn{
+  position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.7em;overflow:hidden;
+  font-family:var(--f-capitales);font-size:.72rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;
+  padding:1.1em 1.9em;border-radius:var(--r);border:1px solid var(--azur);cursor:pointer;
+  transition:background-color .35s var(--ease),color .35s var(--ease),transform .35s var(--ease),box-shadow .35s var(--ease);
+}
+.btn svg{width:15px;height:15px;flex:none}
+.btn::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,rgba(255,255,255,0) 30%,rgba(255,255,255,.45) 50%,rgba(255,255,255,0) 70%);transform:translateX(-120%);transition:transform .9s var(--ease)}
+.btn:hover::after{transform:translateX(120%)}
+.btn--plein{background:var(--azur);color:var(--blanc)}
+.btn--plein:hover{background:var(--azur-fonce);transform:translateY(-2px);box-shadow:0 16px 30px -16px rgba(30,76,120,.7)}
+.btn--trait{background:transparent;color:var(--azur)}
+.btn--trait:hover{background:var(--blanc);transform:translateY(-2px)}
+.btn-ligne{display:flex;flex-wrap:wrap;gap:12px}
+
+.js .reveal{opacity:0;transform:translate3d(0,30px,0);transition:opacity 1s var(--ease) var(--d,0s),transform 1.1s var(--ease) var(--d,0s)}
+.js .reveal.is-in{opacity:1;transform:none}
+
+/* Grain de papier coton */
+body::before{
+  content:"";position:fixed;inset:0;z-index:200;pointer-events:none;opacity:.045;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .09 0 0 0 0 .2 0 0 0 0 .31 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+
+/* Papier à bords frangés (bord à la cuve) */
+.papier{position:relative;isolation:isolate}
+.papier::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--papier-fond,var(--blanc));filter:url(#frange) drop-shadow(0 22px 34px rgba(24,52,79,.2))}
+
+/* Taches d'aquarelle */
+.aquarelle{position:absolute;z-index:0;pointer-events:none;width:var(--t,420px);aspect-ratio:1;border-radius:42% 58% 63% 37% / 45% 38% 62% 55%;background:radial-gradient(closest-side,rgba(169,213,243,.75),rgba(169,213,243,.35) 55%,rgba(169,213,243,0));filter:blur(18px);animation:respire 14s ease-in-out infinite alternate}
+@keyframes respire{to{border-radius:58% 42% 40% 60% / 60% 45% 55% 40%;transform:translate(18px,-14px) scale(1.06)}}
+
+/* =========================================================
+   Ouverture — pochette à ruban de soie
+   ========================================================= */
+.ouverture{
+  position:fixed;inset:0;z-index:100;display:grid;place-items:center;overflow:auto;padding-inline:20px;
+  background:radial-gradient(70% 55% at 30% 20%,rgba(169,213,243,.55),rgba(169,213,243,0) 70%),radial-gradient(60% 50% at 80% 90%,rgba(125,186,230,.35),rgba(125,186,230,0) 70%),var(--coton);
+  transition:opacity 1.2s var(--ease),visibility 1.2s;
+}
+.ouverture.is-gone{opacity:0;visibility:hidden;pointer-events:none}
+.ouverture-pile{position:relative;display:grid;justify-items:center;gap:clamp(18px,3.2vh,28px);padding-block:30px;text-align:center}
+.pochette-scene{perspective:2000px}
+.pochette{position:relative;width:min(380px,76vw);aspect-ratio:5/7;transform-style:preserve-3d;transition:transform 1.4s var(--ease)}
+.pochette-flotte{animation:flotte 6s ease-in-out infinite}
+@keyframes flotte{50%{transform:translateY(-10px)}}
+.pochette-interieur{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:12px;padding:28px;--papier-fond:#FFFFFF}
+.pochette-interieur .script{font-size:clamp(2.6rem,9vw,3.6rem);color:var(--encre)}
+.pochette-interieur .couronne{width:110px;height:110px}
+.volet{position:absolute;top:0;bottom:0;width:50%;transform-style:preserve-3d;transition:transform 1.5s cubic-bezier(.65,0,.25,1)}
+.volet--g{left:0;transform-origin:0 50%}
+.volet--d{right:0;transform-origin:100% 50%}
+.volet-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:inset 0 0 0 1px rgba(212,228,241,.9)}
+.volet-face--avant{background:linear-gradient(135deg,#FFFFFF,#F2F8FC)}
+.volet--g .volet-face--avant{box-shadow:inset -8px 0 14px -10px rgba(24,52,79,.25),inset 0 0 0 1px rgba(212,228,241,.9)}
+.volet--d .volet-face--avant{box-shadow:inset 8px 0 14px -10px rgba(24,52,79,.25),inset 0 0 0 1px rgba(212,228,241,.9)}
+.volet-face--arriere{transform:rotateY(180deg);background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.7) 0 2px,transparent 2.5px) 0 0/18px 18px,linear-gradient(160deg,#BFE0F6,#8EC4EA)}
+.volet-motif{position:absolute;inset:18px;border:1px solid var(--filet)}
+.volet--g .volet-motif{border-right:0}
+.volet--d .volet-motif{border-left:0}
+.is-ouverte .volet--g{transform:rotateY(-168deg)}
+.is-ouverte .volet--d{transform:rotateY(168deg)}
+.ruban{position:absolute;left:-4%;right:-4%;top:50%;height:clamp(26px,6vw,34px);translate:0 -50%;z-index:5;transform:translateZ(2px);pointer-events:none}
+.ruban-g,.ruban-d{position:absolute;top:0;bottom:0;width:50%;background:var(--satin);box-shadow:0 4px 8px rgba(24,52,79,.18);transition:transform 1s cubic-bezier(.65,0,.35,1),opacity .8s var(--ease)}
+.ruban-g{left:0}
+.ruban-d{right:0}
+.is-denoue .ruban-g{transform:translateX(-120%) rotate(-8deg);opacity:0}
+.is-denoue .ruban-d{transform:translateX(120%) rotate(8deg);opacity:0}
+.noeud{position:absolute;left:50%;top:50%;z-index:6;width:clamp(120px,30vw,150px);translate:-50% -50%;pointer-events:none;transition:transform .9s var(--ease),opacity .6s var(--ease);filter:drop-shadow(0 6px 8px rgba(24,52,79,.2))}
+.is-denoue .noeud{transform:scale(.4) rotate(40deg);opacity:0}
+.sceau{
+  position:absolute;left:50%;top:50%;z-index:7;width:clamp(62px,15vw,74px);aspect-ratio:1;translate:-50% -50%;
+  display:grid;place-items:center;border:0;cursor:pointer;border-radius:48% 52% 50% 46% / 50% 46% 54% 50%;
+  background:radial-gradient(circle at 34% 28%,#A6D2F1 0%,#5A9BD0 40%,#336E9F 72%,#24557F 100%);
+  box-shadow:inset 0 0 0 5px rgba(255,255,255,.08),inset 0 -7px 12px rgba(0,0,0,.25),0 8px 16px -4px rgba(24,52,79,.5);
+  color:#F1F8FD;font-family:var(--f-script);font-size:clamp(1.3rem,4vw,1.6rem);
+  transition:transform .6s var(--ease),opacity .5s var(--ease);
+}
+.sceau::after{content:"";position:absolute;inset:14%;border-radius:50%;border:1px dashed rgba(241,248,253,.5)}
+.sceau:hover{transform:scale(1.07)}
+.is-denoue .sceau{transform:scale(1.5);opacity:0;pointer-events:none}
+.ouverture-son{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-capitales);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--azur)}
+.ouverture-son svg{width:14px;height:14px}
+
+/* =========================================================
+   Barre de navigation
+   ========================================================= */
+.barre{position:fixed;inset:0 0 auto;z-index:50;transform:translateY(-100%);transition:transform .9s var(--ease) .6s,background-color .4s,box-shadow .4s}
+.is-open .barre{transform:none}
+.barre.is-scrolled{background:rgba(251,252,254,.86);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--filet);transition-delay:0s}
+.barre-in{display:flex;align-items:center;justify-content:space-between;gap:18px;height:74px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--encre)}
+.logo svg{width:46px;height:46px}
+.menu{display:flex;gap:clamp(16px,2.4vw,30px);list-style:none;margin:0;padding:0}
+.menu a{position:relative;font-family:var(--f-capitales);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--encre-douce);text-decoration:none;padding-block:6px}
+.menu a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--azur);transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.menu a:hover{color:var(--azur)}
+.menu a:hover::after{transform:scaleX(1);transform-origin:left}
+.barre .btn{padding:.85em 1.3em;font-size:.62rem}
+.progression{position:absolute;left:0;right:0;bottom:0;height:2px;transform-origin:0 50%;transform:scaleX(var(--scroll,0));background:linear-gradient(90deg,var(--ciel),var(--azur))}
+
+/* =========================================================
+   Hero — le faire-part, calque et alliances
+   ========================================================= */
+.hero{position:relative;overflow:hidden;padding-block:clamp(110px,12vw,146px) clamp(70px,8vw,100px);background:linear-gradient(180deg,#EAF4FB 0%,var(--coton) 70%)}
+.hero .aquarelle.a1{--t:560px;left:-160px;top:40px}
+.hero .aquarelle.a2{--t:460px;right:-140px;top:260px;animation-delay:-5s}
+.hero .aquarelle.a3{--t:300px;left:38%;bottom:-120px;animation-delay:-9s;opacity:.7}
+.hero-in{position:relative;z-index:1;display:grid;justify-items:center;gap:30px}
+.fp-scene{position:relative;perspective:1600px;width:min(540px,100%)}
+.brin-deco{position:absolute;bottom:-10px;z-index:3;width:clamp(80px,17vw,130px);transform-origin:50% 100%;animation:balance 7s ease-in-out infinite;pointer-events:none}
+.brin-deco--g{left:clamp(-90px,-9vw,-30px)}
+.brin-deco--d{right:clamp(-90px,-9vw,-30px);animation-delay:-3.5s}
+.brin-deco--d svg{transform:scaleX(-1)}
+@keyframes balance{0%,100%{rotate:-3deg}50%{rotate:3deg}}
+.faire-part{
+  position:relative;display:grid;justify-items:center;text-align:center;gap:clamp(12px,1.8vw,18px);
+  padding:clamp(26px,5vw,48px) clamp(22px,5vw,52px) clamp(34px,5vw,52px);
+  transform:rotateY(calc(var(--px,0) * 6deg)) rotateX(calc(var(--py,0) * -5deg));transition:transform .25s linear;
+  transform-style:preserve-3d;
+}
+.faire-part::after{content:"";position:absolute;inset:clamp(12px,2vw,18px);border:1px solid var(--filet);pointer-events:none}
+.rings-zone{position:relative;width:100%;height:clamp(150px,26vw,210px);margin-bottom:-6px}
+.rings{position:absolute;inset:0;width:100%;height:100%}
+.rings-fallback{display:none;position:absolute;inset:0;place-items:center}
+.rings-fallback svg{width:110px;height:110px}
+.no-webgl .rings{display:none}
+.no-webgl .rings-fallback{display:grid}
+.relief{color:var(--azur-fonce);text-shadow:0 1px 0 rgba(255,255,255,.9),0 -1px 0 rgba(24,52,79,.12)}
+.fp-noms{margin:0;display:grid;justify-items:center;font-family:var(--f-script);font-weight:400;font-size:clamp(3.4rem,10vw,5.6rem);line-height:.92;color:var(--encre)}
+.fp-amp{font-family:var(--f-display);font-style:italic;font-size:.42em;line-height:1.3;color:var(--azur)}
+.fp-texte{font-style:italic;font-size:clamp(1.15rem,2.4vw,1.35rem);color:var(--encre-douce);max-width:22em;text-wrap:balance}
+.fp-date{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:clamp(12px,2.6vw,22px);margin-block:6px;width:min(360px,100%)}
+.fp-date .capitales{padding-block:10px;border-block:1px solid var(--filet);color:var(--encre-douce);letter-spacing:.24em}
+.fp-jour{font-family:var(--f-display);font-size:clamp(3rem,8vw,4.2rem);line-height:.9;color:var(--azur-fonce)}
+.fp-lieu{font-family:var(--f-display);font-style:italic;font-size:clamp(1.2rem,2.4vw,1.45rem)}
+.velin{
+  position:absolute;inset:-6px;z-index:8;display:grid;place-items:center;
+  background:linear-gradient(160deg,rgba(255,255,255,.72),rgba(236,245,252,.62));
+  -webkit-backdrop-filter:blur(3px) saturate(.9);backdrop-filter:blur(3px) saturate(.9);
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 12px 30px -20px rgba(24,52,79,.4);
+  transform-origin:0 0;transition:transform 1.8s cubic-bezier(.65,0,.25,1) 1.1s,opacity 1.2s var(--ease) 1.8s;pointer-events:none;
+}
+.velin span{font-family:var(--f-display);font-style:italic;font-size:clamp(2rem,6vw,3rem);color:rgba(44,99,151,.75)}
+.is-open .velin{transform:rotateY(-115deg) rotateZ(-6deg) translateZ(40px);opacity:0}
+.defiler{display:grid;justify-items:center;gap:10px;font-family:var(--f-capitales);font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--encre-douce);text-decoration:none}
+.defiler span{position:relative;width:1px;height:46px;background:var(--filet);overflow:hidden}
+.defiler span::after{content:"";position:absolute;left:0;top:-40%;width:1px;height:40%;background:var(--azur);animation:chute 2.2s var(--ease) infinite}
+@keyframes chute{to{top:100%}}
+
+.js .hero .h-in{opacity:0}
+.is-open .hero .h-in{animation:monte 1.4s var(--ease) var(--d,.2s) both}
+@keyframes monte{from{opacity:0;transform:translateY(40px) scale(.97)}to{opacity:1;transform:none}}
+
+/* Profondeurs de la pochette (évite le scintillement entre plans) */
+.pochette-interieur{transform:translateZ(-2px)}
+.noeud-zone{position:absolute;inset:0;z-index:6;transform:translateZ(6px);pointer-events:none;transform-style:preserve-3d}
+.noeud-zone .sceau{pointer-events:auto}
+.ouverture-noms{font-size:clamp(2.6rem,7vw,3.4rem);color:var(--encre)}
+.calque-sceau{top:47%}
+.pochette{width:min(360px,74vw);width:max(210px,min(360px,74vw,calc((100vh - 310px) * .714)))}
+#histoire{overflow-x:clip}
+.ruban-ombre,.ruban-bande{display:block}
+.enveloppe-reponse{transform-style:flat;perspective:900px}
+.finale .couronne.reveal{margin-bottom:-6px}
+
+/* Couronne de laurier (générée en JS) */
+.couronne .feuille{fill:#E1F0FB;stroke:var(--ciel-vif);stroke-width:.6}
+.couronne .tige{fill:none;stroke:var(--ciel-vif);stroke-width:.9;stroke-linecap:round}
+.couronne-mono{font-family:var(--f-script);font-size:27px;fill:var(--encre)}
+
+/* =========================================================
+   Cadeau — photo dans sa pochette de calque
+   ========================================================= */
+.cadeau-grille{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(44px,7vw,100px);align-items:center}
+.pochette-photo{position:relative;justify-self:center;width:min(390px,100%);padding-top:18%}
+.photo-carte{position:relative;z-index:1;width:84%;margin:0 auto;padding:12px 12px 52px;background:var(--blanc);box-shadow:var(--ombre-papier);rotate:-4deg;transition:transform 1.4s var(--ease),rotate 1.4s var(--ease)}
+.photo-teinte{position:relative;display:block;overflow:hidden}
+.photo-teinte img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:47% 30%;filter:grayscale(1) contrast(1.05) brightness(1.08);transition:filter 1.6s var(--ease)}
+.photo-teinte::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(142,195,230,.55),rgba(44,99,151,.38));mix-blend-mode:color;transition:opacity 1.6s var(--ease)}
+.photo-carte figcaption{position:absolute;left:0;right:0;bottom:12px;font-family:var(--f-script);font-size:1.75rem;line-height:1;text-align:center;color:var(--encre)}
+.calque-poche{position:absolute;left:0;right:0;bottom:-3%;height:56%;z-index:2;clip-path:polygon(0 14%,50% 0,100% 14%,100% 100%,0 100%);background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(232,243,251,.78));-webkit-backdrop-filter:blur(2.5px);backdrop-filter:blur(2.5px);box-shadow:inset 0 1px 0 rgba(255,255,255,.9)}
+.calque-sceau{position:absolute;left:50%;top:13%;z-index:3;width:54px;aspect-ratio:1;translate:-50% -50%;display:grid;place-items:center;border-radius:48% 52% 50% 46%/50% 46% 54% 50%;background:radial-gradient(circle at 34% 28%,#A6D2F1,#5A9BD0 40%,#336E9F 72%,#24557F);box-shadow:inset 0 -5px 10px rgba(0,0,0,.25),0 6px 12px -4px rgba(24,52,79,.5);color:#F1F8FD;font-family:var(--f-script);font-size:1.15rem}
+.pochette-photo.is-in .photo-carte{transform:translateY(-12%);rotate:-2deg;transition-delay:.5s}
+.pochette-photo:hover .photo-carte{transform:translateY(-22%);rotate:0deg;transition-delay:0s}
+.pochette-photo:hover .photo-teinte img{filter:none}
+.pochette-photo:hover .photo-teinte::after{opacity:0}
+.cadeau-texte{display:grid;gap:22px;justify-items:start}
+.compte{--papier-fond:#FFFFFF;width:100%;margin-top:6px;padding:clamp(10px,2vw,16px) clamp(22px,4vw,40px);transition:transform .6s var(--ease)}
+.compte-ligne{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:16px;padding-block:18px}
+.compte-ligne + .compte-ligne{border-top:1px solid var(--filet)}
+.compte-icone{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;border:1px solid var(--ciel);background:var(--brume);color:var(--azur)}
+.compte-icone svg{width:20px;height:20px}
+.compte-corps{display:grid;gap:3px;min-width:0}
+.compte-label{font-family:var(--f-capitales);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--encre-douce)}
+.compte-numero{font-family:var(--f-display);font-size:clamp(1.7rem,4.2vw,2.5rem);line-height:1.1;letter-spacing:.05em;font-variant-numeric:lining-nums tabular-nums;overflow-wrap:anywhere}
+.compte-titulaire{font-size:clamp(1.25rem,2.6vw,1.5rem);font-weight:500;line-height:1.3}
+.copier{font-family:var(--f-capitales);font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;color:var(--azur);background:transparent;border:1px solid var(--ciel);border-radius:var(--r);padding:.85em 1.15em;cursor:pointer;transition:background-color .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease)}
+.copier:hover{border-color:var(--azur)}
+.copier.is-copied{background:var(--azur);border-color:var(--azur);color:#fff}
+.cadeau-merci{font-style:italic;font-size:1.3rem;color:var(--encre-douce)}
+.cadeau-signature{font-family:var(--f-script);font-size:clamp(2.4rem,5vw,3rem);line-height:1;color:var(--encre)}
+
+/* =========================================================
+   Réservez la date — calendrier & anneaux
+   ========================================================= */
+.date-grille{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(44px,7vw,100px);align-items:center}
+.calendrier{--papier-fond:#FFFFFF;justify-self:center;width:min(440px,100%);padding:clamp(26px,4.4vw,44px);text-align:center;rotate:-1.6deg}
+.calendrier::after{content:"";position:absolute;inset:14px;border:1px solid var(--filet);pointer-events:none}
+.cal-mois{margin:0;font-family:var(--f-display);font-style:italic;font-weight:400;font-size:clamp(2.2rem,4.6vw,3rem);line-height:1}
+.cal-grille{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));row-gap:4px;margin-top:22px}
+.cal-nom{padding-bottom:10px;font-family:var(--f-capitales);font-size:.6rem;letter-spacing:.16em;color:var(--encre-douce)}
+.cal-j{position:relative;display:grid;place-items:center;aspect-ratio:1;font-family:var(--f-display);font-size:clamp(.95rem,2.3vw,1.2rem);font-variant-numeric:lining-nums;color:var(--encre)}
+.cal-j--dim{color:var(--ciel-vif)}
+.cal-j--jour{font-weight:500;color:var(--azur-fonce);font-size:clamp(1.15rem,2.8vw,1.45rem)}
+.coeur-encre{position:absolute;left:50%;top:50%;width:190%;height:190%;translate:-50% -52%;overflow:visible;color:var(--azur)}
+.coeur-encre path{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.4s cubic-bezier(.65,0,.35,1) .6s}
+.calendrier.is-in .coeur-encre path{stroke-dashoffset:0}
+.date-texte{display:grid;gap:22px;justify-items:start}
+.decompte{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(8px,2vw,18px);width:100%;max-width:480px}
+.anneau{position:relative;display:grid;place-items:center;aspect-ratio:1}
+.anneau svg{position:absolute;inset:0;width:100%;height:100%;rotate:-90deg}
+.anneau circle{fill:none;stroke-width:1.6}
+.anneau .fond{stroke:var(--filet)}
+.anneau .arc{stroke:var(--azur);stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:calc(1 - var(--f,0));transition:stroke-dashoffset .9s var(--ease)}
+.anneau-centre{position:relative;display:grid;justify-items:center;gap:2px}
+.anneau-val{font-family:var(--f-display);font-size:clamp(1.35rem,3.4vw,2.2rem);line-height:1;font-variant-numeric:lining-nums tabular-nums}
+.anneau-label{font-family:var(--f-capitales);font-size:clamp(.5rem,1.2vw,.58rem);letter-spacing:.18em;text-transform:uppercase;color:var(--encre-douce)}
+
+/* =========================================================
+   Notre histoire — avion en papier & cartes postales 3D
+   ========================================================= */
+.histoire-lettre{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(36px,7vw,96px);align-items:start;margin-bottom:clamp(100px,13vw,160px)}
+.histoire-intro{display:grid;gap:18px;justify-items:start;position:sticky;top:110px}
+.histoire-aide{font-family:var(--f-capitales);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--encre-douce)}
+.lettre{--papier-fond:#FFFFFF;display:grid;gap:1em;padding:clamp(30px,5vw,56px);transition:transform .6s var(--ease)}
+.lettre::after{content:"L&A";position:absolute;right:clamp(18px,4vw,40px);bottom:clamp(4px,1.6vw,14px);font-family:var(--f-script);font-size:clamp(4.6rem,11vw,7rem);line-height:1;color:rgba(169,213,243,.3);pointer-events:none}
+.lettre .salut{font-style:italic;font-size:1.35em;color:var(--azur-fonce)}
+.lettre .signature{font-family:var(--f-script);font-size:clamp(2.2rem,5vw,2.9rem);line-height:1}
+.recit{position:relative}
+.trajectoire{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:0}
+.trajectoire path{fill:none;stroke-width:2;stroke-linecap:round;stroke-dasharray:.1 11}
+.trajectoire .trace-fond{stroke:var(--ciel)}
+.trajectoire .trace-active{stroke:var(--azur)}
+.avion{position:absolute;left:0;top:0;z-index:6;width:46px;height:46px;margin:-23px 0 0 -23px;pointer-events:none;color:var(--azur);opacity:0;transition:opacity .6s var(--ease);filter:drop-shadow(0 10px 8px rgba(24,52,79,.22))}
+.avion.is-visible{opacity:1}
+.escales{position:relative;z-index:1;list-style:none;margin:0;padding:0;display:grid;gap:clamp(120px,16vw,200px)}
+.escale{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,8vw,120px);align-items:center}
+.escale:nth-child(even) .cp-scene{order:2}
+.escale-texte{display:grid;gap:14px;justify-items:start;max-width:28em}
+.escale:nth-child(even) .escale-texte{justify-self:end;justify-items:end;text-align:right}
+.escale-titre{margin:0;font-family:var(--f-display);font-weight:400;font-size:clamp(2rem,4vw,2.9rem);line-height:1.05;text-wrap:balance}
+.escale-titre em{font-style:italic;color:var(--azur)}
+.escale-corps{font-size:1.2rem;color:var(--encre-douce);text-wrap:pretty}
+.js .escale-texte > *{opacity:0;translate:0 22px;transition:opacity 1s var(--ease),translate 1.2s var(--ease)}
+.js .escale-texte > :nth-child(2){transition-delay:.12s}
+.js .escale-texte > :nth-child(3){transition-delay:.24s}
+.js .escale-texte > :nth-child(4){transition-delay:.36s}
+.escale.is-in .escale-texte > *{opacity:1;translate:0 0}
+
+.cp-scene{display:grid;justify-items:center;gap:16px;width:min(500px,100%);justify-self:center;perspective:1700px}
+.js .escale .cp-scene{opacity:0;transform:translateY(70px) rotateX(38deg);transition:opacity 1.2s var(--ease),transform 1.6s var(--ease)}
+.escale.is-in .cp-scene{opacity:1;transform:none}
+.carte-postale{position:relative;width:100%;aspect-ratio:3/2;cursor:pointer;transform-style:preserve-3d;rotate:var(--incl,-2deg);transition:rotate .8s var(--ease)}
+.carte-postale:hover{rotate:0deg}
+.escale.is-in .carte-postale{animation:jeter-oeil 1.6s var(--ease) 1.5s 1}
+@keyframes jeter-oeil{40%{transform:rotateY(-22deg)}}
+.cp-pivot{position:absolute;inset:0;transform-style:preserve-3d;transition:transform 1.2s cubic-bezier(.65,0,.25,1)}
+.carte-postale.is-retournee .cp-pivot{transform:rotateY(180deg)}
+.cp-face{position:absolute;inset:0;padding:12px;background:var(--blanc);box-shadow:var(--ombre-papier);backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.cp-photo{position:relative;display:block;height:100%;overflow:hidden}
+.cp-photo img{width:100%;height:100%;object-fit:cover;object-position:var(--pos,50% 40%);filter:grayscale(1) contrast(1.05) brightness(1.08);scale:1.1;transition:filter 1.8s var(--ease),scale 2.2s var(--ease)}
+.cp-photo::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(142,195,230,.6),rgba(44,99,151,.42));mix-blend-mode:color;transition:opacity 1.8s var(--ease)}
+.escale.is-focus .cp-photo img,.carte-postale:hover .cp-photo img{filter:none;scale:1}
+.escale.is-focus .cp-photo::after,.carte-postale:hover .cp-photo::after{opacity:0}
+.cp-agrandir{position:absolute;right:22px;top:22px;z-index:2;display:grid;place-items:center;width:40px;height:40px;border:0;border-radius:50%;background:rgba(255,255,255,.92);color:var(--azur);cursor:zoom-in;box-shadow:0 6px 14px -6px rgba(24,52,79,.45);transition:transform .3s var(--ease)}
+.cp-agrandir:hover{transform:scale(1.08)}
+.cp-agrandir svg{width:17px;height:17px}
+.cp-verso{transform:rotateY(180deg);display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(12px,2.4vw,20px);padding:clamp(16px,3vw,26px);text-align:left;background:linear-gradient(#FFFFFF,#FAFCFE)}
+.cp-message{display:grid;align-content:center;gap:12px;padding-right:clamp(12px,2.4vw,20px);border-right:1px solid var(--filet)}
+.cp-message p{font-style:italic;font-size:clamp(1.02rem,2.3vw,1.3rem);line-height:1.35}
+.cp-message .script{font-size:clamp(1.6rem,3.4vw,2.1rem);color:var(--azur-fonce)}
+.cp-adresse{position:relative;display:grid;grid-template-rows:auto 1fr}
+.cp-timbre{justify-self:end;width:clamp(52px,10vw,72px);aspect-ratio:.82;padding:5px;background:var(--blanc);-webkit-mask:radial-gradient(circle at 4px 4px,transparent 2.4px,#000 2.9px) -4px -4px/8px 8px;mask:radial-gradient(circle at 4px 4px,transparent 2.4px,#000 2.9px) -4px -4px/8px 8px;filter:drop-shadow(0 2px 3px rgba(24,52,79,.25))}
+.cp-timbre span{display:grid;place-items:center;height:100%;background:linear-gradient(180deg,#8EC4EA,#DDEFFB);color:#fff;font-family:var(--f-script);font-size:1.3rem}
+.cp-cachet{position:absolute;right:clamp(34px,8vw,52px);top:clamp(10px,2vw,18px);width:clamp(58px,11vw,80px);color:var(--azur);opacity:.55;rotate:-12deg}
+.cp-lignes{display:grid;align-content:end;gap:clamp(12px,2.4vw,18px);padding-bottom:4px}
+.cp-lignes small{font-family:var(--f-capitales);font-size:.54rem;letter-spacing:.18em;text-transform:uppercase;color:var(--encre-douce)}
+.cp-lignes span{height:1px;background:var(--filet)}
+.retourner{display:inline-flex;align-items:center;gap:8px;padding:.6em 1em;border:0;background:none;cursor:pointer;font-family:var(--f-capitales);font-size:.62rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--azur)}
+.retourner svg{width:15px;height:15px;transition:transform .8s var(--ease)}
+.retourner[aria-pressed="true"] svg{transform:rotate(180deg)}
+.escale--finale{grid-template-columns:1fr;justify-items:center;text-align:center}
+.escale--finale .escale-texte,.escale:nth-child(even).escale--finale .escale-texte{justify-self:center;justify-items:center;text-align:center;max-width:36em}
+.escale-sceau{width:84px;aspect-ratio:1;display:grid;place-items:center;border-radius:48% 52% 50% 46%/50% 46% 54% 50%;background:radial-gradient(circle at 34% 28%,#A6D2F1,#5A9BD0 40%,#336E9F 72%,#24557F);box-shadow:inset 0 -6px 12px rgba(0,0,0,.25),0 10px 20px -6px rgba(24,52,79,.5);color:#F1F8FD;font-family:var(--f-display);font-size:1.4rem}
+
+/* =========================================================
+   Programme — carte à sommet arrondi
+   ========================================================= */
+.programme-carte{--papier-fond:#FFFFFF;width:min(780px,100%);margin-inline:auto;padding:clamp(110px,14vw,150px) clamp(20px,6vw,72px) clamp(40px,6vw,64px)}
+.programme-carte::before{border-radius:50% 50% 3px 3px / 170px 170px 3px 3px}
+.programme-carte::after{content:"";position:absolute;inset:16px;border:1px solid var(--filet);border-radius:50% 50% 2px 2px / 160px 160px 2px 2px;pointer-events:none}
+.programme-tete{display:grid;justify-items:center;gap:12px;text-align:center;margin-bottom:28px}
+.programme-liste{list-style:none;margin:0;padding:0;display:grid}
+.moment{display:grid;grid-template-columns:clamp(64px,13vw,104px) clamp(36px,6vw,46px) minmax(0,1fr);align-items:center;gap:clamp(12px,2.4vw,22px);padding-block:clamp(14px,2.2vw,20px);border-bottom:1px dashed var(--filet)}
+.moment:last-child{border-bottom:0}
+.moment-heure{font-family:var(--f-display);font-size:clamp(1.35rem,3.2vw,2rem);line-height:1;text-align:right;color:var(--azur-fonce);font-variant-numeric:lining-nums tabular-nums}
+.moment-icone{width:100%;aspect-ratio:1;color:var(--azur)}
+.moment-icone *{fill:none;stroke:currentColor;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.8s var(--ease) .35s}
+.moment.is-in .moment-icone *{stroke-dashoffset:0}
+.moment-corps{display:grid;gap:4px;min-width:0}
+.moment-titre{margin:0;font-size:clamp(1.3rem,2.8vw,1.6rem);font-weight:500;line-height:1.2}
+.moment-lieu{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-family:var(--f-capitales);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--encre-douce)}
+.moment-tag{padding:3px 9px;border-radius:999px;background:var(--ciel-pale);color:var(--azur-fonce);letter-spacing:.14em}
+.js .moment.reveal{transform:perspective(1100px) rotateX(-52deg) translateY(24px);transform-origin:50% 0}
+.js .moment.reveal.is-in{transform:none}
+
+/* =========================================================
+   Lieux — carte d'accès aquarelle
+   ========================================================= */
+.lieux-grille{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,7vw,96px);align-items:center}
+.lieux-texte{display:grid;gap:22px;justify-items:start}
+.adresses{display:grid;gap:12px;width:100%;list-style:none;margin:0;padding:0}
+.adresse{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:start;gap:4px 16px;padding:16px 18px;background:var(--blanc);border:1px solid var(--filet);border-radius:var(--r)}
+.adresse-num{grid-row:span 2;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--azur);color:#fff;font-family:var(--f-display);font-size:1rem}
+.adresse strong{font-weight:500;font-size:1.2rem;line-height:1.2}
+.adresse span{font-size:1.05rem;color:var(--encre-douce)}
+.carte-acces-scene{perspective:1400px;padding-block:20px}
+.carte-acces{--incl:var(--scroll-tilt,48deg);--papier-fond:#FFFFFF;aspect-ratio:1;padding:14px;transform:rotateX(var(--incl));transition:transform .9s var(--ease)}
+.carte-acces-scene:hover .carte-acces{--incl:0deg}
+.carte-acces svg{width:100%;height:100%}
+.route{fill:none;stroke:var(--azur);stroke-width:2.4;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.8s cubic-bezier(.65,0,.35,1) .4s}
+.carte-acces-scene.is-in .route{stroke-dashoffset:0}
+
+/* =========================================================
+   Dress code — rubans de satin
+   ========================================================= */
+.rubans{position:relative;display:flex;justify-content:center;flex-wrap:wrap;gap:clamp(16px,4vw,46px);max-width:760px;margin:0 auto;padding:26px 0 0;list-style:none}
+.rubans::before{content:"";position:absolute;left:0;right:0;top:0;height:8px;border-radius:4px;background:linear-gradient(180deg,#EDF2F6,#C8D5E0);box-shadow:0 4px 8px rgba(24,52,79,.15)}
+.ruban-ech{display:grid;justify-items:center;gap:14px;perspective:700px}
+.ruban-ombre{filter:drop-shadow(0 10px 10px rgba(24,52,79,.18))}
+.ruban-bande{width:clamp(42px,9vw,64px);height:clamp(170px,26vw,230px);transform-origin:50% 0;clip-path:polygon(0 0,100% 0,100% 100%,50% 88%,0 100%);background:linear-gradient(90deg,rgba(24,52,79,.1),rgba(255,255,255,.55) 34%,rgba(255,255,255,0) 56%,rgba(24,52,79,.12)),var(--c);animation:ondule 5.5s ease-in-out infinite;animation-delay:var(--dl,0s)}
+.ruban-ech:hover .ruban-bande{animation-duration:1.8s}
+@keyframes ondule{0%,100%{transform:rotateY(0) rotateZ(0)}25%{transform:rotateY(24deg) rotateZ(1.5deg)}75%{transform:rotateY(-20deg) rotateZ(-1.5deg)}}
+.ruban-nom{font-family:var(--f-capitales);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--encre-douce);text-align:center}
+.notes-tenue{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,30px);margin-top:clamp(50px,7vw,80px)}
+.note-tenue{--papier-fond:#FFFFFF;display:grid;gap:10px;padding:clamp(24px,4vw,38px)}
+.note-tenue h3{margin:0;font-family:var(--f-display);font-style:italic;font-weight:400;font-size:clamp(1.7rem,3.4vw,2.2rem);color:var(--azur-fonce)}
+.tenue-rappel{margin-top:30px;text-align:center}
+
+/* =========================================================
+   Carton réponse
+   ========================================================= */
+.rsvp-scene{position:relative;max-width:720px;margin-inline:auto;perspective:1800px}
+.carton{--papier-fond:#FFFFFF;padding:clamp(34px,6vw,64px);transform-origin:50% 100%;transition:transform 1.1s cubic-bezier(.65,0,.35,1),opacity .6s var(--ease) .45s}
+.carton::after{content:"";position:absolute;inset:clamp(12px,2vw,18px);border:1px solid var(--filet);pointer-events:none}
+.carton-tete{display:grid;justify-items:center;gap:10px;text-align:center;margin-bottom:34px}
+.carton-tete .script{font-size:clamp(2.4rem,6vw,3.2rem);color:var(--encre)}
+.carton fieldset{border:0;margin:0;padding:0;min-width:0}
+.etape-titre{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin:0 0 16px;padding:0;font-family:var(--f-display);font-size:clamp(1.3rem,2.8vw,1.6rem);font-weight:400}
+.etape-num{font-family:var(--f-capitales);font-size:.56rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#fff;background:var(--azur);padding:5px 11px;border-radius:999px}
+.choix-grille{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.choix{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:12px;padding:16px;background:var(--blanc);border:1px solid var(--filet);border-radius:var(--r);cursor:pointer;transition:border-color .35s var(--ease),background-color .35s var(--ease),transform .45s var(--ease)}
+.choix:hover{border-color:var(--ciel-vif);transform:translateY(-2px)}
+.choix:has(input:checked){border-color:var(--azur);background:var(--brume)}
+.choix input,.absent input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.case{position:relative;flex:none;width:24px;height:24px;border:1.5px solid var(--azur);border-radius:2px;background:var(--blanc)}
+.case svg{position:absolute;left:-5px;top:-9px;width:36px;height:36px;overflow:visible}
+.case path{fill:none;stroke:var(--azur-fonce);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .5s var(--ease)}
+input:checked + .case path{stroke-dashoffset:0}
+input:focus-visible + .case{outline:2px solid var(--azur);outline-offset:3px}
+.choix-nom{display:block;font-family:var(--f-display);font-size:1.3rem;line-height:1.1}
+.choix-heure{display:block;margin-top:3px;font-family:var(--f-capitales);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--encre-douce)}
+.absent{position:relative;display:inline-flex;align-items:center;gap:12px;margin-top:16px;font-style:italic;font-size:1.15rem;color:var(--encre-douce);cursor:pointer}
+.indice{margin-top:22px;text-align:center;font-style:italic;color:var(--encre-douce)}
+.etape-deux{display:grid;grid-template-columns:1fr 1fr;gap:26px 30px;margin-top:30px;padding-top:30px;border-top:1px dashed var(--filet);animation:monte .9s var(--ease) both}
+.etape-deux > .etape-titre,.pleine{grid-column:1/-1}
+.champ{display:grid;gap:6px;min-width:0}
+.champ label{font-family:var(--f-capitales);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--encre-douce)}
+.champ input,.champ select,.champ textarea{width:100%;font:inherit;font-size:1.25rem;font-style:italic;color:var(--encre);background:transparent;border:0;border-bottom:1px solid var(--ciel);border-radius:0;padding:.35em 0;transition:border-color .3s var(--ease),box-shadow .3s var(--ease)}
+.champ select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,var(--azur) 50%),linear-gradient(135deg,var(--azur) 50%,transparent 50%);background-position:calc(100% - 12px) 55%,calc(100% - 6px) 55%;background-size:6px 6px;background-repeat:no-repeat}
+.champ textarea{min-height:4.8em;line-height:1.6em;resize:vertical;border-bottom:0;background-image:repeating-linear-gradient(180deg,transparent 0 calc(1.6em - 1px),var(--ciel) calc(1.6em - 1px) 1.6em)}
+.champ input:focus,.champ select:focus{outline:none;border-color:var(--azur);box-shadow:0 1px 0 var(--azur)}
+.champ textarea:focus{outline:none;background-image:repeating-linear-gradient(180deg,transparent 0 calc(1.6em - 1px),var(--azur) calc(1.6em - 1px) 1.6em)}
+.champ input::placeholder,.champ textarea::placeholder{color:#93A6B8}
+.carton-pied{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px}
+.carton-pied small{font-family:var(--f-capitales);font-size:.66rem;letter-spacing:.04em;color:#9C3B3B}
+.enveloppe-reponse{position:absolute;left:50%;top:42%;z-index:3;width:min(360px,78%);aspect-ratio:1.55;translate:-50% -20%;opacity:0;pointer-events:none;transform-style:preserve-3d;transition:opacity .6s var(--ease),translate 1s var(--ease)}
+.er-dos{position:absolute;inset:0;background:linear-gradient(170deg,#DCEBF7,#C7DDEF);box-shadow:0 30px 50px -24px rgba(24,52,79,.5)}
+.er-carte{position:absolute;left:8%;right:8%;top:6%;height:70%;background:#fff;box-shadow:0 1px 6px rgba(24,52,79,.12)}
+.er-poche{position:absolute;inset:0;width:100%;height:100%}
+.er-rabat{position:absolute;left:0;right:0;top:0;height:56%;z-index:2;transform-origin:50% 0;transform:rotateX(180deg);clip-path:polygon(0 0,100% 0,50% 100%);background:linear-gradient(180deg,#E6F1FA,#CFE3F2)}
+.er-sceau{position:absolute;left:50%;top:56%;z-index:3;width:22%;aspect-ratio:1;translate:-50% -50%;scale:0;display:grid;place-items:center;border-radius:48% 52% 50% 46%/50% 46% 54% 50%;background:radial-gradient(circle at 34% 28%,#A6D2F1,#5A9BD0 40%,#336E9F 72%,#24557F);box-shadow:inset 0 -5px 10px rgba(0,0,0,.25),0 6px 12px -4px rgba(24,52,79,.5);color:#F1F8FD;font-family:var(--f-script);font-size:clamp(1rem,3vw,1.4rem)}
+.merci-bloc{position:absolute;left:0;right:0;top:calc(42% + clamp(150px,30vw,190px));z-index:3;display:grid;justify-items:center;gap:12px;padding-inline:16px;text-align:center;opacity:0;translate:0 20px;pointer-events:none;transition:opacity .8s var(--ease),translate .8s var(--ease)}
+.merci-titre{margin:0;font-family:var(--f-display);font-style:italic;font-weight:400;font-size:clamp(2.2rem,5.4vw,3rem);line-height:1.1}
+.merci-titre:focus{outline:none}
+.merci-texte{max-width:28em;color:var(--encre-douce);font-size:1.2rem}
+.rsvp-scene.is-sent .carton{transform:translateY(12%) scale(.44) rotateX(14deg);opacity:0}
+.rsvp-scene.is-sent .enveloppe-reponse{opacity:1;translate:-50% -50%;transition-delay:.35s}
+.rsvp-scene.is-sent .er-rabat{transform:rotateX(0deg);transition:transform .8s var(--ease) 1.3s}
+.rsvp-scene.is-sent .er-sceau{scale:1;transition:scale .55s cubic-bezier(.34,1.56,.64,1) 2s}
+.rsvp-scene.is-sent .merci-bloc{opacity:1;translate:0 0;pointer-events:auto;transition-delay:2.3s}
+
+/* =========================================================
+   Final
+   ========================================================= */
+.finale{position:relative;overflow:hidden;text-align:center;padding-block:clamp(110px,14vw,170px) 40px;background:linear-gradient(180deg,var(--coton) 0%,#E5F1FA 55%,#CFE6F6 100%)}
+.finale .aquarelle.a1{--t:520px;left:-140px;bottom:-120px}
+.finale .aquarelle.a2{--t:420px;right:-120px;top:60px;animation-delay:-6s}
+.finale-in{position:relative;z-index:1;display:grid;justify-items:center;gap:20px}
+.finale .couronne{width:130px;height:130px}
+.finale-noms{margin:0;font-family:var(--f-script);font-weight:400;font-size:clamp(3.6rem,11vw,6.6rem);line-height:1}
+.finale-date{font-family:var(--f-display);font-size:clamp(1.1rem,2.4vw,1.4rem);letter-spacing:.24em;color:var(--azur-fonce)}
+.pied{margin-top:clamp(64px,9vw,104px);padding-top:24px;border-top:1px solid rgba(44,99,151,.18);font-family:var(--f-capitales);font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--encre-douce)}
+
+/* Visionneuse */
+.lightbox{width:100vw;height:100vh;max-width:100vw;max-height:100vh;margin:0;padding:0;border:0;background:transparent;overflow:hidden;color:#fff}
+.lightbox::backdrop{background:rgba(14,36,58,.88);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.lightbox[open]{display:grid;place-items:center;animation:lb-in .5s var(--ease)}
+@keyframes lb-in{from{opacity:0}to{opacity:1}}
+.lb-figure{margin:0;display:grid;justify-items:center;gap:18px;padding-inline:clamp(16px,7vw,100px);perspective:1400px}
+.lb-figure img{display:block;max-width:min(1080px,100%);max-height:76vh;width:auto;height:auto;border:10px solid #fff;box-shadow:0 50px 100px -30px rgba(0,0,0,.65);animation:lb-img .9s var(--ease)}
+@keyframes lb-img{from{opacity:0;transform:rotateX(18deg) translateZ(-160px)}to{opacity:1;transform:none}}
+.lb-figure figcaption{font-size:1.35rem;font-style:italic;text-align:center;color:#EAF4FC}
+.lb-btn{position:fixed;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:#fff;font-family:var(--f-capitales);font-size:1.6rem;line-height:1;cursor:pointer;transition:background-color .3s var(--ease)}
+.lb-btn:hover{background:rgba(255,255,255,.2)}
+.lb-btn svg{width:18px;height:18px}
+.lightbox :focus-visible{outline-color:#fff}
+.lb-close{top:18px;right:18px}
+.lb-prev,.lb-next{top:50%;translate:0 -50%}
+.lb-prev{left:clamp(10px,2vw,28px)}
+.lb-prev svg{rotate:180deg}
+.lb-next{right:clamp(10px,2vw,28px)}
+.lb-count{position:fixed;left:50%;bottom:22px;translate:-50% 0;margin:0;font-family:var(--f-capitales);font-size:.66rem;letter-spacing:.24em;color:rgba(234,244,252,.8)}
+
+/* Bouton musique */
+.music-toggle{position:fixed;right:clamp(16px,3vw,28px);bottom:clamp(16px,3vw,28px);z-index:60;display:inline-flex;align-items:center;gap:12px;height:48px;padding:0 20px 0 16px;border-radius:999px;border:1px solid var(--filet);background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:var(--azur);cursor:pointer;box-shadow:0 14px 30px -16px rgba(24,52,79,.55);font-family:var(--f-capitales);font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(20px);pointer-events:none;transition:opacity .8s var(--ease) 1.6s,transform .8s var(--ease) 1.6s,border-color .3s var(--ease)}
+.is-open .music-toggle{opacity:1;transform:none;pointer-events:auto}
+.music-toggle:hover{border-color:var(--azur)}
+.music-title{max-width:46vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.eq{display:flex;align-items:flex-end;gap:3px;height:16px}
+.eq i{display:block;width:3px;height:30%;border-radius:1px;background:currentColor}
+.is-playing .eq i{animation:eq 1.1s ease-in-out infinite}
+.is-playing .eq i:nth-child(2){animation-delay:-.35s}
+.is-playing .eq i:nth-child(3){animation-delay:-.7s}
+.is-playing .eq i:nth-child(4){animation-delay:-.2s}
+@keyframes eq{0%,100%{height:25%}50%{height:100%}}
+.confetti{position:fixed;inset:0;width:100%;height:100%;z-index:90;pointer-events:none}
+
+/* =========================================================
+   Responsive & mouvement réduit
+   ========================================================= */
+@media (max-width:900px){
+  .menu{display:none}
+  .cadeau-grille,.date-grille,.histoire-lettre,.lieux-grille{grid-template-columns:1fr}
+  .histoire-intro{position:static}
+  .date-texte{justify-items:center;text-align:center}
+  .escale{grid-template-columns:1fr;gap:30px}
+  .escale:nth-child(even) .cp-scene{order:0}
+  .escale:nth-child(even) .escale-texte{justify-self:start;justify-items:start;text-align:left}
+  .carte-acces-scene{max-width:480px;width:100%;margin-inline:auto}
+}
+@media (max-width:640px){
+  .choix-grille,.etape-deux,.notes-tenue{grid-template-columns:1fr}
+  .compte-ligne{grid-template-columns:auto minmax(0,1fr)}
+  .copier{grid-column:2;justify-self:start}
+  .cp-verso{grid-template-columns:1fr}
+  .cp-adresse{display:none}
+  .cp-message{border-right:0;padding-right:0}
+  .brin-deco{width:70px}
+  .brin-deco--g{left:-34px}
+  .brin-deco--d{right:-34px}
+  .lb-prev,.lb-next{top:auto;bottom:14px;translate:none}
+  .lb-count{bottom:34px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;transition-delay:0s!important;scroll-behavior:auto!important}
+  .js .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body class="is-sealed">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="frange" x="-4%" y="-4%" width="108%" height="108%">
+      <feTurbulence type="fractalNoise" baseFrequency=".045" numOctaves="4" seed="7" result="bruit"/>
+      <feDisplacementMap in="SourceGraphic" in2="bruit" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <linearGradient id="satin-g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#DDF0FC"/><stop offset=".42" stop-color="#8FC5EA"/><stop offset=".58" stop-color="#C4E3F7"/><stop offset="1" stop-color="#77B1DD"/>
+    </linearGradient>
+    <symbol id="fleur" viewBox="-10 -10 20 20">
+      <g fill="#FFFFFF" stroke="#AFD3EC" stroke-width=".6">
+        <ellipse cx="0" cy="-4.6" rx="3" ry="4.4"/><ellipse cx="0" cy="-4.6" rx="3" ry="4.4" transform="rotate(72)"/><ellipse cx="0" cy="-4.6" rx="3" ry="4.4" transform="rotate(144)"/><ellipse cx="0" cy="-4.6" rx="3" ry="4.4" transform="rotate(216)"/><ellipse cx="0" cy="-4.6" rx="3" ry="4.4" transform="rotate(288)"/>
+      </g>
+      <circle r="1.9" fill="#7DBAE6"/>
+    </symbol>
+    <symbol id="brin" viewBox="0 0 60 160">
+      <path d="M30 160C29 122 35 86 29 48C27 32 30 18 35 8" fill="none" stroke="#9CC6E4" stroke-width="1.4"/>
+      <path d="M29 70C22 62 20 54 22 50" fill="none" stroke="#9CC6E4" stroke-width="1.1"/>
+      <g fill="#DCEDF8" stroke="#A9D2EE" stroke-width=".7">
+        <ellipse cx="40" cy="130" rx="11" ry="4.2" transform="rotate(-32 40 130)"/><ellipse cx="19" cy="112" rx="11" ry="4.2" transform="rotate(30 19 112)"/><ellipse cx="41" cy="94" rx="10" ry="3.8" transform="rotate(-38 41 94)"/><ellipse cx="20" cy="80" rx="9" ry="3.6" transform="rotate(36 20 80)"/><ellipse cx="39" cy="34" rx="8" ry="3.2" transform="rotate(-40 39 34)"/>
+      </g>
+      <use href="#fleur" x="25" y="-2" width="20" height="20"/><use href="#fleur" x="12" y="38" width="18" height="18"/><use href="#fleur" x="32" y="54" width="15" height="15"/>
+    </symbol>
+    <symbol id="fleuron" viewBox="0 0 120 18"><g fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><path d="M2 9h38M80 9h38"/><path d="M60 3c-7 0-11 6-18 6 7 0 11 6 18 6 7 0 11-6 18-6-7 0-11-6-18-6z"/></g><circle cx="60" cy="9" r="1.8" fill="currentColor"/></symbol>
+    <symbol id="cachet" viewBox="0 0 130 100"><g fill="none" stroke="currentColor"><circle cx="50" cy="50" r="36" stroke-width="2"/><circle cx="50" cy="50" r="28" stroke-width="1"/><path d="M92 34q7-5 14 0t14 0M92 50q7-5 14 0t14 0M92 66q7-5 14 0t14 0" stroke-width="1.8"/></g><text x="50" y="48" text-anchor="middle" font-family="Jost, sans-serif" font-size="11" letter-spacing="2" fill="currentColor">KRIBI</text><text x="50" y="62" text-anchor="middle" font-family="Jost, sans-serif" font-size="9" letter-spacing="1" fill="currentColor">2027</text></symbol>
+    <symbol id="i-avion" viewBox="0 0 48 48"><path d="M44 8 4 22l14 5 3 13 7-9 9 7z" fill="#FFFFFF" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M44 8 18 27M44 8 21 40" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></symbol>
+    <symbol id="i-agrandir" viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-retourner" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v5h-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-carte" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></g></symbol>
+    <symbol id="i-personne" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 19.5a7 7 0 0 1 14 0"/></g></symbol>
+    <symbol id="i-fleche" viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-agenda" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><rect x="2" y="3" width="12" height="11" rx="1"/><path d="M2 6.5h12M5.5 1.5v3M10.5 1.5v3"/></g></symbol>
+    <symbol id="i-son" viewBox="0 0 16 16"><path d="M2 6h3l4-3v10L5 10H2z" fill="currentColor"/><path d="M11.5 5.5a3.5 3.5 0 0 1 0 5M13.5 3.5a6.5 6.5 0 0 1 0 9" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-coche" viewBox="0 0 36 36"><path pathLength="1" d="M7 19c3 2 5 5 7 9 4-9 10-17 19-24"/></symbol>
+  </defs>
+</svg>
+
+<!-- ================= Ouverture : pochette à ruban ================= -->
+<div class="ouverture" id="ouverture" role="dialog" aria-modal="true" aria-labelledby="ouverture-titre">
+  <div class="ouverture-pile">
+    <p class="capitales">Vous êtes conviés au mariage de</p>
+    <p class="script ouverture-noms" id="ouverture-titre">Levy &amp; Adrienne</p>
+    <div class="pochette-scene">
+      <div class="pochette-flotte">
+        <div class="pochette" id="pochette">
+          <div class="pochette-interieur papier">
+            <svg class="couronne" viewBox="0 0 120 120" aria-hidden="true"><g class="laurier"></g><text class="couronne-mono" x="60" y="69" text-anchor="middle">L&amp;A</text></svg>
+            <p class="script">Levy &amp; Adrienne</p>
+            <p class="capitales">Kribi · 2027</p>
+          </div>
+          <div class="volet volet--g" aria-hidden="true"><div class="volet-face volet-face--avant"><span class="volet-motif"></span></div><div class="volet-face volet-face--arriere"></div></div>
+          <div class="volet volet--d" aria-hidden="true"><div class="volet-face volet-face--avant"><span class="volet-motif"></span></div><div class="volet-face volet-face--arriere"></div></div>
+          <div class="ruban" aria-hidden="true"><span class="ruban-g"></span><span class="ruban-d"></span></div>
+          <div class="noeud-zone">
+            <svg class="noeud" viewBox="0 0 160 110" aria-hidden="true">
+              <path d="M80 50C60 20 22 12 16 34c-6 22 30 30 64 16z" fill="url(#satin-g)"/>
+              <path d="M80 50c20-30 58-38 64-16 6 22-30 30-64 16z" fill="url(#satin-g)"/>
+              <path d="M76 56 52 104l14-4 8 10 10-50z" fill="url(#satin-g)"/>
+              <path d="M84 56l24 48-14-4-8 10-10-50z" fill="url(#satin-g)"/>
+            </svg>
+            <button class="sceau" id="sceau" type="button" aria-label="Dénouer le ruban et ouvrir le faire-part">L&amp;A</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn--plein" id="ouvrir" type="button">Dénouer le ruban</button>
+    <p class="ouverture-son"><svg aria-hidden="true"><use href="#i-son"/></svg><span id="seal-sound-text">Montez le son — une musique vous accompagne</span></p>
+  </div>
+</div>
+
+<!-- ================= Navigation ================= -->
+<header class="barre" id="barre">
+  <span class="progression" aria-hidden="true"></span>
+  <div class="shell barre-in">
+    <a class="logo" href="#haut" aria-label="Retour en haut">
+      <svg class="couronne" viewBox="0 0 120 120" aria-hidden="true"><g class="laurier"></g><text class="couronne-mono" x="60" y="69" text-anchor="middle">L&amp;A</text></svg>
+    </a>
+    <nav aria-label="Sections du faire-part">
+      <ul class="menu">
+        <li><a href="#cadeau">Cadeau</a></li>
+        <li><a href="#date">La date</a></li>
+        <li><a href="#histoire">Notre histoire</a></li>
+        <li><a href="#programme">Programme</a></li>
+        <li><a href="#lieux">Lieux</a></li>
+        <li><a href="#tenue">Tenue</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--plein" href="#rsvp">Répondre</a>
+  </div>
+</header>
+
+<main id="accueil" tabindex="-1">
+
+<!-- ================= Hero : le faire-part ================= -->
+<section class="hero" id="haut" aria-labelledby="couple">
+  <div class="aquarelle a1" aria-hidden="true"></div>
+  <div class="aquarelle a2" aria-hidden="true"></div>
+  <div class="aquarelle a3" aria-hidden="true"></div>
+  <div class="shell hero-in">
+    <div class="fp-scene h-in" style="--d:.15s">
+      <article class="faire-part papier">
+        <div class="rings-zone">
+          <canvas class="rings" id="rings"></canvas>
+          <div class="rings-fallback"><svg class="couronne" viewBox="0 0 120 120" aria-hidden="true"><g class="laurier"></g><text class="couronne-mono" x="60" y="69" text-anchor="middle">L&amp;A</text></svg></div>
+        </div>
+        <p class="capitales">Avec la bénédiction de leurs familles</p>
+        <h1 class="fp-noms" id="couple"><span>Levy</span><span class="fp-amp">&amp;</span><span>Adrienne</span></h1>
+        <p class="fp-texte">ont la joie de vous inviter à célébrer leur mariage</p>
+        <div class="fp-date">
+          <span class="capitales">Dimanche</span>
+          <span class="fp-jour relief">31</span>
+          <span class="capitales">Janvier 2027</span>
+        </div>
+        <p class="fp-lieu relief">à Kribi, Cameroun</p>
+        <svg class="fleuron" aria-hidden="true"><use href="#fleuron"/></svg>
+        <p class="capitales">Mairie · Église · Soirée</p>
+      </article>
+      <div class="velin" aria-hidden="true"><span>Save the date</span></div>
+      <div class="brin-deco brin-deco--g" aria-hidden="true"><svg viewBox="0 0 60 160"><use href="#brin"/></svg></div>
+      <div class="brin-deco brin-deco--d" aria-hidden="true"><svg viewBox="0 0 60 160"><use href="#brin"/></svg></div>
+    </div>
+    <a class="defiler h-in" style="--d:1.8s" href="#cadeau">Découvrir <span aria-hidden="true"></span></a>
+  </div>
+</section>
+
+<!-- ================= Cadeau ================= -->
+<section class="section section--brume" id="cadeau" aria-labelledby="cadeau-titre">
+  <div class="shell cadeau-grille">
+    <div class="pochette-photo reveal" data-tilt="6">
+      <figure class="photo-carte" style="margin:0 auto">
+        <span class="photo-teinte"><img src="photos/levy-adrienne.jpg" alt="Levy et Adrienne face à face, un bouquet entre les mains" width="1080" height="720" decoding="async"></span>
+        <figcaption>Levy &amp; Adrienne</figcaption>
+      </figure>
+      <div class="calque-poche" aria-hidden="true"></div>
+      <span class="calque-sceau" aria-hidden="true">L&amp;A</span>
+    </div>
+
+    <div class="cadeau-texte reveal" style="--d:.15s">
+      <p class="capitales">Liste de mariage</p>
+      <h2 class="titre" id="cadeau-titre">Votre présence est le plus <em>beau des cadeaux</em></h2>
+      <p class="chapeau">Si vous souhaitez toutefois contribuer à notre mariage, voici notre compte.</p>
+      <div class="compte papier" data-tilt="4">
+        <div class="compte-ligne">
+          <span class="compte-icone" aria-hidden="true"><svg><use href="#i-carte"/></svg></span>
+          <div class="compte-corps"><span class="compte-label">Numéro de compte</span><span class="compte-numero">••• ••• •••••</span></div>
+          <button class="copier" type="button" data-copy="(masqué dans l'aperçu)" aria-label="Copier le numéro de compte">Copier</button>
+        </div>
+        <div class="compte-ligne">
+          <span class="compte-icone" aria-hidden="true"><svg><use href="#i-personne"/></svg></span>
+          <div class="compte-corps"><span class="compte-label">Nom du titulaire</span><span class="compte-titulaire">Coordonnées communiquées aux invités</span></div>
+        </div>
+      </div>
+      <p class="cadeau-merci">Merci infiniment pour votre générosité et votre soutien.</p>
+      <p class="cadeau-signature">Levy &amp; Adrienne</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Réservez la date ================= -->
+<section class="section" id="date" aria-labelledby="date-titre">
+  <div class="shell date-grille">
+    <div class="calendrier papier reveal" role="img" aria-label="Calendrier de janvier 2027 : le dimanche 31 est entouré d'un cœur">
+      <p class="capitales">Réservez la date</p>
+      <p class="cal-mois">Janvier 2027</p>
+      <div class="cal-grille" id="cal-grille" aria-hidden="true"></div>
+    </div>
+    <div class="date-texte reveal" style="--d:.15s">
+      <p class="capitales">Dimanche 31 janvier 2027</p>
+      <h2 class="titre" id="date-titre">Un dimanche <em>pour toujours</em></h2>
+      <p class="chapeau">Trois temps forts à Kribi : la mairie, l'église, puis la soirée. Gardez précieusement cette date.</p>
+      <div class="decompte" role="timer" aria-label="Temps restant avant le mariage">
+        <div class="anneau" data-unite="j"><svg viewBox="0 0 100 100" aria-hidden="true"><circle class="fond" cx="50" cy="50" r="47" pathLength="1"/><circle class="arc" cx="50" cy="50" r="47" pathLength="1"/></svg><div class="anneau-centre"><span class="anneau-val">000</span><span class="anneau-label">Jours</span></div></div>
+        <div class="anneau" data-unite="h"><svg viewBox="0 0 100 100" aria-hidden="true"><circle class="fond" cx="50" cy="50" r="47" pathLength="1"/><circle class="arc" cx="50" cy="50" r="47" pathLength="1"/></svg><div class="anneau-centre"><span class="anneau-val">00</span><span class="anneau-label">Heures</span></div></div>
+        <div class="anneau" data-unite="m"><svg viewBox="0 0 100 100" aria-hidden="true"><circle class="fond" cx="50" cy="50" r="47" pathLength="1"/><circle class="arc" cx="50" cy="50" r="47" pathLength="1"/></svg><div class="anneau-centre"><span class="anneau-val">00</span><span class="anneau-label">Minutes</span></div></div>
+        <div class="anneau" data-unite="s"><svg viewBox="0 0 100 100" aria-hidden="true"><circle class="fond" cx="50" cy="50" r="47" pathLength="1"/><circle class="arc" cx="50" cy="50" r="47" pathLength="1"/></svg><div class="anneau-centre"><span class="anneau-val">00</span><span class="anneau-label">Secondes</span></div></div>
+      </div>
+      <a class="btn btn--trait" data-calendar href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-agenda"/></svg>Ajouter à mon agenda</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Notre histoire ================= -->
+<section class="section section--brume" id="histoire" aria-labelledby="histoire-titre">
+  <div class="shell">
+    <div class="histoire-lettre">
+      <div class="histoire-intro reveal">
+        <p class="capitales">Notre histoire</p>
+        <h2 class="titre" id="histoire-titre">Deux histoires, <em>un même ciel</em></h2>
+        <p class="histoire-aide">Suivez l'avion de papier et retournez les cartes postales</p>
+      </div>
+      <article class="lettre papier reveal" style="--d:.15s" data-tilt="4">
+        <p class="salut">Chers familles et amis,</p>
+        <p>Il y a des rencontres qui changent tout. La nôtre a fait de deux histoires une seule, écrite à quatre mains, jour après jour.</p>
+        <p>Vous faites partie de ce chemin : vous nous avez entourés, encouragés, portés. C'est donc avec vous que nous voulons en écrire le plus beau chapitre.</p>
+        <p>Voici, en quelques cartes postales, la route qui nous mène au 31 janvier 2027.</p>
+        <p class="signature">Levy &amp; Adrienne</p>
+      </article>
+    </div>
+
+    <div class="recit" id="recit">
+      <svg class="trajectoire" id="trajectoire" aria-hidden="true">
+        <defs><mask id="masque-trace" maskUnits="userSpaceOnUse"><path id="trace-masque" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/></mask></defs>
+        <path class="trace-fond" id="trace-fond"/>
+        <path class="trace-active" id="trace-active" mask="url(#masque-trace)"/>
+      </svg>
+      <svg class="avion" id="avion" aria-hidden="true"><use href="#i-avion"/></svg>
+
+      <ol class="escales">
+        <li class="escale">
+          <div class="cp-scene">
+            <div class="carte-postale" style="--incl:-2.5deg" data-carte>
+              <div class="cp-pivot">
+                <div class="cp-face cp-recto">
+                  <span class="cp-photo" style="--pos:50% 30%"><img src="photos/histoire-1-regards.jpg" alt="Levy et Adrienne se font face en souriant, un bouquet de roses entre les mains" width="1080" height="720" loading="lazy" decoding="async"></span>
+                  <button class="cp-agrandir" type="button" data-lightbox data-legende="Un bouquet, deux sourires" aria-label="Agrandir la photo « Un bouquet, deux sourires »"><svg aria-hidden="true"><use href="#i-agrandir"/></svg></button>
+                </div>
+                <div class="cp-face cp-verso">
+                  <div class="cp-message"><p>« Un regard, un sourire… et tout a commencé. »</p><p class="script">Levy &amp; Adrienne</p></div>
+                  <div class="cp-adresse"><span class="cp-timbre"><span>L&amp;A</span></span><svg class="cp-cachet" aria-hidden="true"><use href="#cachet"/></svg><div class="cp-lignes"><small>À nos familles &amp; amis</small><span></span><span></span><span></span></div></div>
+                </div>
+              </div>
+            </div>
+            <button class="retourner" type="button" aria-pressed="false"><svg aria-hidden="true"><use href="#i-retourner"/></svg>Retourner la carte</button>
+          </div>
+          <div class="escale-texte">
+            <p class="capitales">Chapitre I · Nous deux</p>
+            <h3 class="escale-titre">Deux regards, <em>une évidence</em></h3>
+            <p class="escale-corps">Au commencement, il y a eu un regard. Puis des rires, des confidences, et cette certitude tranquille d'avoir trouvé sa place auprès de l'autre.</p>
+          </div>
+        </li>
+
+        <li class="escale">
+          <div class="cp-scene">
+            <div class="carte-postale" style="--incl:2deg" data-carte>
+              <div class="cp-pivot">
+                <div class="cp-face cp-recto">
+                  <span class="cp-photo" style="--pos:52% 48%"><img src="photos/histoire-2-ecrin.jpg" alt="Une main tient un écrin rouge en forme de cœur contenant une bague, devant une enseigne lumineuse" width="1080" height="721" loading="lazy" decoding="async"></span>
+                  <button class="cp-agrandir" type="button" data-lightbox data-legende="Un écrin rouge, une bague" aria-label="Agrandir la photo « Un écrin rouge, une bague »"><svg aria-hidden="true"><use href="#i-agrandir"/></svg></button>
+                </div>
+                <div class="cp-face cp-verso">
+                  <div class="cp-message"><p>« Il a suffi d'une question pour changer nos vies. »</p><p class="script">Levy &amp; Adrienne</p></div>
+                  <div class="cp-adresse"><span class="cp-timbre"><span>L&amp;A</span></span><svg class="cp-cachet" aria-hidden="true"><use href="#cachet"/></svg><div class="cp-lignes"><small>À nos familles &amp; amis</small><span></span><span></span><span></span></div></div>
+                </div>
+              </div>
+            </div>
+            <button class="retourner" type="button" aria-pressed="false"><svg aria-hidden="true"><use href="#i-retourner"/></svg>Retourner la carte</button>
+          </div>
+          <div class="escale-texte">
+            <p class="capitales">Chapitre II · La demande</p>
+            <h3 class="escale-titre">Un écrin, <em>une question</em></h3>
+            <p class="escale-corps">Un soir, sous des lettres lumineuses qui disaient « Marry me », un petit écrin s'est ouvert sur la plus belle des questions.</p>
+          </div>
+        </li>
+
+        <li class="escale">
+          <div class="cp-scene">
+            <div class="carte-postale" style="--incl:-1.5deg" data-carte>
+              <div class="cp-pivot">
+                <div class="cp-face cp-recto">
+                  <span class="cp-photo" style="--pos:42% 50%"><img src="photos/histoire-3-oui.jpg" alt="Un genou à terre, la bague est glissée au doigt sous l'enseigne lumineuse « Marry me »" width="899" height="506" loading="lazy" decoding="async"></span>
+                  <button class="cp-agrandir" type="button" data-lightbox data-legende="Un genou à terre, une bague au doigt" aria-label="Agrandir la photo « Un genou à terre, une bague au doigt »"><svg aria-hidden="true"><use href="#i-agrandir"/></svg></button>
+                </div>
+                <div class="cp-face cp-verso">
+                  <div class="cp-message"><p>« Oui. Mille fois oui. »</p><p class="script">Levy &amp; Adrienne</p></div>
+                  <div class="cp-adresse"><span class="cp-timbre"><span>L&amp;A</span></span><svg class="cp-cachet" aria-hidden="true"><use href="#cachet"/></svg><div class="cp-lignes"><small>À nos familles &amp; amis</small><span></span><span></span><span></span></div></div>
+                </div>
+              </div>
+            </div>
+            <button class="retourner" type="button" aria-pressed="false"><svg aria-hidden="true"><use href="#i-retourner"/></svg>Retourner la carte</button>
+          </div>
+          <div class="escale-texte">
+            <p class="capitales">Chapitre III · La réponse</p>
+            <h3 class="escale-titre">Le plus beau <em>des « oui »</em></h3>
+            <p class="escale-corps">Une main tendue, une bague glissée au doigt, et un « oui » qui a tout illuminé. Ce soir-là, notre histoire a trouvé sa suite.</p>
+          </div>
+        </li>
+
+        <li class="escale escale--finale">
+          <div class="escale-texte">
+            <span class="escale-sceau" aria-hidden="true">IV</span>
+            <p class="capitales">Chapitre IV · À suivre</p>
+            <h3 class="escale-titre">Le 31 janvier 2027, <em>avec vous</em></h3>
+            <p class="escale-corps">Le prochain chapitre s'écrit à Kribi, entourés de ceux que nous aimons. Nous avons hâte de vous y retrouver.</p>
+            <a class="btn btn--plein" href="#rsvp">Confirmer ma présence <svg aria-hidden="true"><use href="#i-fleche"/></svg></a>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Programme ================= -->
+<section class="section" id="programme" aria-labelledby="prog-titre">
+  <div class="aquarelle" style="--t:520px;left:-180px;top:30%" aria-hidden="true"></div>
+  <div class="shell">
+    <div class="programme-carte papier reveal">
+      <div class="programme-tete">
+        <p class="capitales">Dimanche 31 janvier 2027</p>
+        <h2 class="titre" id="prog-titre">Le déroulé <em>de la journée</em></h2>
+        <svg class="fleuron" aria-hidden="true"><use href="#fleuron"/></svg>
+      </div>
+      <ol class="programme-liste">
+        <li class="moment reveal">
+          <span class="moment-heure">13:30</span>
+          <svg class="moment-icone" viewBox="0 0 40 40" aria-hidden="true"><path pathLength="1" d="M10 35V17a10 10 0 0 1 20 0v18"/><path pathLength="1" d="M5 35h30"/><path pathLength="1" d="M15 35V21a5 5 0 0 1 10 0v14"/></svg>
+          <div class="moment-corps"><h3 class="moment-titre">Accueil des invités</h3><span class="moment-lieu">Devant la mairie de Kribi</span></div>
+        </li>
+        <li class="moment reveal">
+          <span class="moment-heure">14:00</span>
+          <svg class="moment-icone" viewBox="0 0 40 40" aria-hidden="true"><path pathLength="1" d="M5 35h30M7 31h26"/><path pathLength="1" d="M10 31V18M16 31V18M24 31V18M30 31V18"/><path pathLength="1" d="M6 18h28L20 8z"/></svg>
+          <div class="moment-corps"><h3 class="moment-titre">Mariage civil</h3><span class="moment-lieu"><span class="moment-tag">Mairie</span>Mairie de Kribi</span></div>
+        </li>
+        <li class="moment reveal">
+          <span class="moment-heure">15:30</span>
+          <svg class="moment-icone" viewBox="0 0 40 40" aria-hidden="true"><path pathLength="1" d="M20 3v8M16.5 6.5h7"/><path pathLength="1" d="M9 35V20l11-8 11 8v15"/><path pathLength="1" d="M17 35v-7a3 3 0 0 1 6 0v7"/><path pathLength="1" d="M5 35h30"/></svg>
+          <div class="moment-corps"><h3 class="moment-titre">Bénédiction nuptiale</h3><span class="moment-lieu"><span class="moment-tag">Église</span>Kribi centre</span></div>
+        </li>
+        <li class="moment reveal">
+          <span class="moment-heure">18:00</span>
+          <svg class="moment-icone" viewBox="0 0 40 40" aria-hidden="true"><path pathLength="1" d="M9 7h8l-.8 9a3.2 3.2 0 0 1-6.4 0z"/><path pathLength="1" d="M23 7h8l-.8 9a3.2 3.2 0 0 1-6.4 0z"/><path pathLength="1" d="M13 19v14M9 33h8M27 19v14M23 33h8"/></svg>
+          <div class="moment-corps"><h3 class="moment-titre">Cocktail au coucher du soleil</h3><span class="moment-lieu"><span class="moment-tag">Soirée</span>Villa Azur, terrasse océane</span></div>
+        </li>
+        <li class="moment reveal">
+          <span class="moment-heure">20:00</span>
+          <svg class="moment-icone" viewBox="0 0 40 40" aria-hidden="true"><path pathLength="1" d="M5 29h30"/><path pathLength="1" d="M8 29a12 12 0 0 1 24 0"/><path pathLength="1" d="M20 14v3M17.5 13h5"/><path pathLength="1" d="M10 33h20"/></svg>
+          <div class="moment-corps"><h3 class="moment-titre">Dîner de gala</h3><span class="moment-lieu">Grand salon blanc</span></div>
+        </li>
+        <li class="moment reveal">
+          <span class="moment-heure">22:00</span>
+          <svg class="moment-icone" viewBox="0 0 40 40" aria-hidden="true"><path pathLength="1" d="M16 30V10l15-4v20"/><path pathLength="1" d="M16 15l15-4"/><circle pathLength="1" cx="12.5" cy="30" r="3.5"/><circle pathLength="1" cx="27.5" cy="26" r="3.5"/></svg>
+          <div class="moment-corps"><h3 class="moment-titre">Ouverture du bal</h3><span class="moment-lieu">Piste sous les étoiles</span></div>
+        </li>
+        <li class="moment reveal">
+          <span class="moment-heure">00:30</span>
+          <svg class="moment-icone" viewBox="0 0 40 40" aria-hidden="true"><path pathLength="1" d="M9 35V26h22v9"/><path pathLength="1" d="M12.5 26v-7h15v7"/><path pathLength="1" d="M16 19v-5h8v5"/><path pathLength="1" d="M20 14v-4"/><path pathLength="1" d="M20 10c-1.8-1.6-.4-3.4 0-5 .4 1.6 1.8 3.4 0 5z"/><path pathLength="1" d="M5 35h30"/></svg>
+          <div class="moment-corps"><h3 class="moment-titre">Pièce montée &amp; feu d'artifice</h3><span class="moment-lieu">Plage privée du domaine</span></div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Lieux ================= -->
+<section class="section section--brume" id="lieux" aria-labelledby="lieux-titre">
+  <div class="shell lieux-grille">
+    <div class="lieux-texte reveal">
+      <p class="capitales">Les lieux</p>
+      <h2 class="titre" id="lieux-titre">Rendez-vous <em>à Kribi</em></h2>
+      <ol class="adresses">
+        <li class="adresse"><span class="adresse-num">1</span><strong>Mairie de Kribi</strong><span>Mariage civil · 14h00</span></li>
+        <li class="adresse"><span class="adresse-num">2</span><strong>Église — Kribi centre</strong><span>Bénédiction nuptiale · 15h30</span></li>
+        <li class="adresse"><span class="adresse-num">3</span><strong>Villa Azur, face à l'océan</strong><span>Soirée · dès 18h00</span></li>
+      </ol>
+      <p class="chapeau">Navette depuis Douala (Akwa) à 10h00, retour vers 01h30. Parking gardé à la Villa Azur.</p>
+      <div class="btn-ligne">
+        <a class="btn btn--plein" href="https://www.google.com/maps/search/?api=1&amp;query=Kribi%2C%20Cameroun" target="_blank" rel="noopener">Voir l'itinéraire <svg aria-hidden="true"><use href="#i-fleche"/></svg></a>
+        <a class="btn btn--trait" data-calendar href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-agenda"/></svg>Ajouter à mon agenda</a>
+      </div>
+    </div>
+    <div class="carte-acces-scene reveal" id="carte-scene" style="--d:.2s">
+      <div class="carte-acces papier">
+        <svg viewBox="0 0 400 400" role="img" aria-label="Plan illustré : la route depuis Douala jusqu'à Kribi, avec la mairie, l'église et la Villa Azur au bord de l'océan">
+          <defs>
+            <filter id="aqua-f" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".03" numOctaves="3" seed="4" result="b"/><feDisplacementMap in="SourceGraphic" in2="b" scale="16" xChannelSelector="R" yChannelSelector="G"/></filter>
+            <radialGradient id="mer-g" cx=".15" cy=".5" r=".9"><stop offset="0" stop-color="#9ACCEF"/><stop offset="1" stop-color="#DCEEFA"/></radialGradient>
+          </defs>
+          <path d="M0 0H128C160 70 108 130 140 200C166 262 118 320 150 400H0Z" fill="url(#mer-g)" filter="url(#aqua-f)"/>
+          <g fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round"><path d="M26 70q9-6 18 0t18 0"/><path d="M58 130q9-6 18 0t18 0"/><path d="M20 200q9-6 18 0t18 0"/><path d="M70 262q9-6 18 0t18 0"/><path d="M30 336q9-6 18 0t18 0"/></g>
+          <text x="54" y="300" transform="rotate(-78 54 300)" font-family="EB Garamond, serif" font-style="italic" font-size="19" fill="#2C6397">Océan Atlantique</text>
+          <path d="M400 34C330 70 300 120 262 150C240 170 234 200 222 222C206 250 180 262 158 270" fill="none" stroke="#E9F0F6" stroke-width="12" stroke-linecap="round"/>
+          <path class="route" pathLength="1" d="M400 34C330 70 300 120 262 150C240 170 234 200 222 222C206 250 180 262 158 270"/>
+          <text x="300" y="26" font-family="Jost, sans-serif" font-size="10" letter-spacing="2" fill="#4E6781">VERS DOUALA ↗</text>
+          <g font-family="Bodoni Moda, serif" font-size="12" text-anchor="middle" fill="#FFFFFF">
+            <circle cx="246" cy="178" r="12" fill="#2C6397"/><text x="246" y="182">1</text>
+            <circle cx="222" cy="222" r="12" fill="#2C6397"/><text x="222" y="226">2</text>
+            <circle cx="158" cy="270" r="12" fill="#2C6397"/><text x="158" y="274">3</text>
+          </g>
+          <path d="M158 246c-3-6-12-5-12 2 0 5 7 9 12 13 5-4 12-8 12-13 0-7-9-8-12-2z" fill="#7DBAE6" stroke="#FFFFFF" stroke-width="1.2"/>
+          <text x="262" y="236" font-family="Jost, sans-serif" font-size="10" letter-spacing="2" fill="#4E6781">KRIBI CENTRE</text>
+          <g transform="translate(350 350)" fill="none" stroke="#7DBAE6"><circle r="18"/><path d="M0-14 4 0 0 14-4 0Z" fill="#7DBAE6"/></g>
+          <text x="346" y="322" font-family="Jost, sans-serif" font-size="10" fill="#4E6781">N</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Tenue ================= -->
+<section class="section" id="tenue" aria-labelledby="tenue-titre">
+  <div class="shell">
+    <div class="entete reveal">
+      <p class="capitales">Dress code</p>
+      <h2 class="titre" id="tenue-titre">Blanc &amp; <em>bleu ciel</em></h2>
+      <p class="chapeau">Nous serions ravis que vos tenues rappellent les couleurs de notre journée.</p>
+      <svg class="fleuron" aria-hidden="true"><use href="#fleuron"/></svg>
+    </div>
+    <ul class="rubans reveal">
+      <li class="ruban-ech"><span class="ruban-ombre"><span class="ruban-bande" style="--c:#FFFFFF;--dl:0s"></span></span><span class="ruban-nom">Blanc nacré</span></li>
+      <li class="ruban-ech"><span class="ruban-ombre"><span class="ruban-bande" style="--c:#BFDDF2;--dl:-1.1s"></span></span><span class="ruban-nom">Bleu ciel</span></li>
+      <li class="ruban-ech"><span class="ruban-ombre"><span class="ruban-bande" style="--c:#9CC3E0;--dl:-2.2s"></span></span><span class="ruban-nom">Bleu poudré</span></li>
+      <li class="ruban-ech"><span class="ruban-ombre"><span class="ruban-bande" style="--c:#5E97C4;--dl:-3.3s"></span></span><span class="ruban-nom">Azur</span></li>
+      <li class="ruban-ech"><span class="ruban-ombre"><span class="ruban-bande" style="--c:#D9E0E6;--dl:-4.4s"></span></span><span class="ruban-nom">Gris perle</span></li>
+    </ul>
+    <div class="notes-tenue">
+      <article class="note-tenue papier reveal"><h3>Mesdames</h3><p>Robes fluides ou tailleurs dans les tons bleu poudré, ciel ou gris perle. Préférez des talons larges : une partie de la réception se tient sur le gazon.</p></article>
+      <article class="note-tenue papier reveal" style="--d:.12s"><h3>Messieurs</h3><p>Costume clair, bleu marine ou gris ; chemise blanche ou bleu ciel. La cravate est facultative, la bonne humeur obligatoire.</p></article>
+    </div>
+    <p class="capitales tenue-rappel reveal">Le blanc intégral est réservé aux mariés</p>
+  </div>
+</section>
+
+<!-- ================= Carton réponse ================= -->
+<section class="section section--brume" id="rsvp" aria-labelledby="rsvp-titre">
+  <div class="shell">
+    <div class="entete reveal">
+      <p class="capitales">Répondez s'il vous plaît</p>
+      <h2 class="titre" id="rsvp-titre">Le carton <em>réponse</em></h2>
+      <p class="chapeau">Merci de nous répondre avant le 15 décembre 2026.</p>
+    </div>
+    <div class="rsvp-scene reveal" id="rsvp-scene">
+      <form class="carton papier" id="rsvp-form" novalidate>
+        <div class="carton-tete"><p class="script">Levy &amp; Adrienne</p><svg class="fleuron" aria-hidden="true"><use href="#fleuron"/></svg></div>
+        <fieldset>
+          <legend class="etape-titre"><span class="etape-num">Étape 1</span> Je serai présent(e)</legend>
+          <div class="choix-grille">
+            <label class="choix"><input id="rsvp-mairie" type="checkbox" name="evenements" value="mairie"><span class="case" aria-hidden="true"><svg viewBox="0 0 36 36"><path pathLength="1" d="M7 19c3 2 5 5 7 9 4-9 10-17 19-24"/></svg></span><span><span class="choix-nom">à la mairie</span><span class="choix-heure">Mariage civil · 14h00</span></span></label>
+            <label class="choix"><input id="rsvp-eglise" type="checkbox" name="evenements" value="eglise"><span class="case" aria-hidden="true"><svg viewBox="0 0 36 36"><path pathLength="1" d="M7 19c3 2 5 5 7 9 4-9 10-17 19-24"/></svg></span><span><span class="choix-nom">à l'église</span><span class="choix-heure">Bénédiction · 15h30</span></span></label>
+            <label class="choix"><input id="rsvp-soiree" type="checkbox" name="evenements" value="soiree"><span class="case" aria-hidden="true"><svg viewBox="0 0 36 36"><path pathLength="1" d="M7 19c3 2 5 5 7 9 4-9 10-17 19-24"/></svg></span><span><span class="choix-nom">à la soirée</span><span class="choix-heure">Dîner &amp; bal · dès 18h00</span></span></label>
+          </div>
+          <label class="absent"><input id="rsvp-absent" type="checkbox" name="absent" value="oui"><span class="case" aria-hidden="true"><svg viewBox="0 0 36 36"><path pathLength="1" d="M7 19c3 2 5 5 7 9 4-9 10-17 19-24"/></svg></span>Je ne pourrai malheureusement pas venir</label>
+        </fieldset>
+        <p class="indice" id="rsvp-indice">Cochez un ou plusieurs moments pour compléter votre carton.</p>
+        <div class="etape-deux" id="rsvp-etape2" hidden>
+          <p class="etape-titre"><span class="etape-num">Étape 2</span> Vos informations</p>
+          <div class="champ"><label for="rsvp-nom">Nom et prénom</label><input id="rsvp-nom" name="nom" type="text" autocomplete="name" placeholder="Marie Ngo" required></div>
+          <div class="champ"><label for="rsvp-contact">Téléphone ou e-mail</label><input id="rsvp-contact" name="contact" type="text" autocomplete="tel" placeholder="Pour vous tenir informé"></div>
+          <div class="champ" data-if-yes><label for="rsvp-nombre">Nombre de personnes</label><select id="rsvp-nombre" name="nombre"><option value="1">1 personne</option><option value="2">2 personnes</option><option value="3">3 personnes</option><option value="4">4 personnes</option></select></div>
+          <div class="champ" data-if-yes><label for="rsvp-regime">Régime alimentaire</label><input id="rsvp-regime" name="regime" type="text" placeholder="Allergies, végétarien…"></div>
+          <div class="champ pleine"><label for="rsvp-message">Un mot pour les mariés</label><textarea id="rsvp-message" name="message" rows="3" placeholder="Facultatif"></textarea></div>
+          <div class="carton-pied pleine"><small id="rsvp-erreur" role="alert"></small><button class="btn btn--plein" type="submit">Envoyer le carton <svg aria-hidden="true"><use href="#i-fleche"/></svg></button></div>
+        </div>
+      </form>
+      <div class="enveloppe-reponse" aria-hidden="true">
+        <div class="er-dos"></div>
+        <div class="er-carte"></div>
+        <svg class="er-poche" viewBox="0 0 300 194" preserveAspectRatio="none"><polygon points="0,0 150,112 0,194" fill="#EEF6FC"/><polygon points="300,0 150,112 300,194" fill="#EEF6FC"/><polygon points="0,194 150,98 300,194" fill="#F7FAFD"/><polyline points="0,194 150,98 300,194" fill="none" stroke="#D4E4F1"/></svg>
+        <div class="er-rabat"></div>
+        <span class="er-sceau">L&amp;A</span>
+      </div>
+      <div class="merci-bloc" id="merci-bloc" inert>
+        <p class="capitales">Carton bien reçu</p>
+        <p class="merci-titre" id="merci-titre" tabindex="-1">Merci !</p>
+        <p class="merci-texte" id="merci-texte"></p>
+        <button class="btn btn--trait" id="rsvp-modifier" type="button">Modifier ma réponse</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Final ================= -->
+<footer class="finale" id="finale" aria-labelledby="fin-titre">
+  <div class="aquarelle a1" aria-hidden="true"></div>
+  <div class="aquarelle a2" aria-hidden="true"></div>
+  <div class="shell finale-in">
+    <svg class="couronne reveal" viewBox="0 0 120 120" aria-hidden="true"><g class="laurier"></g><text class="couronne-mono" x="60" y="69" text-anchor="middle">L&amp;A</text></svg>
+    <p class="capitales reveal">Au plaisir de vous y voir</p>
+    <h2 class="finale-noms reveal" id="fin-titre">Levy &amp; Adrienne</h2>
+    <p class="finale-date reveal">31 · 01 · 2027 — Kribi</p>
+    <p class="capitales reveal">#LevyEtAdrienne2027</p>
+    <p class="pied">Faire-part conçu avec amour</p>
+  </div>
+</footer>
+
+</main>
+
+<dialog class="lightbox" id="lightbox" aria-label="Photo agrandie">
+  <figure class="lb-figure"><img id="lb-img" alt=""><figcaption id="lb-caption"></figcaption></figure>
+  <button class="lb-btn lb-close" type="button" data-lb="close" aria-label="Fermer la photo">×</button>
+  <button class="lb-btn lb-prev" type="button" data-lb="prev" aria-label="Photo précédente"><svg aria-hidden="true"><use href="#i-fleche"/></svg></button>
+  <button class="lb-btn lb-next" type="button" data-lb="next" aria-label="Photo suivante"><svg aria-hidden="true"><use href="#i-fleche"/></svg></button>
+  <p class="lb-count" id="lb-count"></p>
+</dialog>
+
+<button class="music-toggle" id="music-toggle" type="button" aria-pressed="false" aria-label="Lancer la musique">
+  <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+  <span class="music-title" id="music-title" aria-hidden="true">Musique</span>
+</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* =========================================================
+   Personnalisation
+   ========================================================= */
+const MARIAGE = {
+  debut: '2027-01-31T13:30:00+01:00', // dimanche 31 janvier 2027, heure de Kribi (UTC+1)
+  fin:   '2027-02-01T01:30:00+01:00',
+  titre: 'Mariage de Levy & Adrienne',
+  lieu:  'Kribi, Cameroun',
+  musique: {
+    fichier: 'musique/joe-mettle-my-everything.mp3',
+    titre:   'My Everything',
+    artiste: 'Joe Mettle',
+    depart:  0
+  }
+};
+
+const reduit = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const tactile = matchMedia('(hover: none)').matches;
+const root = document.documentElement;
+const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+const parallaxe = { x: 0, y: 0, tx: 0, ty: 0 };
+
+/* ---------- Pétale en pseudo-3D (rotation sur deux axes) ---------- */
+const TEINTES_CIEL = ['#FFFFFF', '#F1F8FD', '#D6EAF7', '#B4D8F0', '#8EC3E6'];
+const TEINTES_FETE = ['#FFFFFF', '#BFDDF2', '#8EC3E6', '#5E97C4', '#D6EAF7'];
+function dessinerPetale(ctx, x, y, t, rx, rz, teinte, alpha) {
+  let flip = Math.cos(rx);
+  if (Math.abs(flip) < .07) flip = flip < 0 ? -.07 : .07;
+  ctx.save();
+  ctx.translate(x, y);
+  ctx.rotate(rz);
+  ctx.scale(1, flip);
+  ctx.globalAlpha = alpha * (flip < 0 ? .8 : 1);
+  ctx.beginPath();
+  ctx.moveTo(0, -t);
+  ctx.bezierCurveTo(t * .9, -t * .45, t * .62, t * .8, 0, t);
+  ctx.bezierCurveTo(-t * .62, t * .8, -t * .9, -t * .45, 0, -t);
+  ctx.fillStyle = teinte;
+  ctx.fill();
+  ctx.lineWidth = .8;
+  ctx.strokeStyle = 'rgba(46,106,153,.2)';
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(0, -t * .55);
+  ctx.quadraticCurveTo(t * .14, 0, 0, t * .7);
+  ctx.strokeStyle = 'rgba(46,106,153,.12)';
+  ctx.stroke();
+  ctx.restore();
+}
+
+/* ---------- Pluie de pétales festive (ouverture, grattage, RSVP) ---------- */
+const confettis = (() => {
+  let cv, ctx, parts = [], raf = 0;
+  function redim() {
+    const d = Math.min(devicePixelRatio || 1, 2);
+    cv.width = innerWidth * d; cv.height = innerHeight * d;
+    ctx.setTransform(d, 0, 0, d, 0, 0);
+  }
+  function boucle() {
+    ctx.clearRect(0, 0, innerWidth, innerHeight);
+    parts = parts.filter(p => p.vie > 0);
+    for (const p of parts) {
+      p.vy += .14; p.vx *= .982; p.vy *= .982;
+      p.x += p.vx + Math.sin(p.vie / 14) * .4; p.y += p.vy;
+      p.rx += p.vrx; p.rz += p.vrz; p.vie -= 1;
+      dessinerPetale(ctx, p.x, p.y, p.s, p.rx, p.rz, p.c, Math.min(1, p.vie / 40));
+    }
+    raf = parts.length ? requestAnimationFrame(boucle) : 0;
+  }
+  return function eclat(x, y, n = 60) {
+    if (reduit) return;
+    if (!cv) {
+      cv = document.createElement('canvas');
+      cv.className = 'confetti';
+      cv.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(cv);
+      ctx = cv.getContext('2d');
+      redim();
+      addEventListener('resize', redim);
+    }
+    for (let i = 0; i < n; i++) {
+      const a = Math.random() * Math.PI * 2, v = 3 + Math.random() * 8;
+      parts.push({
+        x, y, vx: Math.cos(a) * v, vy: Math.sin(a) * v - 5,
+        s: 5 + Math.random() * 6, rx: Math.random() * 6, vrx: .08 + Math.random() * .22,
+        rz: Math.random() * 6, vrz: (Math.random() - .5) * .2,
+        c: TEINTES_FETE[(Math.random() * TEINTES_FETE.length) | 0], vie: 100 + Math.random() * 70
+      });
+    }
+    if (!raf) raf = requestAnimationFrame(boucle);
+  };
+})();
+
+/* ---------- Couronnes de laurier ---------- */
+function genererCouronnes() {
+  const NS = 'http://www.w3.org/2000/svg';
+  document.querySelectorAll('.couronne .laurier').forEach(g => {
+    if (g.childElementCount) return;
+    const R = 44, cx = 60, cy = 60, t0 = .45, t1 = 2.55, n = 9;
+    [-1, 1].forEach(cote => {
+      const p = t => [cx - cote * R * Math.sin(t), cy + R * Math.cos(t)];
+      const [x0, y0] = p(t0), [x1, y1] = p(t1);
+      const tige = document.createElementNS(NS, 'path');
+      tige.setAttribute('class', 'tige');
+      tige.setAttribute('d', `M${x0.toFixed(2)} ${y0.toFixed(2)} A${R} ${R} 0 0 ${cote < 0 ? 0 : 1} ${x1.toFixed(2)} ${y1.toFixed(2)}`);
+      g.appendChild(tige);
+      for (let i = 0; i < n; i++) {
+        const t = t0 + (t1 - t0) * (i + .5) / n;
+        const [x, y] = p(t);
+        const ang = Math.atan2(-R * Math.sin(t), -cote * R * Math.cos(t)) * 180 / Math.PI;
+        const k = 1 - (i / n) * .45;
+        [-1, 1].forEach(s => {
+          const f = document.createElementNS(NS, 'ellipse');
+          f.setAttribute('class', 'feuille');
+          f.setAttribute('rx', (7.5 * k).toFixed(2));
+          f.setAttribute('ry', (2.8 * k).toFixed(2));
+          f.setAttribute('transform', `translate(${x.toFixed(2)} ${y.toFixed(2)}) rotate(${(ang + s * 35).toFixed(1)}) translate(${(6 * k).toFixed(2)} 0)`);
+          g.appendChild(f);
+        });
+      }
+    });
+  });
+}
+
+/* ---------- Ouverture : ruban puis volets ---------- */
+function initOuverture(demarrer, auClic) {
+  const ecran = document.getElementById('ouverture');
+  const pochette = document.getElementById('pochette');
+  const main = document.getElementById('accueil');
+  const barre = document.getElementById('barre');
+  let ouvert = false;
+  main.inert = true; barre.inert = true;
+  function ouvrir() {
+    if (ouvert) return;
+    ouvert = true;
+    if (auClic) auClic();
+    pochette.classList.add('is-denoue');
+    setTimeout(() => pochette.classList.add('is-ouverte'), reduit ? 0 : 750);
+    setTimeout(() => {
+      ecran.classList.add('is-gone');
+      document.body.classList.remove('is-sealed');
+      document.body.classList.add('is-open');
+      main.inert = false; barre.inert = false;
+      main.focus({ preventScroll: true });
+      demarrer();
+      confettis(innerWidth / 2, innerHeight * .35, 90);
+      setTimeout(() => { ecran.hidden = true; }, reduit ? 0 : 1300);
+    }, reduit ? 0 : 2500);
+  }
+  document.getElementById('sceau').addEventListener('click', ouvrir);
+  document.getElementById('ouvrir').addEventListener('click', ouvrir);
+}
+
+/* ---------- Barre & progression ---------- */
+function initBarre() {
+  const barre = document.getElementById('barre');
+  let attente = false;
+  function maj() {
+    attente = false;
+    barre.classList.toggle('is-scrolled', scrollY > 40);
+    const max = document.documentElement.scrollHeight - innerHeight;
+    barre.style.setProperty('--scroll', max > 0 ? (scrollY / max).toFixed(4) : 0);
+  }
+  addEventListener('scroll', () => { if (!attente) { attente = true; requestAnimationFrame(maj); } }, { passive: true });
+  maj();
+}
+
+/* ---------- Apparitions ---------- */
+function initApparitions() {
+  const els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('is-in')); return; }
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: .12 });
+  els.forEach(e => io.observe(e));
+}
+
+/* ---------- Inclinaison du faire-part ---------- */
+function initParallaxe() {
+  const hero = document.getElementById('haut');
+  if (reduit) return;
+  addEventListener('pointermove', e => {
+    if (e.pointerType !== 'mouse') return;
+    parallaxe.tx = e.clientX / innerWidth - .5;
+    parallaxe.ty = e.clientY / innerHeight - .5;
+  }, { passive: true });
+  (function boucle(t) {
+    requestAnimationFrame(boucle);
+    if (tactile) { parallaxe.tx = Math.sin(t / 3400) * .3; parallaxe.ty = Math.cos(t / 4300) * .18; }
+    parallaxe.x += (parallaxe.tx - parallaxe.x) * .06;
+    parallaxe.y += (parallaxe.ty - parallaxe.y) * .06;
+    if (scrollY < hero.offsetHeight) {
+      hero.style.setProperty('--px', parallaxe.x.toFixed(4));
+      hero.style.setProperty('--py', parallaxe.y.toFixed(4));
+    }
+  })(0);
+}
+
+/* ---------- Alliances 3D en WebGL ---------- */
+function initAlliances() {
+  const cv = document.getElementById('rings');
+  if (!cv) return { start() {} };
+  if (!window.THREE) { root.classList.add('no-webgl'); return { start() {} }; }
+  let renderer;
+  try { renderer = new THREE.WebGLRenderer({ canvas: cv, alpha: true, antialias: true }); }
+  catch (e) { root.classList.add('no-webgl'); return { start() {} }; }
+
+  renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1;
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(30, 1, .1, 50);
+  camera.position.set(0, 0, 6.2);
+
+  // Studio photo « bleu ciel » : un dôme en dégradé + boîtes à lumière, pour les reflets du métal
+  const studio = new THREE.Scene();
+  const dome = new THREE.SphereGeometry(10, 48, 24);
+  const pos = dome.attributes.position, couleurs = [], c = new THREE.Color();
+  const haut = new THREE.Color('#8FA3B3'), milieu = new THREE.Color('#D9D2C4'), bas = new THREE.Color('#4A3822');
+  for (let i = 0; i < pos.count; i++) {
+    const y = pos.getY(i) / 10;
+    if (y >= 0) c.copy(milieu).lerp(haut, Math.pow(y, .7)); else c.copy(milieu).lerp(bas, Math.pow(-y, .8));
+    couleurs.push(c.r, c.g, c.b);
+  }
+  dome.setAttribute('color', new THREE.Float32BufferAttribute(couleurs, 3));
+  studio.add(new THREE.Mesh(dome, new THREE.MeshBasicMaterial({ vertexColors: true, side: THREE.BackSide })));
+  const boite = new THREE.MeshBasicMaterial({ color: new THREE.Color(4, 4, 4), side: THREE.DoubleSide });
+  [[0, 7, 3, 8, 1.6], [-7, 1.5, 4, 1.6, 6], [7, .5, -3, 1.6, 6], [0, -2, 8, 6, 1]].forEach(([x, y, z, lw, lh]) => {
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(lw, lh), boite);
+    m.position.set(x, y, z); m.lookAt(0, 0, 0); studio.add(m);
+  });
+  const pmrem = new THREE.PMREMGenerator(renderer);
+  scene.environment = pmrem.fromScene(studio, .02).texture;
+
+  // Deux anneaux entrelacés en or : or jaune poli (solitaire) et or champagne satiné
+  const orJaune = new THREE.MeshStandardMaterial({ color: new THREE.Color(1, .64, .22), metalness: 1, roughness: .14 });
+  const orChampagne = new THREE.MeshStandardMaterial({ color: new THREE.Color(.96, .7, .36), metalness: 1, roughness: .24 });
+  const a1 = new THREE.Mesh(new THREE.TorusGeometry(1, .12, 64, 220), orJaune);
+  const a2 = new THREE.Mesh(new THREE.TorusGeometry(.9, .1, 64, 220), orChampagne);
+  a1.position.x = -.5;
+  a2.position.x = .5;
+  a2.rotation.x = Math.PI / 2;
+  const serti = new THREE.Mesh(new THREE.CylinderGeometry(.11, .05, .16, 20), orJaune);
+  serti.position.set(0, 1.14, 0);
+  const gemme = new THREE.Mesh(
+    new THREE.OctahedronGeometry(.17, 0),
+    new THREE.MeshPhysicalMaterial({ color: 0xE6F3FF, metalness: .1, roughness: 0, clearcoat: 1, clearcoatRoughness: 0, envMapIntensity: 2.4, flatShading: true })
+  );
+  gemme.position.set(0, 1.29, 0);
+  gemme.scale.set(1, 1.15, 1);
+  a1.add(serti, gemme);
+  const groupe = new THREE.Group();
+  groupe.add(a1, a2);
+  scene.add(groupe);
+
+  function redim() {
+    const w = cv.clientWidth, h = cv.clientHeight;
+    if (!w || !h) return;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  }
+  const t0 = performance.now();
+  function rendu(t) {
+    const s = (t - t0) / 1000;
+    groupe.rotation.y = -.5 + s * .45 + parallaxe.x * .8;
+    groupe.rotation.x = .32 + Math.sin(s * .7) * .1 + parallaxe.y * .5;
+    groupe.position.y = Math.sin(s * 1.1) * .07;
+    gemme.rotation.y = s * 1.4;
+    renderer.render(scene, camera);
+  }
+  let visible = true, actif = false;
+  new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(cv);
+  addEventListener('resize', () => { redim(); if (reduit) rendu(t0); });
+  redim();
+  rendu(t0);
+  return {
+    start() {
+      if (actif) return;
+      actif = true;
+      redim();
+      if (reduit) { rendu(t0); return; }
+      (function boucle(t) { requestAnimationFrame(boucle); if (visible) rendu(t); })(performance.now());
+    }
+  };
+}
+
+/* ---------- Calendrier de janvier 2027 ---------- */
+function initCalendrier() {
+  const grille = document.getElementById('cal-grille');
+  if (!grille) return;
+  let html = ['L', 'M', 'M', 'J', 'V', 'S', 'D'].map(n => `<span class="cal-nom">${n}</span>`).join('');
+  const premier = (new Date(2027, 0, 1).getDay() + 6) % 7;
+  for (let i = 0; i < premier; i++) html += '<span></span>';
+  for (let j = 1; j <= 31; j++) {
+    const classes = ['cal-j'];
+    if ((premier + j - 1) % 7 === 6) classes.push('cal-j--dim');
+    if (j === 31) classes.push('cal-j--jour');
+    const coeur = j === 31 ? '<svg class="coeur-encre" viewBox="0 0 100 100"><path pathLength="1" d="M50 30C44 14 16 14 16 36c0 20 24 34 34 50 10-16 34-30 34-50 0-22-28-22-34-6-2-4-4-7-7-8"/></svg>' : '';
+    html += `<span class="${classes.join(' ')}">${j}${coeur}</span>`;
+  }
+  grille.innerHTML = html;
+}
+
+/* ---------- Compte à rebours en anneaux ---------- */
+function initDecompte() {
+  const cible = new Date(MARIAGE.debut).getTime();
+  const anneaux = {};
+  document.querySelectorAll('.anneau').forEach(a => { anneaux[a.dataset.unite] = { el: a, val: a.querySelector('.anneau-val') }; });
+  const deux = n => String(n).padStart(2, '0');
+  function maj() {
+    let e = Math.max(0, cible - Date.now());
+    const j = Math.floor(e / 864e5); e -= j * 864e5;
+    const h = Math.floor(e / 36e5); e -= h * 36e5;
+    const m = Math.floor(e / 6e4); e -= m * 6e4;
+    const s = Math.floor(e / 1000);
+    const donnees = { j: [String(j), Math.min(1, j / 365)], h: [deux(h), h / 24], m: [deux(m), m / 60], s: [deux(s), s / 60] };
+    for (const k in donnees) {
+      const a = anneaux[k];
+      if (!a) continue;
+      if (a.val.textContent !== donnees[k][0]) a.val.textContent = donnees[k][0];
+      a.el.style.setProperty('--f', donnees[k][1].toFixed(4));
+    }
+  }
+  maj();
+  setInterval(maj, 1000);
+}
+
+/* ---------- Copier le numéro de compte ---------- */
+function initCopie() {
+  document.querySelectorAll('[data-copy]').forEach(bouton => {
+    bouton.addEventListener('click', async () => {
+      const valeur = bouton.dataset.copy;
+      let ok = false;
+      try { await navigator.clipboard.writeText(valeur); ok = true; }
+      catch (e) {
+        const zone = document.createElement('textarea');
+        zone.value = valeur; zone.setAttribute('readonly', '');
+        zone.style.cssText = 'position:fixed;opacity:0;pointer-events:none';
+        document.body.appendChild(zone); zone.select();
+        try { ok = document.execCommand('copy'); } catch (_) { ok = false; }
+        zone.remove();
+      }
+      bouton.textContent = ok ? 'Copié ✓' : 'Copie impossible';
+      bouton.classList.toggle('is-copied', ok);
+      setTimeout(() => { bouton.textContent = 'Copier'; bouton.classList.remove('is-copied'); }, 2200);
+    });
+  });
+}
+
+/* ---------- Notre histoire : avion de papier & cartes postales ---------- */
+function initHistoire() {
+  const recit = document.getElementById('recit');
+  if (!recit) return;
+  const escales = [...recit.querySelectorAll('.escale')];
+  const svg = document.getElementById('trajectoire');
+  const fond = document.getElementById('trace-fond');
+  const active = document.getElementById('trace-active');
+  const masque = document.getElementById('trace-masque');
+  const avion = document.getElementById('avion');
+  let longueur = 0;
+
+  escales.forEach(escale => {
+    const carte = escale.querySelector('[data-carte]');
+    const bouton = escale.querySelector('.retourner');
+    if (!carte || !bouton) return;
+    const basculer = () => bouton.setAttribute('aria-pressed', String(carte.classList.toggle('is-retournee')));
+    carte.addEventListener('click', e => { if (!e.target.closest('.cp-agrandir')) basculer(); });
+    bouton.addEventListener('click', basculer);
+  });
+
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+    }, { threshold: .2 });
+    escales.forEach(e => io.observe(e));
+  } else {
+    escales.forEach(e => e.classList.add('is-in'));
+  }
+
+  function tracer() {
+    const w = recit.clientWidth, h = recit.offsetHeight;
+    if (!w || !h) return;
+    svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+    const pts = [{ x: w / 2, y: 0 }];
+    escales.forEach((escale, i) => {
+      const scene = escale.querySelector('.cp-scene');
+      if (scene) {
+        const x = i % 2 === 0 ? scene.offsetLeft - 36 : scene.offsetLeft + scene.offsetWidth + 36;
+        pts.push({ x: clamp(x, 14, w - 14), y: scene.offsetTop + scene.querySelector('.carte-postale').offsetHeight * .5 });
+      } else {
+        const sceau = escale.querySelector('.escale-sceau');
+        pts.push({ x: sceau.offsetLeft + sceau.offsetWidth / 2, y: sceau.offsetTop - 12 });
+      }
+    });
+    let d = `M${pts[0].x} ${pts[0].y}`;
+    for (let i = 1; i < pts.length; i++) {
+      const a = pts[i - 1], b = pts[i], dy = b.y - a.y;
+      d += ` C${a.x} ${(a.y + dy * .5).toFixed(1)} ${b.x} ${(b.y - dy * .5).toFixed(1)} ${b.x.toFixed(1)} ${b.y.toFixed(1)}`;
+    }
+    [fond, active, masque].forEach(p => p.setAttribute('d', d));
+    longueur = fond.getTotalLength();
+    masque.style.strokeDasharray = `${longueur} ${longueur}`;
+    maj();
+  }
+
+  let attente = false;
+  function maj() {
+    attente = false;
+    const vh = innerHeight;
+    if (longueur) {
+      const base = recit.getBoundingClientRect();
+      const p = clamp((vh * .55 - base.top) / base.height, 0, 1);
+      const l = longueur * p;
+      masque.style.strokeDashoffset = String(longueur - l);
+      const a = fond.getPointAtLength(Math.max(0, l - 1));
+      const b = fond.getPointAtLength(Math.min(longueur, l + 1));
+      const ang = Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI + 38.7;
+      avion.style.transform = `translate(${b.x.toFixed(1)}px, ${b.y.toFixed(1)}px) rotate(${ang.toFixed(1)}deg)`;
+      avion.classList.toggle('is-visible', p > .002);
+    }
+    escales.forEach(e => {
+      const r = e.getBoundingClientRect();
+      if (r.bottom < -100 || r.top > vh + 100) return;
+      const c = r.top + r.height / 2;
+      e.classList.toggle('is-focus', c > vh * .15 && c < vh * .85);
+    });
+  }
+  addEventListener('scroll', () => { if (!attente) { attente = true; requestAnimationFrame(maj); } }, { passive: true });
+  let minuteurTrace = 0;
+  addEventListener('resize', () => { clearTimeout(minuteurTrace); minuteurTrace = setTimeout(tracer, 150); });
+  addEventListener('load', tracer);
+  if (document.fonts) document.fonts.ready.then(tracer);
+  tracer();
+}
+
+/* ---------- Visionneuse photo ---------- */
+function initVisionneuse() {
+  const boite = document.getElementById('lightbox');
+  const boutons = [...document.querySelectorAll('[data-lightbox]')];
+  if (!boite || !boutons.length || typeof boite.showModal !== 'function') return;
+  const image = document.getElementById('lb-img');
+  const legende = document.getElementById('lb-caption');
+  const compteur = document.getElementById('lb-count');
+  let index = 0, declencheur = null;
+  function afficher(i) {
+    index = (i + boutons.length) % boutons.length;
+    const source = boutons[index].closest('.cp-recto').querySelector('img');
+    image.src = source.currentSrc || source.src;
+    image.alt = source.alt;
+    legende.textContent = boutons[index].dataset.legende || '';
+    compteur.textContent = `${index + 1} / ${boutons.length}`;
+    image.style.animation = 'none'; void image.offsetWidth; image.style.animation = '';
+  }
+  boutons.forEach((b, i) => b.addEventListener('click', e => { e.stopPropagation(); declencheur = b; afficher(i); boite.showModal(); }));
+  boite.addEventListener('click', e => {
+    const cible = e.target.closest('[data-lb]');
+    const action = cible ? cible.dataset.lb : null;
+    if (action === 'close' || e.target === boite) boite.close();
+    else if (action === 'prev') afficher(index - 1);
+    else if (action === 'next') afficher(index + 1);
+  });
+  boite.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') afficher(index - 1);
+    if (e.key === 'ArrowRight') afficher(index + 1);
+  });
+  boite.addEventListener('close', () => { if (declencheur) declencheur.focus({ preventScroll: true }); });
+}
+
+/* ---------- Carte d'accès : se redresse au défilement ---------- */
+function initCarte() {
+  const scene = document.getElementById('carte-scene');
+  if (!scene) return;
+  let attente = false;
+  function maj() {
+    attente = false;
+    const r = scene.getBoundingClientRect();
+    const t = clamp((innerHeight - (r.top + r.height / 2)) / (innerHeight * .6), 0, 1);
+    scene.style.setProperty('--scroll-tilt', (54 - t * 42).toFixed(1) + 'deg');
+  }
+  addEventListener('scroll', () => { if (!attente) { attente = true; requestAnimationFrame(maj); } }, { passive: true });
+  addEventListener('resize', maj);
+  maj();
+}
+
+/* ---------- Carton réponse ---------- */
+function initRSVP() {
+  const scene = document.getElementById('rsvp-scene');
+  const form = document.getElementById('rsvp-form');
+  const etape2 = document.getElementById('rsvp-etape2');
+  const indice = document.getElementById('rsvp-indice');
+  const absent = document.getElementById('rsvp-absent');
+  const erreur = document.getElementById('rsvp-erreur');
+  const merci = document.getElementById('merci-bloc');
+  const titre = document.getElementById('merci-titre');
+  const texte = document.getElementById('merci-texte');
+  const cases = [...form.querySelectorAll('input[name="evenements"]')];
+  const siPresent = form.querySelectorAll('[data-if-yes]');
+  const LIEUX = { mairie: 'à la mairie', eglise: 'à l’église', soiree: 'à la soirée' };
+
+  function majEtapes() {
+    const pret = cases.some(c => c.checked) || absent.checked;
+    const apparait = pret && etape2.hidden;
+    etape2.hidden = !pret;
+    indice.hidden = pret;
+    siPresent.forEach(el => { el.hidden = absent.checked; });
+    erreur.textContent = '';
+    if (apparait && !reduit) setTimeout(() => etape2.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 120);
+  }
+  cases.forEach(c => c.addEventListener('change', () => { if (c.checked) absent.checked = false; majEtapes(); }));
+  absent.addEventListener('change', () => { if (absent.checked) cases.forEach(c => { c.checked = false; }); majEtapes(); });
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const donnees = new FormData(form);
+    const nom = String(donnees.get('nom') || '').trim();
+    const choisis = cases.filter(c => c.checked).map(c => c.value);
+    const present = choisis.length > 0;
+    if (!present && !absent.checked) { erreur.textContent = 'Choisissez au moins un moment : mairie, église ou soirée.'; cases[0].focus(); return; }
+    if (!nom) { erreur.textContent = 'Indiquez votre nom pour que nous sachions qui répond.'; form.elements.nom.focus(); return; }
+    erreur.textContent = '';
+
+    // À brancher sur votre back-office RSVP (« evenements » contient mairie / eglise / soiree) :
+    // fetch('/api/rsvp', { method: 'POST', body: donnees });
+
+    const prenom = nom.split(/\s+/)[0];
+    const nombre = Number(donnees.get('nombre') || 1);
+    if (present) {
+      const lieux = choisis.map(v => LIEUX[v]);
+      const phrase = lieux.length > 1 ? `${lieux.slice(0, -1).join(', ')} et ${lieux[lieux.length - 1]}` : lieux[0];
+      titre.textContent = `Merci, ${prenom} !`;
+      texte.textContent = `Nous vous attendons ${phrase} le 31 janvier${nombre > 1 ? `, à ${nombre} personnes` : ''}.`;
+    } else {
+      titre.textContent = `Merci, ${prenom}`;
+      texte.textContent = 'Vous allez nous manquer. Merci d’avoir pris le temps de répondre — nous penserons à vous ce jour-là.';
+    }
+    scene.scrollIntoView({ behavior: reduit ? 'auto' : 'smooth', block: 'center' });
+    scene.classList.add('is-sent');
+    form.inert = true; merci.inert = false;
+    setTimeout(() => {
+      titre.focus({ preventScroll: true });
+      if (present) {
+        const r = merci.getBoundingClientRect();
+        confettis(r.left + r.width / 2, r.top, 120);
+      }
+    }, reduit ? 0 : 2300);
+  });
+
+  document.getElementById('rsvp-modifier').addEventListener('click', () => {
+    scene.classList.remove('is-sent');
+    form.inert = false; merci.inert = true;
+    setTimeout(() => form.elements.nom.focus({ preventScroll: true }), reduit ? 0 : 900);
+  });
+}
+
+/* ---------- Inclinaison 3D au survol ---------- */
+function initInclinaison() {
+  if (reduit || tactile) return;
+  document.querySelectorAll('[data-tilt]').forEach(el => {
+    el.addEventListener('pointermove', e => {
+      const r = el.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      const force = Number(el.dataset.tilt) || 5;
+      el.style.transform = `perspective(1200px) rotateY(${x * force}deg) rotateX(${-y * force}deg)`;
+    });
+    el.addEventListener('pointerleave', () => { el.style.transform = ''; });
+  });
+}
+
+/* ---------- Liens « Ajouter à mon agenda » ---------- */
+function initAgenda() {
+  const utc = d => new Date(d).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+  const url = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+    + '&text=' + encodeURIComponent(MARIAGE.titre)
+    + '&dates=' + utc(MARIAGE.debut) + '/' + utc(MARIAGE.fin)
+    + '&location=' + encodeURIComponent(MARIAGE.lieu)
+    + '&details=' + encodeURIComponent('Mairie 14h00 · Église 15h30 · Soirée dès 18h00. Dress code : blanc & bleu ciel.');
+  document.querySelectorAll('[data-calendar]').forEach(a => { a.href = url; });
+}
+
+/* ---------- Pluie de pétales au final ---------- */
+function initFinale() {
+  const finale = document.getElementById('finale');
+  if (!finale || !('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver(([e]) => {
+    if (!e.isIntersecting) return;
+    confettis(innerWidth / 2, Math.max(90, finale.getBoundingClientRect().top + 140), 80);
+    io.disconnect();
+  }, { threshold: .45 });
+  io.observe(finale);
+}
+
+/* ---------- Musique gospel ----------
+   1) si le fichier MARIAGE.musique.fichier existe (Joe Mettle — My Everything), il est joué en boucle ;
+   2) sinon, une ballade gospel originale est synthétisée en direct :
+      orgue à tirettes, piano en triolets (12/8), chœur « aah », basse, réverbe d'église. */
+const musique = (() => {
+  const bouton = document.getElementById('music-toggle');
+  const TEMPO = 64, NOIRE = 60 / TEMPO, MESURE = NOIRE * 4;
+  const hz = n => 440 * Math.pow(2, (n - 69) / 12);
+
+  // Grille originale en do majeur — par mesure : [temps, durée (noires), basse, voix]
+  const GRILLE = [
+    [[0, 4, 36, [64, 67, 71, 74]]],                              // Cmaj9
+    [[0, 4, 33, [64, 67, 71, 72]]],                              // Am9
+    [[0, 4, 38, [65, 69, 72, 76]]],                              // Dm9
+    [[0, 2, 43, [65, 69, 72, 76]], [2, 2, 31, [65, 68, 71, 74]]], // G13sus → G7(b9)
+    [[0, 2, 40, [67, 71, 74]], [2, 2, 33, [67, 73, 77]]],         // Em7 → A7(b13)
+    [[0, 4, 38, [65, 69, 72, 76]]],                              // Dm9
+    [[0, 2, 41, [64, 69, 72]], [2, 2, 41, [68, 72, 74]]],         // Fmaj7 → Fm6
+    [[0, 2, 43, [64, 67, 72]], [2, 2, 31, [65, 69, 72, 74]]]      // C/G → G9sus
+  ];
+  // Mélodie (une boucle sur deux) — [temps, durée, note]
+  const MELODIE = [
+    [[0, 1.5, 76], [1.5, .5, 74], [2, 2, 79]],
+    [[0, 1, 76], [1, 1, 72], [2, 2, 71]],
+    [[0, 1.5, 74], [1.5, .5, 72], [2, 1, 69], [3, 1, 72]],
+    [[0, 3, 74], [3, 1, 71]],
+    [[0, 1.5, 71], [1.5, .5, 74], [2, 2, 73]],
+    [[0, 1, 74], [1, 1, 76], [2, 2, 77]],
+    [[0, 2, 76], [2, 2, 74]],
+    [[0, 2, 72], [2, 2, 74]]
+  ];
+
+  let ctx = null, maitre, sec, reverb;
+  let enCours = false, modeSynthe = false, fichier = null, essai = 0;
+  let prochain = 0, boucle = 0, minuteur = 0, repriseAuRetour = false;
+
+  function deverrouiller() {
+    if (ctx) { ctx.resume(); return; }
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return;
+    ctx = new AC();
+    maitre = ctx.createGain(); maitre.gain.value = 0;
+    const comp = ctx.createDynamicsCompressor();
+    comp.threshold.value = -16; comp.ratio.value = 3;
+    maitre.connect(comp); comp.connect(ctx.destination);
+    sec = ctx.createGain(); sec.connect(maitre);
+    reverb = ctx.createConvolver();
+    const duree = 3.4, len = Math.floor(ctx.sampleRate * duree), buf = ctx.createBuffer(2, len, ctx.sampleRate);
+    for (let c = 0; c < 2; c++) {
+      const d = buf.getChannelData(c);
+      for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 2.8);
+    }
+    reverb.buffer = buf;
+    const humide = ctx.createGain(); humide.gain.value = .5;
+    reverb.connect(humide); humide.connect(maitre);
+    ctx.resume();
+  }
+
+  function sortie(node, avecReverbe = true) { node.connect(sec); if (avecReverbe) node.connect(reverb); }
+  function enveloppe(g, t, attaque, tenue, relache, niveau) {
+    const fin = t + Math.max(attaque, tenue);
+    g.gain.setValueAtTime(0, t);
+    g.gain.linearRampToValueAtTime(niveau, t + attaque);
+    g.gain.setValueAtTime(niveau, fin);
+    g.gain.exponentialRampToValueAtTime(.0001, fin + relache);
+    return fin + relache + .05;
+  }
+  function osc(type, f, t, stop, dest, amp = 1, detune = 0) {
+    const o = ctx.createOscillator(), g = ctx.createGain();
+    o.type = type; o.frequency.value = f; o.detune.value = detune; g.gain.value = amp;
+    o.connect(g); g.connect(dest); o.start(t); o.stop(stop);
+    return o;
+  }
+
+  function orgue(n, t, d) {
+    const g = ctx.createGain();
+    const stop = enveloppe(g, t, .4, d, .9, .026);
+    [[1, 1], [2, .5], [3, .28], [4, .18]].forEach(([m, a]) => osc('sine', hz(n) * m, t, stop, g, a));
+    const lfo = ctx.createOscillator(), lg = ctx.createGain();
+    lfo.frequency.value = 5.8; lg.gain.value = .005;
+    lfo.connect(lg); lg.connect(g.gain); lfo.start(t); lfo.stop(stop);
+    sortie(g);
+  }
+  function piano(n, t, niveau) {
+    const g = ctx.createGain(), f = ctx.createBiquadFilter();
+    g.gain.setValueAtTime(0, t);
+    g.gain.linearRampToValueAtTime(niveau, t + .006);
+    g.gain.exponentialRampToValueAtTime(niveau * .3, t + .4);
+    g.gain.exponentialRampToValueAtTime(.0001, t + 2.4);
+    f.type = 'lowpass';
+    f.frequency.setValueAtTime(4200, t);
+    f.frequency.exponentialRampToValueAtTime(900, t + 1.4);
+    const stop = t + 2.5;
+    osc('triangle', hz(n), t, stop, f, 1, (Math.random() - .5) * 5);
+    osc('sine', hz(n) * 2, t, stop, f, .3);
+    osc('sine', hz(n) * 3, t, stop, f, .1);
+    f.connect(g); sortie(g);
+  }
+  function choeur(n, t, d) {
+    const g = ctx.createGain();
+    const stop = enveloppe(g, t, 1.3, d, 1.5, .045);
+    const bas = ctx.createBiquadFilter(); bas.type = 'lowpass'; bas.frequency.value = 2600;
+    const f1 = ctx.createBiquadFilter(); f1.type = 'bandpass'; f1.frequency.value = 760; f1.Q.value = 3;
+    const f2 = ctx.createBiquadFilter(); f2.type = 'bandpass'; f2.frequency.value = 1150; f2.Q.value = 4;
+    const f2g = ctx.createGain(); f2g.gain.value = .6;
+    bas.connect(f1); bas.connect(f2); f1.connect(g); f2.connect(f2g); f2g.connect(g);
+    const vib = ctx.createOscillator(), vg = ctx.createGain();
+    vib.frequency.value = 5; vg.gain.value = 8; vib.connect(vg); vib.start(t); vib.stop(stop);
+    [-8, 0, 8].forEach(det => { const o = osc('sawtooth', hz(n), t, stop, bas, 1, det); vg.connect(o.detune); });
+    sortie(g);
+  }
+  function basse(n, t, d) {
+    const g = ctx.createGain();
+    const stop = enveloppe(g, t, .03, d * .9, .6, .11);
+    osc('sine', hz(n), t, stop, g, 1);
+    osc('sine', hz(n) * 2, t, stop, g, .3);
+    sortie(g, false);
+  }
+  function voix(n, t, d) {
+    const g = ctx.createGain(), f = ctx.createBiquadFilter();
+    const stop = enveloppe(g, t, .09, d * .92, .7, .06);
+    f.type = 'lowpass'; f.frequency.value = 2200;
+    const vib = ctx.createOscillator(), vg = ctx.createGain();
+    vib.frequency.value = 5.2; vg.gain.setValueAtTime(0, t); vg.gain.linearRampToValueAtTime(12, t + Math.min(d, 1));
+    vib.connect(vg); vib.start(t); vib.stop(stop);
+    const o1 = osc('triangle', hz(n), t, stop, f, 1);
+    const o2 = osc('sine', hz(n) * 2, t, stop, f, .15);
+    vg.connect(o1.detune); vg.connect(o2.detune);
+    f.connect(g); sortie(g);
+  }
+
+  function planifierBoucle(debut, avecMelodie) {
+    const ordre = [0, 1, 2, 3, 2, 1];
+    GRILLE.forEach((mesure, i) => {
+      const t0 = debut + i * MESURE;
+      mesure.forEach(([temps, duree, b, notes]) => {
+        const t = t0 + temps * NOIRE, d = duree * NOIRE;
+        basse(b, t, d);
+        notes.forEach(n => orgue(n - 12, t, d));
+        notes.slice(-3).forEach(n => choeur(n - 12, t, d));
+        piano(b + 12, t, .06);
+        for (let k = 0; k < duree * 3; k++) {
+          const n = notes[ordre[k % 6] % notes.length];
+          piano(n, t + k * NOIRE / 3 + Math.random() * .012, k % 3 === 0 ? .07 : .042);
+        }
+      });
+      if (avecMelodie) MELODIE[i].forEach(([temps, duree, n]) => voix(n, t0 + temps * NOIRE, duree * NOIRE));
+    });
+  }
+  function planifier() {
+    if (!ctx || !enCours || !modeSynthe) return;
+    while (prochain < ctx.currentTime + 3) {
+      planifierBoucle(prochain, boucle % 2 === 1);
+      prochain += GRILLE.length * MESURE;
+      boucle++;
+    }
+  }
+
+  let fondu = 0;
+  function fonduFichier(cible, apres) {
+    const depart = fichier.volume, t0 = performance.now(), jeton = ++fondu;
+    (function pas(t) {
+      const k = clamp((t - t0) / 1500, 0, 1);
+      if (!fichier || jeton !== fondu) return;
+      fichier.volume = depart + (cible - depart) * k;
+      if (k < 1) requestAnimationFrame(pas); else if (apres) apres();
+    })(t0);
+  }
+  function demarrerSynthe() {
+    deverrouiller();
+    if (!ctx) return;
+    modeSynthe = true;
+    ctx.resume();
+    const t = ctx.currentTime;
+    if (prochain < t) prochain = t + .25;
+    maitre.gain.cancelScheduledValues(t);
+    maitre.gain.setValueAtTime(maitre.gain.value, t);
+    maitre.gain.linearRampToValueAtTime(.9, t + 3);
+    planifier();
+    clearInterval(minuteur);
+    minuteur = setInterval(planifier, 1000);
+  }
+  function majBouton() {
+    bouton.classList.toggle('is-playing', enCours);
+    bouton.setAttribute('aria-pressed', String(enCours));
+    bouton.setAttribute('aria-label', enCours ? 'Couper la musique' : 'Lancer la musique');
+  }
+
+  // Détection du fichier de la chanson dès le chargement (métadonnées seulement)
+  let fichierDispo = null;
+  const choix = MARIAGE.musique || {};
+  if (choix.fichier) {
+    fichier = new Audio();
+    fichier.preload = 'metadata';
+    fichier.loop = true;
+    fichier.volume = 0;
+    fichier.addEventListener('loadedmetadata', () => {
+      fichierDispo = true;
+      if (choix.depart) fichier.currentTime = choix.depart;
+      document.getElementById('music-title').textContent = `${choix.titre} · ${choix.artiste}`;
+      document.getElementById('seal-sound-text').textContent = `Montez le son — « ${choix.titre} » de ${choix.artiste} vous accompagne`;
+    }, { once: true });
+    fichier.addEventListener('error', () => { fichierDispo = false; fichier = null; }, { once: true });
+    fichier.src = choix.fichier;
+  }
+
+  async function lancer() {
+    enCours = true;
+    majBouton();
+    const monEssai = ++essai;
+    if (modeSynthe) { demarrerSynthe(); return; }
+    if (fichier && fichierDispo !== false) {
+      try {
+        await fichier.play();
+        if (monEssai !== essai || !enCours) { fichier.pause(); return; }
+        if (ctx) ctx.suspend();
+        fonduFichier(.85);
+        return;
+      } catch (e) {
+        if (fichierDispo !== true) fichier = null;
+      }
+    }
+    if (monEssai === essai && enCours) demarrerSynthe();
+  }
+  function couper() {
+    enCours = false;
+    essai++;
+    majBouton();
+    if (fichier) fonduFichier(0, () => { if (fichier && !enCours) fichier.pause(); });
+    if (ctx && modeSynthe) {
+      const t = ctx.currentTime;
+      maitre.gain.cancelScheduledValues(t);
+      maitre.gain.setValueAtTime(maitre.gain.value, t);
+      maitre.gain.linearRampToValueAtTime(0, t + .9);
+      setTimeout(() => { if (!enCours) ctx.suspend(); }, 950);
+    }
+  }
+
+  bouton.addEventListener('click', () => {
+    deverrouiller();
+    if (enCours) couper(); else lancer();
+  });
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden && enCours) { repriseAuRetour = true; couper(); }
+    else if (!document.hidden && repriseAuRetour) { repriseAuRetour = false; lancer(); }
+  });
+
+  return { deverrouiller, lancer };
+})();
+
+/* ---------- Démarrage ---------- */
+genererCouronnes();
+initCalendrier();
+const alliances = initAlliances();
+initBarre();
+initApparitions();
+initParallaxe();
+initDecompte();
+initCopie();
+initHistoire();
+initVisionneuse();
+initCarte();
+initRSVP();
+initInclinaison();
+initAgenda();
+initFinale();
+initOuverture(
+  () => { alliances.start(); },
+  () => { musique.deverrouiller(); musique.lancer(); }
+);
+</script>
+</body>
+</html>
