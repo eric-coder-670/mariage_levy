@@ -54,6 +54,7 @@ main:focus{outline:none}
 .shell{width:min(1140px,100%);margin-inline:auto;padding-inline:clamp(20px,5vw,48px)}
 .section{position:relative;padding-block:clamp(90px,11vw,146px)}
 .section--brume{background:var(--brume)}
+.section:not(.hero):not(.finale){content-visibility:auto;contain-intrinsic-size:900px}
 .section--brume::before{content:"";position:absolute;left:50%;top:0;width:min(860px,78%);height:1px;background:linear-gradient(90deg,transparent,rgba(125,186,230,.7),transparent);transform:translateX(-50%) scaleX(0);transform-origin:center;transition:transform 1.4s var(--ease)}
 .section--brume.is-in::before{transform:translateX(-50%) scaleX(1)}
 
@@ -1925,7 +1926,7 @@ const musique = (() => {
   const choix = MARIAGE.musique || {};
   if (choix.fichier) {
     fichier = new Audio();
-    fichier.preload = 'auto';
+    fichier.preload = 'none';
     fichier.setAttribute('playsinline', '');
     fichier.loop = true;
     fichier.volume = 0;
@@ -1947,7 +1948,6 @@ const musique = (() => {
       bouton.setAttribute('aria-label', 'Musique indisponible');
     }, { once: true });
     fichier.src = choix.fichier;
-    fichier.load();
   } else {
     setTimeout(calculer, 800);
   }
@@ -1959,6 +1959,7 @@ const musique = (() => {
     if (modeSynthe) { demarrerSynthe(monEssai); return; }
     if (fichier && fichierDispo !== false) {
       try {
+        if (!fichierDispo) fichier.load();
         await fichier.play();
         if (monEssai !== essai || !enCours) { fichier.pause(); return; }
         if (ctx) ctx.suspend();
