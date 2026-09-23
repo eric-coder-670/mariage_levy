@@ -1209,7 +1209,7 @@ function initOuverture(demarrer, auClic) {
       main.focus({ preventScroll: true });
       demarrer();
       confettis(innerWidth / 2, innerHeight * .35, 90);
-      setTimeout(() => { ecran.hidden = true; }, reduit ? 0 : 1300);
+      setTimeout(() => { ecran.hidden = true; }, rapide || reduit ? 0 : 1300);
     }, rapide || reduit ? 0 : 2500);
   }
   document.getElementById('sceau').addEventListener('click', ouvrir);
