@@ -5,6 +5,7 @@
  * Après toute modification du code, créez une NOUVELLE VERSION du déploiement.
  */
 const SHEET_NAME = 'Réponses RSVP';
+const SPREADSHEET_ID = '1scMe2q0iQE_bT5HGsTRnyjFQfM3dPC37VJMGBQxy-Ec';
 const ENTETES = ['Date', 'Nom', 'Contact', 'Présence', 'Événements', 'Nombre de personnes', 'Message', 'Accompagnement'];
 const LIBELLES = { mairie: 'Traditionnel et civil', eglise: 'Mariage religieux', soiree: 'Réception' };
 
@@ -49,7 +50,7 @@ function doGet() {
 }
 
 function obtenirFeuille() {
-  const classeur = SpreadsheetApp.getActiveSpreadsheet();
+  const classeur = SpreadsheetApp.openById(SPREADSHEET_ID);
   let feuille = classeur.getSheetByName(SHEET_NAME);
   if (!feuille) feuille = classeur.insertSheet(SHEET_NAME);
   let colonneAccompagnement = ENTETES.length;

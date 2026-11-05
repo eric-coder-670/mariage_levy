@@ -2033,13 +2033,16 @@ function initRSVP() {
           method: 'POST',
           body: versSheets ? new URLSearchParams(donnees) : donnees,
           headers: versSheets ? undefined : { Accept: 'application/json' },
+          mode: versSheets ? 'no-cors' : 'cors',
           signal: controle.signal
         });
       } finally { clearTimeout(minuteur); }
-      if (!reponse.ok) throw new Error('Envoi impossible');
-      let resultat = null;
-      try { resultat = await reponse.json(); } catch (err) { throw new Error('Réponse illisible'); }
-      if (!resultat || resultat.success === false || resultat.success === 'false') throw new Error('Envoi refusé');
+      if (reponse.type !== 'opaque') {
+        if (!reponse.ok) throw new Error('Envoi impossible');
+        let resultat = null;
+        try { resultat = await reponse.json(); } catch (err) { throw new Error('Réponse illisible'); }
+        if (!resultat || resultat.success === false || resultat.success === 'false') throw new Error('Envoi refusé');
+      }
     } catch (e) {
       erreur.textContent = 'L’envoi a échoué. Vérifiez votre connexion et réessayez.';
       envoyer.disabled = false;
