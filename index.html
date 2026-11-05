@@ -1912,12 +1912,10 @@ function initGalerie() {
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible) planifier(); }, { threshold: .35 }).observe(piste);
   } else { visible = true; }
-  if (!reduit) {
-    setInterval(() => {
-      if (!visible || survol || document.hidden || (boite && boite.open) || Date.now() < pauseJusqua || glisse) return;
-      aller(courant + 1);
-    }, 4800);
-  }
+  setInterval(() => {
+    if (!visible || survol || document.hidden || (boite && boite.open) || Date.now() < pauseJusqua || glisse) return;
+    aller(courant + 1);
+  }, 4800);
   maj();
 }
 
@@ -1933,7 +1931,7 @@ function initCitations() {
     slides.forEach((el, k) => { el.classList.toggle('is-actif', k === i); if (k === i) el.removeAttribute('aria-hidden'); else el.setAttribute('aria-hidden', 'true'); });
     points.forEach((p, k) => p.classList.toggle('is-actif', k === i));
   }
-  function armer() { clearInterval(minuteur); if (!reduit) minuteur = setInterval(() => { if (!document.hidden) aller(i + 1); }, 7000); }
+  function armer() { clearInterval(minuteur); minuteur = setInterval(() => { if (!document.hidden) aller(i + 1); }, 7000); }
   zone.querySelector('.cit-prec').addEventListener('click', () => { aller(i - 1); armer(); });
   zone.querySelector('.cit-suiv').addEventListener('click', () => { aller(i + 1); armer(); });
   points.forEach((p, k) => p.addEventListener('click', () => { aller(k); armer(); }));

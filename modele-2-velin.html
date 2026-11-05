@@ -1264,7 +1264,7 @@ input:focus-visible + .case{outline:2px solid var(--azur);outline-offset:3px}
           <p class="etape-titre"><span class="etape-num">Étape 2</span> Vos informations</p>
           <div class="champ"><label for="rsvp-nom">Nom et prénom</label><input id="rsvp-nom" name="nom" type="text" autocomplete="name" placeholder="Marie Ngo" required></div>
           <div class="champ"><label for="rsvp-contact">Téléphone ou e-mail</label><input id="rsvp-contact" name="contact" type="text" autocomplete="tel" placeholder="Pour vous tenir informé"></div>
-          <div class="champ" data-if-yes><label for="rsvp-nombre">Nombre de personnes</label><select id="rsvp-nombre" name="nombre"><option value="1">1 personne</option><option value="2">2 personnes</option><option value="3">3 personnes</option><option value="4">4 personnes</option></select></div>
+          <div class="champ" data-if-yes><label for="rsvp-accompagnement">Vous serez accompagné(e) ?</label><select id="rsvp-accompagnement" name="accompagnement"><option value="seul">Seul(e)</option><option value="couple">En couple</option></select></div>
           <div class="champ pleine"><label for="rsvp-message">Un mot pour les mariés</label><textarea id="rsvp-message" name="message" rows="3" placeholder="Facultatif"></textarea></div>
           <div class="carton-pied pleine"><small id="rsvp-erreur" role="alert"></small><button class="btn btn--plein" id="rsvp-submit" type="submit">Envoyer le carton <svg aria-hidden="true"><use href="#i-fleche"/></svg></button></div>
         </div>
@@ -1912,12 +1912,10 @@ function initGalerie() {
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible) planifier(); }, { threshold: .35 }).observe(piste);
   } else { visible = true; }
-  if (!reduit) {
-    setInterval(() => {
-      if (!visible || survol || document.hidden || (boite && boite.open) || Date.now() < pauseJusqua || glisse) return;
-      aller(courant + 1);
-    }, 4800);
-  }
+  setInterval(() => {
+    if (!visible || survol || document.hidden || (boite && boite.open) || Date.now() < pauseJusqua || glisse) return;
+    aller(courant + 1);
+  }, 4800);
   maj();
 }
 
@@ -1933,7 +1931,7 @@ function initCitations() {
     slides.forEach((el, k) => { el.classList.toggle('is-actif', k === i); if (k === i) el.removeAttribute('aria-hidden'); else el.setAttribute('aria-hidden', 'true'); });
     points.forEach((p, k) => p.classList.toggle('is-actif', k === i));
   }
-  function armer() { clearInterval(minuteur); if (!reduit) minuteur = setInterval(() => { if (!document.hidden) aller(i + 1); }, 7000); }
+  function armer() { clearInterval(minuteur); minuteur = setInterval(() => { if (!document.hidden) aller(i + 1); }, 7000); }
   zone.querySelector('.cit-prec').addEventListener('click', () => { aller(i - 1); armer(); });
   zone.querySelector('.cit-suiv').addEventListener('click', () => { aller(i + 1); armer(); });
   points.forEach((p, k) => p.addEventListener('click', () => { aller(k); armer(); }));
@@ -2055,12 +2053,12 @@ function initRSVP() {
     } catch (e) { /* Le serveur a reçu la réponse même si le stockage local est indisponible. */ }
     envoyer.removeAttribute('aria-busy');
 
-    const nombre = Number(donnees.get('nombre') || 1);
+    const accompagnement = donnees.get('accompagnement');
     if (present) {
       const lieux = choisis.map(v => LIEUX[v]);
       const phrase = lieux.length > 1 ? `${lieux.slice(0, -1).join(', ')} et ${lieux[lieux.length - 1]}` : lieux[0];
       titre.textContent = `Merci, ${prenom} !`;
-      texte.textContent = `Nous vous attendons ${phrase} les 29 et 30 janvier${nombre > 1 ? `, à ${nombre} personnes` : ''}.`;
+      texte.textContent = `Nous vous attendons ${phrase} les 29 et 30 janvier${accompagnement === 'couple' ? ' en couple' : ''}.`;
     } else {
       titre.textContent = `Merci, ${prenom}`;
       texte.textContent = 'Vous allez nous manquer. Merci d’avoir pris le temps de répondre — nous penserons à vous ce jour-là.';
