@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1E4C78">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Levy &amp; Adrienne — Mariage, 29 et 30 janvier 2027">
+<meta property="og:description" content="Une rencontre, un dessein. Faire-part de mariage de Levy &amp; Adrienne, Douala.">
 <title>Levy &amp; Adrienne</title>
 <meta name="description" content="Faire-part de mariage de Levy &amp; Adrienne — 29 et 30 janvier 2027, Douala.">
 <script>document.documentElement.classList.add('js')</script>
@@ -238,10 +242,10 @@ body::before{
 .enveloppe-reponse{transform-style:flat;perspective:900px}
 .finale .couronne.reveal{margin-bottom:-6px}
 
-/* Couronne de laurier (générée en JS) */
-.couronne .feuille{fill:#E1F0FB;stroke:var(--ciel-vif);stroke-width:.6}
-.couronne .tige{fill:none;stroke:var(--ciel-vif);stroke-width:.9;stroke-linecap:round}
-.couronne-mono{font-family:var(--f-script);font-size:27px;fill:var(--encre)}
+/* Couronne royale + monogramme (générés en JS) */
+.couronne .filet{fill:none;stroke:var(--ciel-vif);stroke-width:1;stroke-linecap:round}
+.couronne .perle{fill:var(--ciel-vif)}
+.couronne-mono{font-family:var(--f-script);font-size:31px;fill:var(--encre)}
 
 /* =========================================================
    Cadeau — photo dans sa pochette de calque
@@ -405,7 +409,8 @@ body::before{
 .lieux-texte{display:grid;gap:22px;justify-items:start}
 .adresses{display:grid;gap:12px;width:100%;list-style:none;margin:0;padding:0}
 .adresse{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:start;gap:4px 16px;padding:16px 18px;background:var(--blanc);border:1px solid var(--filet);border-radius:var(--r)}
-.adresse-num{grid-row:span 2;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--azur);color:#fff;font-family:var(--f-display);font-size:1rem}
+.adresse > :not(.adresse-num){grid-column:2}
+.adresse .adresse-num{grid-row:span 2;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--azur);color:#fff;font-family:var(--f-display);font-size:1rem}
 .adresse strong{font-weight:500;font-size:1.2rem;line-height:1.2}
 .adresse span{font-size:1.05rem;color:var(--encre-douce)}
 .adresse a{grid-column:2;justify-self:start;font-family:var(--f-capitales);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--azur);text-decoration:none}
@@ -575,6 +580,127 @@ input:focus-visible + .case{outline:2px solid var(--azur);outline-offset:3px}
   .js .reveal{opacity:1;transform:none}
   .carte-acces .map-marker{animation:none}
 }
+
+/* =========================================================
+   Récit : lettre — finitions
+   ========================================================= */
+.lettre{gap:1.15em;padding-bottom:clamp(64px,9vw,96px)}
+.lettre-fleuron{width:110px;height:16px;color:var(--ciel-vif);margin:0 0 -.2em}
+.lettre-titre{margin:0;font-family:var(--f-display);font-style:italic;font-weight:400;font-size:clamp(1.8rem,3.4vw,2.5rem);line-height:1.12;color:var(--azur-fonce);text-wrap:balance}
+.lettre p{text-wrap:pretty;hyphens:auto}
+.lettre .capitale::first-letter{float:left;font-family:var(--f-display);font-size:4.1em;line-height:.78;padding:.08em .1em 0 0;color:var(--azur)}
+.lettre .signature{display:flex;align-items:center;gap:.35em;margin-top:.4em;color:var(--azur-fonce)}
+.lettre .coeur{display:inline-block;width:.5em;height:.5em;fill:var(--ciel-vif);flex:none}
+
+/* =========================================================
+   Galerie — défilement 3D
+   ========================================================= */
+#galerie{content-visibility:visible}
+.section--nuit{background:radial-gradient(900px 480px at 82% -4%,rgba(125,186,230,.30),transparent 70%),radial-gradient(700px 440px at 4% 104%,rgba(169,213,243,.18),transparent 70%),linear-gradient(180deg,#16395A 0%,#1B4570 52%,#142F4B 100%);color:#EAF4FC;overflow:hidden}
+.section--nuit .capitales{color:var(--ciel)}
+.section--nuit .titre{color:#fff}
+.section--nuit .titre em{color:var(--ciel)}
+.section--nuit .chapeau{color:rgba(234,244,252,.8)}
+.section--nuit .fleuron{color:var(--ciel)}
+.section--nuit :focus-visible{outline-color:#fff}
+.section--nuit .entete{margin-bottom:clamp(28px,4vw,48px)}
+
+.gal{--w:clamp(250px,27vw,380px);--gap:clamp(18px,3vw,40px)}
+.gal-piste{position:relative;display:flex;align-items:flex-start;gap:var(--gap);overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;padding-block:clamp(24px,3vw,40px) clamp(56px,6vw,76px);cursor:grab;outline-offset:-6px}
+.gal-piste::-webkit-scrollbar{display:none}
+.gal-piste.is-drag{cursor:grabbing;user-select:none}
+.gal-piste::before,.gal-piste::after{content:"";flex:0 0 max(0px,calc(50vw - var(--w)/2 - var(--gap)))}
+.gal-item{flex:0 0 var(--w);margin:0;scroll-snap-align:center;transform:perspective(1100px) rotateY(calc(var(--d,0)*-13deg)) scale(calc(1 - var(--a,0)*.09));opacity:calc(1 - var(--a,0)*.42);transition:opacity .35s linear;will-change:transform}
+.gal-item:nth-child(even){translate:0 clamp(20px,3.4vw,52px)}
+.gal-cadre{position:relative;aspect-ratio:3/4;overflow:hidden;background:#fff;border:8px solid #fff;border-radius:999px 999px 6px 6px;box-shadow:0 40px 70px -34px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.12)}
+.gal-cadre img{width:100%;height:100%;object-fit:cover;object-position:var(--pos,50% 30%);border-radius:inherit;transition:transform 1.3s var(--ease);-webkit-user-drag:none;user-select:none}
+.gal-item:hover .gal-cadre img{transform:scale(1.06)}
+.gal-agrandir{position:absolute;inset:0;display:grid;align-items:end;justify-items:end;padding:14px;margin:0;border:0;background:linear-gradient(180deg,transparent 60%,rgba(14,36,58,.38));color:#fff;cursor:zoom-in;opacity:1}
+.gal-agrandir svg{width:38px;height:38px;padding:10px;border-radius:50%;background:rgba(24,52,79,.6);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;transform:scale(.8);transition:opacity .35s var(--ease),transform .35s var(--ease)}
+.gal-item:hover .gal-agrandir svg,.gal-agrandir:focus-visible svg{opacity:1;transform:none}
+@media (hover:none){.gal-agrandir svg{opacity:1;transform:none}}
+.gal-vide{display:none;position:absolute;inset:0;place-content:center;justify-items:center;gap:8px;text-align:center;background:var(--satin);color:var(--azur-fonce)}
+.gal-vide .script{font-size:clamp(3rem,6vw,4.4rem)}
+.gal-vide small{font-family:var(--f-capitales);font-size:.6rem;letter-spacing:.26em;text-transform:uppercase}
+.gal-item.is-vide .gal-vide{display:grid}
+.gal-item.is-vide img{visibility:hidden}
+.gal-item.is-vide .gal-agrandir{display:none}
+.gal-item figcaption{display:grid;justify-items:center;gap:4px;margin-top:18px;text-align:center}
+.gal-num{font-family:var(--f-capitales);font-size:.62rem;letter-spacing:.3em;color:var(--ciel)}
+.gal-item figcaption em{font-size:1.12rem;color:rgba(234,244,252,.88)}
+
+.gal-controles{display:flex;align-items:center;justify-content:center;gap:clamp(16px,3vw,28px)}
+.gal-btn{display:grid;place-items:center;width:52px;height:52px;padding:0;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:#fff;cursor:pointer;transition:background-color .3s var(--ease),transform .3s var(--ease)}
+.gal-btn:hover{background:rgba(255,255,255,.2);transform:scale(1.06)}
+.gal-btn svg{width:18px;height:18px}
+.gal-prec svg{rotate:180deg}
+.gal-info{display:grid;justify-items:center;gap:12px;min-width:min(220px,40vw)}
+.gal-compte{font-family:var(--f-capitales);font-size:.66rem;letter-spacing:.28em;color:rgba(234,244,252,.85)}
+.gal-progres{position:relative;display:block;width:100%;height:2px;border-radius:2px;background:rgba(255,255,255,.2);overflow:hidden}
+.gal-progres span{position:absolute;inset:0;background:var(--ciel);transform-origin:left;transform:scaleX(var(--p,.125));transition:transform .6s var(--ease)}
+
+@media (max-width:1180px){.menu{gap:14px}.menu a{letter-spacing:.16em}}
+@media (max-width:980px){.menu{display:none}}
+@media (max-width:640px){.gal{--w:min(72vw,320px)}.gal-btn{width:46px;height:46px}}
+@media (prefers-reduced-motion:reduce){.gal-item{transform:none!important;opacity:1!important}.gal-cadre img{transition:none}.gal-item:hover .gal-cadre img{transform:none}}
+
+/* =========================================================
+   Inspiration « agence de mariage » : bandes alternées,
+   aquarelles florales, bandeau-citation, portrait final
+   ========================================================= */
+.section>.shell{position:relative;z-index:1}
+.deco{position:absolute;z-index:0;pointer-events:none;width:clamp(150px,25vw,330px);aspect-ratio:320/260;opacity:.9}
+.deco svg{width:100%;height:100%;overflow:visible}
+.deco--hd{top:-30px;right:-48px}
+.deco--hg{top:-30px;left:-48px;transform:scaleX(-1)}
+.deco--bd{bottom:-44px;right:-48px;transform:scaleY(-1)}
+.deco--nuit{opacity:.2;filter:saturate(.6) brightness(1.15)}
+@media (max-width:640px){.deco{width:150px;opacity:.55}.deco--nuit{opacity:.14}.deco--bd{display:none}}
+.entete .titre{font-weight:400}
+.entete .fleuron{margin-top:2px}
+
+/* Bandeau de citations */
+.citations{position:relative;overflow:hidden;padding-block:clamp(84px,10vw,136px);color:#fff;background:linear-gradient(180deg,rgba(20,47,75,.74),rgba(30,76,120,.82)),url("photos/histoire-1-regards.jpg") center 30%/cover no-repeat,var(--azur-fonce)}
+.citations-in{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:clamp(12px,3vw,40px)}
+.cit-scene{display:grid;justify-items:center;text-align:center}
+.cit-slide{grid-area:1/1;margin:0;max-width:34em;opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .9s var(--ease),transform .9s var(--ease),visibility 0s linear .9s}
+.cit-slide.is-actif{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.cit-slide p{font-family:var(--f-display);font-size:clamp(1.45rem,3.4vw,2.5rem);line-height:1.25;text-wrap:balance}
+.cit-slide footer{margin-top:22px;font-family:var(--f-capitales);font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ciel)}
+.cit-btn{display:grid;place-items:center;width:48px;height:48px;padding:0;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.08);color:#fff;cursor:pointer;transition:background-color .3s var(--ease)}
+.cit-btn:hover{background:rgba(255,255,255,.22)}
+.cit-btn svg{width:17px;height:17px}
+.cit-prec svg{rotate:180deg}
+.cit-points{display:flex;justify-content:center;gap:10px;margin-top:clamp(26px,4vw,44px)}
+.cit-point{width:28px;height:3px;padding:0;border:0;border-radius:2px;background:rgba(255,255,255,.35);cursor:pointer;transition:background-color .4s,width .4s var(--ease)}
+.cit-point.is-actif{background:#fff;width:46px}
+.citations :focus-visible{outline-color:#fff}
+@media (max-width:640px){.citations-in{grid-template-columns:minmax(0,1fr)}.cit-btn{display:none}}
+
+/* Portrait final avec couronne */
+.portrait{position:relative;width:clamp(150px,21vw,196px);aspect-ratio:1;margin:clamp(40px,6vw,56px) auto 18px}
+.portrait-photo{position:relative;width:100%;height:100%;border-radius:50%;overflow:hidden;border:6px solid #fff;background:var(--satin);box-shadow:0 26px 50px -24px rgba(24,52,79,.55)}
+.portrait-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.portrait-mono{display:none;position:absolute;inset:0;width:100%;height:100%;margin:0}
+.portrait.is-vide .portrait-mono{display:block;translate:0 -26%}
+.portrait-mono .laurier use{display:none}
+.portrait.is-vide img{display:none}
+.portrait-couronne{position:absolute;left:50%;top:-46px;width:98px;translate:-50% 0;z-index:3;filter:drop-shadow(0 6px 8px rgba(30,76,120,.25))}
+.portrait-fl{position:absolute;bottom:-26px;width:clamp(120px,17vw,170px);z-index:2;pointer-events:none}
+.portrait-fl--g{left:-62%;transform:scaleX(-1) rotate(-8deg)}
+.portrait-fl--d{right:-62%;transform:rotate(-8deg)}
+.finale .portrait.reveal{margin-bottom:26px}
+
+/* Galerie : vignettes rondes + focus central */
+.gal-item.is-actif .gal-cadre{box-shadow:0 46px 80px -30px rgba(0,0,0,.75),0 0 0 1px rgba(169,213,243,.55),0 0 46px -6px rgba(125,186,230,.45)}
+.gal-item figcaption{opacity:calc(1 - var(--a,0)*1.7)}
+.gal-vignettes{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(8px,1.6vw,14px);padding-inline:20px;margin-bottom:clamp(22px,3vw,34px)}
+.gal-vig{position:relative;width:clamp(42px,6vw,58px);aspect-ratio:1;padding:0;border-radius:50%;border:2px solid rgba(255,255,255,.3);background:var(--satin);overflow:hidden;cursor:pointer;opacity:.7;transition:transform .35s var(--ease),border-color .35s,opacity .35s}
+.gal-vig img{width:100%;height:100%;object-fit:cover}
+.gal-vig:hover{opacity:1;transform:translateY(-2px)}
+.gal-vig.is-actif{border-color:var(--ciel);opacity:1;transform:scale(1.14)}
+.gal-vig.is-vide img{display:none}
+.gal-item{transform:perspective(1100px) rotateY(calc(var(--d,0)*-13deg)) scale(calc(1 - var(--a,0)*.13))}
 </style>
 </head>
 <body class="is-sealed">
@@ -601,6 +727,23 @@ input:focus-visible + .case{outline:2px solid var(--azur);outline-offset:3px}
       </g>
       <use href="#fleur" x="25" y="-2" width="20" height="20"/><use href="#fleur" x="12" y="38" width="18" height="18"/><use href="#fleur" x="32" y="54" width="15" height="15"/>
     </symbol>
+    <radialGradient id="fl-g" cx=".5" cy=".85" r=".95"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".55" stop-color="#D3E8F7"/><stop offset="1" stop-color="#8EC3E6"/></radialGradient>
+    <symbol id="cr" viewBox="0 0 120 66">
+      <g fill="none" stroke="#7DBAE6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M60 2v11M55 6.5h10"/>
+        <path d="M26 58 19 23l21 15 20-24 20 24 21-15-7 35z" fill="#E1F0FB"/>
+        <path d="M40 38l4 13M80 38l-4 13M60 14v24" stroke-width=".9"/>
+        <rect x="26" y="50" width="68" height="9" rx="2" fill="#C9E4F6"/>
+      </g>
+      <g fill="#2C6397"><circle cx="60" cy="14" r="2.7"/><circle cx="60" cy="54.5" r="2"/><circle cx="42" cy="54.5" r="1.7"/><circle cx="78" cy="54.5" r="1.7"/></g>
+      <g fill="#7DBAE6"><circle cx="19" cy="21" r="2.6"/><circle cx="101" cy="21" r="2.6"/><circle cx="40" cy="36.5" r="2"/><circle cx="80" cy="36.5" r="2"/></g>
+    </symbol>
+    <symbol id="bouquet" viewBox="0 0 320 260">
+      <g fill="none" stroke="#9CC6E4" stroke-width="1.4" stroke-linecap="round"><path d="M90 90C120 120 150 130 200 150"/><path d="M200 60C215 110 225 140 230 150"/><path d="M130 185C110 150 80 120 60 100"/><path d="M40 170C60 150 70 130 90 100"/></g>
+      <g fill="#D4E9F7" stroke="#A9D2EE" stroke-width=".8" opacity=".95"><ellipse cx="15.0" cy="0" rx="15.0" ry="4.5" transform="translate(150 130) rotate(-30)"/><ellipse cx="17.0" cy="0" rx="17.0" ry="5.0" transform="translate(150 130) rotate(40)"/><ellipse cx="15.0" cy="0" rx="15.0" ry="4.5" transform="translate(60 150) rotate(-70)"/><ellipse cx="18.0" cy="0" rx="18.0" ry="5.0" transform="translate(250 100) rotate(-10)"/><ellipse cx="16.0" cy="0" rx="16.0" ry="4.5" transform="translate(185 200) rotate(70)"/><ellipse cx="14.0" cy="0" rx="14.0" ry="4.0" transform="translate(110 40) rotate(-120)"/><ellipse cx="13.0" cy="0" rx="13.0" ry="4.0" transform="translate(20 110) rotate(-100)"/><ellipse cx="14.0" cy="0" rx="14.0" ry="4.0" transform="translate(280 170) rotate(50)"/></g>
+      <g transform="translate(90 90)" opacity="0.92"><g fill="url(#fl-g)" stroke="#9CC6E4" stroke-width=".8"><ellipse cx="0" cy="-34.1" rx="26.0" ry="36.0" transform="rotate(0.0)"/><ellipse cx="0" cy="-34.1" rx="26.0" ry="36.0" transform="rotate(60.0)"/><ellipse cx="0" cy="-34.1" rx="26.0" ry="36.0" transform="rotate(120.0)"/><ellipse cx="0" cy="-34.1" rx="26.0" ry="36.0" transform="rotate(180.0)"/><ellipse cx="0" cy="-34.1" rx="26.0" ry="36.0" transform="rotate(240.0)"/><ellipse cx="0" cy="-34.1" rx="26.0" ry="36.0" transform="rotate(300.0)"/></g><circle r="12.4" fill="#7DBAE6"/><g fill="#FFFFFF"><circle cx="18.6" cy="0.0" r="2.5"/><circle cx="9.3" cy="16.1" r="2.5"/><circle cx="-9.3" cy="16.1" r="2.5"/><circle cx="-18.6" cy="0.0" r="2.5"/><circle cx="-9.3" cy="-16.1" r="2.5"/><circle cx="9.3" cy="-16.1" r="2.5"/></g></g><g transform="translate(205 62)" opacity="0.92"><g fill="url(#fl-g)" stroke="#9CC6E4" stroke-width=".8"><ellipse cx="0" cy="-23.1" rx="17.6" ry="24.4" transform="rotate(20.0)"/><ellipse cx="0" cy="-23.1" rx="17.6" ry="24.4" transform="rotate(80.0)"/><ellipse cx="0" cy="-23.1" rx="17.6" ry="24.4" transform="rotate(140.0)"/><ellipse cx="0" cy="-23.1" rx="17.6" ry="24.4" transform="rotate(200.0)"/><ellipse cx="0" cy="-23.1" rx="17.6" ry="24.4" transform="rotate(260.0)"/><ellipse cx="0" cy="-23.1" rx="17.6" ry="24.4" transform="rotate(320.0)"/></g><circle r="8.4" fill="#7DBAE6"/><g fill="#FFFFFF"><circle cx="12.6" cy="0.0" r="1.7"/><circle cx="6.3" cy="10.9" r="1.7"/><circle cx="-6.3" cy="10.9" r="1.7"/><circle cx="-12.6" cy="0.0" r="1.7"/><circle cx="-6.3" cy="-10.9" r="1.7"/><circle cx="6.3" cy="-10.9" r="1.7"/></g></g><g transform="translate(232 152)" opacity="0.92"><g fill="url(#fl-g)" stroke="#9CC6E4" stroke-width=".8"><ellipse cx="0" cy="-27.5" rx="21.0" ry="29.0" transform="rotate(12.0)"/><ellipse cx="0" cy="-27.5" rx="21.0" ry="29.0" transform="rotate(84.0)"/><ellipse cx="0" cy="-27.5" rx="21.0" ry="29.0" transform="rotate(156.0)"/><ellipse cx="0" cy="-27.5" rx="21.0" ry="29.0" transform="rotate(228.0)"/><ellipse cx="0" cy="-27.5" rx="21.0" ry="29.0" transform="rotate(300.0)"/></g><circle r="10.0" fill="#7DBAE6"/><g fill="#FFFFFF"><circle cx="15.0" cy="0.0" r="2.0"/><circle cx="7.5" cy="13.0" r="2.0"/><circle cx="-7.5" cy="13.0" r="2.0"/><circle cx="-15.0" cy="0.0" r="2.0"/><circle cx="-7.5" cy="-13.0" r="2.0"/><circle cx="7.5" cy="-13.0" r="2.0"/></g></g><g transform="translate(132 188)" opacity="0.92"><g fill="url(#fl-g)" stroke="#9CC6E4" stroke-width=".8"><ellipse cx="0" cy="-18.7" rx="14.3" ry="19.7" transform="rotate(30.0)"/><ellipse cx="0" cy="-18.7" rx="14.3" ry="19.7" transform="rotate(90.0)"/><ellipse cx="0" cy="-18.7" rx="14.3" ry="19.7" transform="rotate(150.0)"/><ellipse cx="0" cy="-18.7" rx="14.3" ry="19.7" transform="rotate(210.0)"/><ellipse cx="0" cy="-18.7" rx="14.3" ry="19.7" transform="rotate(270.0)"/><ellipse cx="0" cy="-18.7" rx="14.3" ry="19.7" transform="rotate(330.0)"/></g><circle r="6.8" fill="#7DBAE6"/><g fill="#FFFFFF"><circle cx="10.2" cy="0.0" r="1.4"/><circle cx="5.1" cy="8.8" r="1.4"/><circle cx="-5.1" cy="8.8" r="1.4"/><circle cx="-10.2" cy="0.0" r="1.4"/><circle cx="-5.1" cy="-8.8" r="1.4"/><circle cx="5.1" cy="-8.8" r="1.4"/></g></g><g transform="translate(38 170)" opacity="0.92"><g fill="url(#fl-g)" stroke="#9CC6E4" stroke-width=".8"><ellipse cx="0" cy="-14.3" rx="10.9" ry="15.1" transform="rotate(10.0)"/><ellipse cx="0" cy="-14.3" rx="10.9" ry="15.1" transform="rotate(82.0)"/><ellipse cx="0" cy="-14.3" rx="10.9" ry="15.1" transform="rotate(154.0)"/><ellipse cx="0" cy="-14.3" rx="10.9" ry="15.1" transform="rotate(226.0)"/><ellipse cx="0" cy="-14.3" rx="10.9" ry="15.1" transform="rotate(298.0)"/></g><circle r="5.2" fill="#7DBAE6"/><g fill="#FFFFFF"><circle cx="7.8" cy="0.0" r="1.0"/><circle cx="3.9" cy="6.8" r="1.0"/><circle cx="-3.9" cy="6.8" r="1.0"/><circle cx="-7.8" cy="0.0" r="1.0"/><circle cx="-3.9" cy="-6.8" r="1.0"/><circle cx="3.9" cy="-6.8" r="1.0"/></g></g>
+      <g fill="#8EC3E6" opacity=".7"><circle cx="160" cy="30" r="3"/><circle cx="268" cy="96" r="2.6"/><circle cx="20" cy="40" r="2.4"/><circle cx="170" cy="236" r="2.8"/></g>
+    </symbol>
     <symbol id="fleuron" viewBox="0 0 120 18"><g fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><path d="M2 9h38M80 9h38"/><path d="M60 3c-7 0-11 6-18 6 7 0 11 6 18 6 7 0 11-6 18-6-7 0-11-6-18-6z"/></g><circle cx="60" cy="9" r="1.8" fill="currentColor"/></symbol>
     <symbol id="cachet" viewBox="0 0 130 100"><g fill="none" stroke="currentColor"><circle cx="50" cy="50" r="36" stroke-width="2"/><circle cx="50" cy="50" r="28" stroke-width="1"/><path d="M92 34q7-5 14 0t14 0M92 50q7-5 14 0t14 0M92 66q7-5 14 0t14 0" stroke-width="1.8"/></g><text x="50" y="48" text-anchor="middle" font-family="Jost, sans-serif" font-size="11" letter-spacing="2" fill="currentColor">DOUALA</text><text x="50" y="62" text-anchor="middle" font-family="Jost, sans-serif" font-size="9" letter-spacing="1" fill="currentColor">2027</text></symbol>
     <symbol id="i-avion" viewBox="0 0 48 48"><path d="M44 8 4 22l14 5 3 13 7-9 9 7z" fill="#FFFFFF" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M44 8 18 27M44 8 21 40" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></symbol>
@@ -624,7 +767,7 @@ input:focus-visible + .case{outline:2px solid var(--azur);outline-offset:3px}
       <div class="pochette-flotte">
         <div class="pochette" id="pochette">
           <div class="pochette-interieur papier">
-            <svg class="couronne" viewBox="0 0 120 120" aria-hidden="true"><g class="laurier"></g><text class="couronne-mono" x="60" y="69" text-anchor="middle">L&amp;A</text></svg>
+            <svg class="couronne" viewBox="0 0 120 120" aria-hidden="true"><g class="laurier"></g><text class="couronne-mono" x="60" y="94" text-anchor="middle">L&amp;A</text></svg>
             <p class="script">Levy &amp; Adrienne </p>
             <p class="capitales">Douala · 2027</p>
           </div>
@@ -656,13 +799,14 @@ input:focus-visible + .case{outline:2px solid var(--azur);outline-offset:3px}
   <span class="progression" aria-hidden="true"></span>
   <div class="shell barre-in">
     <a class="logo" href="#haut" aria-label="Retour en haut">
-      <svg class="couronne" viewBox="0 0 120 120" aria-hidden="true"><g class="laurier"></g><text class="couronne-mono" x="60" y="69" text-anchor="middle">L&amp;A</text></svg>
+      <svg class="couronne" viewBox="0 0 120 120" aria-hidden="true"><g class="laurier"></g><text class="couronne-mono" x="60" y="94" text-anchor="middle">L&amp;A</text></svg>
     </a>    
     <nav aria-label="Sections du faire-part">
       <ul class="menu">
         <li><a href="#cadeau">Cadeau</a></li>
         <li><a href="#date">La date</a></li>
         <li><a href="#histoire">Notre histoire</a></li>
+        <li><a href="#galerie">Galerie</a></li>
         <li><a href="#programme">Programme</a></li>
         <li><a href="#lieux">Lieux</a></li>
         <li><a href="#tenue">Tenue</a></li>
@@ -684,7 +828,7 @@ input:focus-visible + .case{outline:2px solid var(--azur);outline-offset:3px}
       <article class="faire-part papier">
         <div class="rings-zone">
           <canvas class="rings" id="rings"></canvas>
-          <div class="rings-fallback"><svg class="couronne" viewBox="0 0 120 120" aria-hidden="true"><g class="laurier"></g><text class="couronne-mono" x="60" y="69" text-anchor="middle">L&amp;A</text></svg></div>
+          <div class="rings-fallback"><svg class="couronne" viewBox="0 0 120 120" aria-hidden="true"><g class="laurier"></g><text class="couronne-mono" x="60" y="94" text-anchor="middle">L&amp;A</text></svg></div>
         </div>
         <p class="capitales">Avec la bénédiction de leurs familles</p>
         <h1 class="fp-noms" id="couple"><span>Levy &amp; Adrienne</span></h1>
@@ -708,6 +852,7 @@ input:focus-visible + .case{outline:2px solid var(--azur);outline-offset:3px}
 
 <!-- ================= Cadeau ================= -->
 <section class="section section--brume" id="cadeau" aria-labelledby="cadeau-titre">
+  <div class="deco deco--hd" aria-hidden="true"><svg viewBox="0 0 320 260"><use href="#bouquet"/></svg></div>
   <div class="shell cadeau-grille">
     <div class="pochette-photo reveal" data-tilt="6">
       <figure class="photo-carte" style="margin:0 auto">
@@ -748,6 +893,8 @@ input:focus-visible + .case{outline:2px solid var(--azur);outline-offset:3px}
 
 <!-- ================= Réservez la date ================= -->
 <section class="section" id="date" aria-labelledby="date-titre">
+  <div class="deco deco--bd" aria-hidden="true"><svg viewBox="0 0 320 260"><use href="#bouquet"/></svg></div>
+  <div class="deco deco--hg" aria-hidden="true"><svg viewBox="0 0 320 260"><use href="#bouquet"/></svg></div>
   <div class="shell date-grille">
     <div class="calendrier papier reveal" role="img" aria-label="Calendrier de janvier 2027 : les 29 et 30 janvier sont marqués">
       <p class="capitales">Réservez la date</p>
@@ -757,7 +904,7 @@ input:focus-visible + .case{outline:2px solid var(--azur);outline-offset:3px}
     <div class="date-texte reveal" style="--d:.15s">
       <p class="capitales">29 et 30 janvier 2027</p>
       <h2 class="titre" id="date-titre">Deux jours <em>pour toujours</em></h2>
-      <p class="chapeau">Deux jours de célébration à Logpom et Ndogpassi. Gardez précieusement ces dates.</p>
+      <p class="chapeau">Deux jours de célébration à Douala. Gardez précieusement ces dates.</p>
       <div class="decompte" role="timer" aria-label="Temps restant avant le mariage">
         <div class="anneau" data-unite="j"><svg viewBox="0 0 100 100" aria-hidden="true"><circle class="fond" cx="50" cy="50" r="47" pathLength="1"/><circle class="arc" cx="50" cy="50" r="47" pathLength="1"/></svg><div class="anneau-centre"><span class="anneau-val">000</span><span class="anneau-label">Jours</span></div></div>
         <div class="anneau" data-unite="h"><svg viewBox="0 0 100 100" aria-hidden="true"><circle class="fond" cx="50" cy="50" r="47" pathLength="1"/><circle class="arc" cx="50" cy="50" r="47" pathLength="1"/></svg><div class="anneau-centre"><span class="anneau-val">00</span><span class="anneau-label">Heures</span></div></div>
@@ -779,13 +926,13 @@ input:focus-visible + .case{outline:2px solid var(--azur);outline-offset:3px}
         <p class="histoire-aide">Une rencontre, une amitié, une promesse et une grâce à célébrer.</p>
       </div>
       <article class="lettre papier reveal" style="--d:.15s" data-tilt="4">
-        <p class="salut">Chers familles et amis,</p>
-        <p><strong>Une rencontre, un dessein</strong></p>
-        <p>En 2019, nous nous sommes rencontrés au camp zonal des jeunes. Deux jeunes venus chercher Dieu, sans savoir qu'Il nous avait déjà réservés l'un pour l'autre.</p>
-        <p>Les années ont passé, et c'est en 2021 que le Seigneur a tissé entre nous une belle amitié. Nous avons appris à nous connaître, à nous encourager dans la foi et à nous porter dans la prière. C'est dans cette amitié centrée sur Christ que l'amour a germé.</p>
-        <p>Avec le temps, ce que nous ressentions l'un pour l'autre est devenu une évidence, une conviction profonde que c'était le plan parfait de Dieu pour nos vies.</p>
-        <p>Le 14 février 2026, devant Dieu, la promesse est devenue fiançailles. Aujourd'hui, nous rendons grâce à Dieu pour Son amour et Sa fidélité, et nous nous préparons avec joie à nous unir pour Sa gloire.</p>
-        <!-- <p class="signature">Levy Dongmo</p> -->
+        <svg class="lettre-fleuron" aria-hidden="true"><use href="#fleuron"/></svg>
+        <h3 class="lettre-titre">Une rencontre, un dessein</h3>
+        <p class="capitale">En 2019, sous le ciel du camp zonal des jeunes, nos pas se sont croisés. Nous étions deux âmes venues chercher Dieu, ignorant que, dans le secret de Sa souveraineté, Il avait déjà lié nos destins. Nous cherchions le Créateur&nbsp;; Il nous offrait Sa promesse.</p>
+        <p>Le temps a fait son œuvre, bercé par les saisons de la grâce. C’est en 2021 que le Seigneur a tissé entre nous les fils d’une amitié pure et lumineuse. Ensemble, nous avons appris à nous connaître, à fortifier notre foi et à porter nos murmures jusqu’au trône de la prière. C’est dans ce jardin fertile, cultivé à l’ombre de la Croix, que l’amour a doucement germé.</p>
+        <p>Au fil des jours, ce murmure intérieur est devenu une symphonie, une évidence céleste. Une conviction profonde s’est emparée de nous&nbsp;: nos vies n’étaient pas le fruit du hasard, mais le chef-d’œuvre d’un plan parfait dessiné par le Très-Haut.</p>
+        <p>Le 14 février 2026, à l’autel de la fidélité, ce vœu discret est devenu fiançailles. Aujourd’hui, le cœur vibrant de gratitude, nous célébrons l’amour indéfectible de notre Dieu et tournons nos regards, empreints d’une joie immuable, vers le jour où nos deux vies ne feront plus qu’une, pour l’éternité et pour Sa seule gloire.</p>
+        <p class="signature script">Levy &amp; Adrienne <svg class="coeur" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.4C.9 8.1 3 4.5 6.6 4.5c2.1 0 3.9 1.2 5.4 3.1 1.5-1.9 3.3-3.1 5.4-3.1 3.6 0 5.7 3.6 4.2 7.1C19.5 16.4 12 21 12 21z"/></svg></p>
       </article>
     </div>
 
@@ -804,7 +951,7 @@ input:focus-visible + .case{outline:2px solid var(--azur);outline-offset:3px}
               <div class="cp-pivot">
                 <div class="cp-face cp-recto">
                   <span class="cp-photo" style="--pos:50% 30%"><img src="photos/histoire-1-regards.jpg" alt="Levy et sa fiancée se font face en souriant, un bouquet de roses entre les mains" width="1080" height="720" loading="lazy" decoding="async"></span>
-                  <button class="cp-agrandir" type="button" data-lightbox data-legende="Un bouquet, deux sourires" aria-label="Agrandir la photo « Un bouquet, deux sourires »"><svg aria-hidden="true"><use href="#i-agrandir"/></svg></button>
+                  <button class="cp-agrandir" type="button" data-lightbox="histoire" data-legende="Un bouquet, deux sourires" aria-label="Agrandir la photo « Un bouquet, deux sourires »"><svg aria-hidden="true"><use href="#i-agrandir"/></svg></button>
                 </div>
                 <div class="cp-face cp-verso">
                   <div class="cp-message"><p>« Une rencontre, un dessein. »</p><p class="script">Levy &amp; Adrienne</p></div>
@@ -827,7 +974,7 @@ input:focus-visible + .case{outline:2px solid var(--azur);outline-offset:3px}
               <div class="cp-pivot">
                 <div class="cp-face cp-recto">
                   <span class="cp-photo" style="--pos:52% 48%"><img src="photos/histoire-2-ecrin.jpg" alt="Une main tient un écrin rouge en forme de cœur contenant une bague, devant une enseigne lumineuse" width="1080" height="721" loading="lazy" decoding="async"></span>
-                  <button class="cp-agrandir" type="button" data-lightbox data-legende="Un écrin rouge, une bague" aria-label="Agrandir la photo « Un écrin rouge, une bague »"><svg aria-hidden="true"><use href="#i-agrandir"/></svg></button>
+                  <button class="cp-agrandir" type="button" data-lightbox="histoire" data-legende="Un écrin rouge, une bague" aria-label="Agrandir la photo « Un écrin rouge, une bague »"><svg aria-hidden="true"><use href="#i-agrandir"/></svg></button>
                 </div>
                 <div class="cp-face cp-verso">
                   <div class="cp-message"><p>« Une amitié centrée sur Christ. »</p><p class="script">Levy &amp; Adrienne</p></div>
@@ -850,7 +997,7 @@ input:focus-visible + .case{outline:2px solid var(--azur);outline-offset:3px}
               <div class="cp-pivot">
                 <div class="cp-face cp-recto">
                   <span class="cp-photo" style="--pos:42% 50%"><img src="photos/histoire-3-oui.jpg" alt="Un genou à terre, la bague est glissée au doigt sous l'enseigne lumineuse « Marry me »" width="899" height="506" loading="lazy" decoding="async"></span>
-                  <button class="cp-agrandir" type="button" data-lightbox data-legende="Un genou à terre, une bague au doigt" aria-label="Agrandir la photo « Un genou à terre, une bague au doigt »"><svg aria-hidden="true"><use href="#i-agrandir"/></svg></button>
+                  <button class="cp-agrandir" type="button" data-lightbox="histoire" data-legende="Un genou à terre, une bague au doigt" aria-label="Agrandir la photo « Un genou à terre, une bague au doigt »"><svg aria-hidden="true"><use href="#i-agrandir"/></svg></button>
                 </div>
                 <div class="cp-face cp-verso">
                   <div class="cp-message"><p>« Pour Sa gloire. »</p><p class="script">Levy &amp; Adrienne</p></div>
@@ -881,8 +1028,99 @@ input:focus-visible + .case{outline:2px solid var(--azur);outline-offset:3px}
   </div>
 </section>
 
+<!-- ================= Galerie ================= -->
+<section class="section section--nuit" id="galerie" aria-labelledby="galerie-titre">
+  <div class="deco deco--bd deco--nuit" aria-hidden="true"><svg viewBox="0 0 320 260"><use href="#bouquet"/></svg></div>
+  <div class="deco deco--hg deco--nuit" aria-hidden="true"><svg viewBox="0 0 320 260"><use href="#bouquet"/></svg></div>
+  <div class="shell">
+    <div class="entete reveal">
+      <p class="capitales">Galerie</p>
+      <h2 class="titre" id="galerie-titre">Instants <em>de lumière</em></h2>
+      <svg class="fleuron" aria-hidden="true"><use href="#fleuron"/></svg>
+      <p class="chapeau">Quelques images de notre shooting de couple, avant le grand jour. Faites défiler, ou touchez une photo pour l’agrandir.</p>
+    </div>
+  </div>
+  <div class="gal reveal" id="gal" style="--d:.15s" role="region" aria-roledescription="carrousel" aria-label="Photos du shooting de couple">
+    <div class="gal-piste" id="gal-piste" tabindex="0" aria-label="Défilement des photos, flèches gauche et droite pour naviguer">
+      <figure class="gal-item" style="--pos:50% 25%" aria-label="Photo 1 sur 8">
+        <div class="gal-cadre">
+          <img src="photos/galerie-1.jpg" alt="Levy et Adrienne lors de leur shooting de couple — regards complices" width="900" height="1200" loading="lazy" decoding="async" onerror="this.closest('.gal-item').classList.add('is-vide')">
+          <span class="gal-vide" aria-hidden="true"><span class="script">L&amp;A</span><small>Photo à venir</small></span>
+          <button class="gal-agrandir" type="button" data-lightbox="galerie" data-legende="Regards complices" aria-label="Agrandir la photo « Regards complices »"><svg aria-hidden="true"><use href="#i-agrandir"/></svg></button>
+        </div>
+        <figcaption><span class="gal-num">I</span><em>Regards complices</em></figcaption>
+      </figure>
+      <figure class="gal-item" style="--pos:50% 30%" aria-label="Photo 2 sur 8">
+        <div class="gal-cadre">
+          <img src="photos/galerie-2.jpg" alt="Levy et Adrienne lors de leur shooting de couple — main dans la main" width="900" height="1200" loading="lazy" decoding="async" onerror="this.closest('.gal-item').classList.add('is-vide')">
+          <span class="gal-vide" aria-hidden="true"><span class="script">L&amp;A</span><small>Photo à venir</small></span>
+          <button class="gal-agrandir" type="button" data-lightbox="galerie" data-legende="Main dans la main" aria-label="Agrandir la photo « Main dans la main »"><svg aria-hidden="true"><use href="#i-agrandir"/></svg></button>
+        </div>
+        <figcaption><span class="gal-num">II</span><em>Main dans la main</em></figcaption>
+      </figure>
+      <figure class="gal-item" style="--pos:50% 28%" aria-label="Photo 3 sur 8">
+        <div class="gal-cadre">
+          <img src="photos/galerie-3.jpg" alt="Levy et Adrienne lors de leur shooting de couple — sous un ciel de lumière" width="900" height="1200" loading="lazy" decoding="async" onerror="this.closest('.gal-item').classList.add('is-vide')">
+          <span class="gal-vide" aria-hidden="true"><span class="script">L&amp;A</span><small>Photo à venir</small></span>
+          <button class="gal-agrandir" type="button" data-lightbox="galerie" data-legende="Sous un ciel de lumière" aria-label="Agrandir la photo « Sous un ciel de lumière »"><svg aria-hidden="true"><use href="#i-agrandir"/></svg></button>
+        </div>
+        <figcaption><span class="gal-num">III</span><em>Sous un ciel de lumière</em></figcaption>
+      </figure>
+      <figure class="gal-item" style="--pos:50% 35%" aria-label="Photo 4 sur 8">
+        <div class="gal-cadre">
+          <img src="photos/galerie-4.jpg" alt="Levy et Adrienne lors de leur shooting de couple — un sourire, une promesse" width="900" height="1200" loading="lazy" decoding="async" onerror="this.closest('.gal-item').classList.add('is-vide')">
+          <span class="gal-vide" aria-hidden="true"><span class="script">L&amp;A</span><small>Photo à venir</small></span>
+          <button class="gal-agrandir" type="button" data-lightbox="galerie" data-legende="Un sourire, une promesse" aria-label="Agrandir la photo « Un sourire, une promesse »"><svg aria-hidden="true"><use href="#i-agrandir"/></svg></button>
+        </div>
+        <figcaption><span class="gal-num">IV</span><em>Un sourire, une promesse</em></figcaption>
+      </figure>
+      <figure class="gal-item" style="--pos:50% 30%" aria-label="Photo 5 sur 8">
+        <div class="gal-cadre">
+          <img src="photos/galerie-5.jpg" alt="Levy et Adrienne lors de leur shooting de couple — deux cœurs, un même élan" width="900" height="1200" loading="lazy" decoding="async" onerror="this.closest('.gal-item').classList.add('is-vide')">
+          <span class="gal-vide" aria-hidden="true"><span class="script">L&amp;A</span><small>Photo à venir</small></span>
+          <button class="gal-agrandir" type="button" data-lightbox="galerie" data-legende="Deux cœurs, un même élan" aria-label="Agrandir la photo « Deux cœurs, un même élan »"><svg aria-hidden="true"><use href="#i-agrandir"/></svg></button>
+        </div>
+        <figcaption><span class="gal-num">V</span><em>Deux cœurs, un même élan</em></figcaption>
+      </figure>
+      <!-- <figure class="gal-item" style="--pos:50% 25%" aria-label="Photo 6 sur 8">
+        <div class="gal-cadre">
+          <img src="photos/galerie-6.jpg" alt="Levy et Adrienne lors de leur shooting de couple — complicité" width="900" height="1200" loading="lazy" decoding="async" onerror="this.closest('.gal-item').classList.add('is-vide')">
+          <span class="gal-vide" aria-hidden="true"><span class="script">L&amp;A</span><small>Photo à venir</small></span>
+          <button class="gal-agrandir" type="button" data-lightbox="galerie" data-legende="Complicité" aria-label="Agrandir la photo « Complicité »"><svg aria-hidden="true"><use href="#i-agrandir"/></svg></button>
+        </div>
+        <figcaption><span class="gal-num">VI</span><em>Complicité</em></figcaption>
+      </figure>
+      <figure class="gal-item" style="--pos:50% 32%" aria-label="Photo 7 sur 8">
+        <div class="gal-cadre">
+          <img src="photos/galerie-7.jpg" alt="Levy et Adrienne lors de leur shooting de couple — l’un pour l’autre" width="900" height="1200" loading="lazy" decoding="async" onerror="this.closest('.gal-item').classList.add('is-vide')">
+          <span class="gal-vide" aria-hidden="true"><span class="script">L&amp;A</span><small>Photo à venir</small></span>
+          <button class="gal-agrandir" type="button" data-lightbox="galerie" data-legende="L’un pour l’autre" aria-label="Agrandir la photo « L’un pour l’autre »"><svg aria-hidden="true"><use href="#i-agrandir"/></svg></button>
+        </div>
+        <figcaption><span class="gal-num">VII</span><em>L’un pour l’autre</em></figcaption>
+      </figure>
+      <figure class="gal-item" style="--pos:50% 28%" aria-label="Photo 8 sur 8">
+        <div class="gal-cadre">
+          <img src="photos/galerie-8.jpg" alt="Levy et Adrienne lors de leur shooting de couple — pour toujours" width="900" height="1200" loading="lazy" decoding="async" onerror="this.closest('.gal-item').classList.add('is-vide')">
+          <span class="gal-vide" aria-hidden="true"><span class="script">L&amp;A</span><small>Photo à venir</small></span>
+          <button class="gal-agrandir" type="button" data-lightbox="galerie" data-legende="Pour toujours" aria-label="Agrandir la photo « Pour toujours »"><svg aria-hidden="true"><use href="#i-agrandir"/></svg></button>
+        </div>
+        <figcaption><span class="gal-num">VIII</span><em>Pour toujours</em></figcaption>
+      </figure> -->
+    </div>
+    <div class="gal-vignettes" id="gal-vignettes" aria-label="Choisir une photo"></div>
+    <div class="shell">
+      <div class="gal-controles">
+        <button class="gal-btn gal-prec" id="gal-prec" type="button" aria-label="Photo précédente"><svg aria-hidden="true"><use href="#i-fleche"/></svg></button>
+        <div class="gal-info"><span class="gal-compte" id="gal-compte" aria-live="polite">01 / 08</span><span class="gal-progres" aria-hidden="true"><span id="gal-progres"></span></span></div>
+        <button class="gal-btn gal-suiv" id="gal-suiv" type="button" aria-label="Photo suivante"><svg aria-hidden="true"><use href="#i-fleche"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= Programme ================= -->
 <section class="section" id="programme" aria-labelledby="prog-titre">
+  <div class="deco deco--hd" aria-hidden="true"><svg viewBox="0 0 320 260"><use href="#bouquet"/></svg></div>
   <div class="aquarelle" style="--t:520px;left:-180px;top:30%" aria-hidden="true"></div>
   <div class="shell">
     <div class="programme-carte papier reveal">
@@ -897,7 +1135,7 @@ input:focus-visible + .case{outline:2px solid var(--azur);outline-offset:3px}
           <svg class="moment-icone" viewBox="0 0 40 40" aria-hidden="true"><path pathLength="1" d="M10 35V17a10 10 0 0 1 20 0v18"/><path pathLength="1" d="M5 35h30"/><path pathLength="1" d="M15 35V21a5 5 0 0 1 10 0v14"/></svg>
           <div class="moment-corps"><h3 class="moment-titre">Mariage traditionnel et civil</h3><span class="moment-lieu">Logpom lycée · Tenue africaine</span></div>
         </li>
-        <li class="moment reveal">
+        <li class="moment reveal"> 
           <span class="moment-heure">10:00</span>
           <svg class="moment-icone" viewBox="0 0 40 40" aria-hidden="true"><path pathLength="1" d="M20 3v8M16.5 6.5h7"/><path pathLength="1" d="M9 35V20l11-8 11 8v15"/><path pathLength="1" d="M17 35v-7a3 3 0 0 1 6 0v7"/><path pathLength="1" d="M5 35h30"/></svg>
 
@@ -922,8 +1160,8 @@ input:focus-visible + .case{outline:2px solid var(--azur);outline-offset:3px}
       <h2 class="titre" id="lieux-titre">Rendez-vous <em>à Douala</em></h2>
       <ol class="adresses">
         <li class="adresse"><span class="adresse-num">1</span><strong>Lieu de dot et mairie</strong><span>4°04'54.5&quot;N 9°45'56.2&quot;E</span><button class="coord-copier" type="button" data-copy="4.0818056,9.7656111">Copier les coordonnées</button><a href="https://www.google.com/maps/search/?api=1&amp;query=4.0818056%2C9.7656111" target="_blank" rel="noopener">Ouvrir dans Maps</a></li>
-        <li class="adresse"><span class="adresse-num">2</span><strong>Harvest Ndogpassi</strong><span>Mariage religieux · 30 janvier · 10h00</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Harvest%20Ndogpassi%20Douala" target="_blank" rel="noopener">Ouvrir dans Maps</a></li>
-        <li class="adresse"><span class="adresse-num">3</span><strong>Salle Dany Plaza, Logpom</strong><span>Réception · 30 janvier · 20h00</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Salle%20Dany%20Plaza%20Logpom%20Douala" target="_blank" rel="noopener">Ouvrir dans Maps</a></li>
+        <li class="adresse"><span class="adresse-num">2</span><strong>Église Harvest Ndogpassi</strong><span>120 Rue LT0007DO3, Douala</span><span>Mariage religieux · 30 janvier · 10h00</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Lovely%20Kids%2C%20120%20Rue%20LT0007DO3%2C%20Douala" target="_blank" rel="noopener">Ouvrir dans Maps</a></li>
+        <li class="adresse"><span class="adresse-num">3</span><strong>Salle Dany Plaza, Logpom</strong><span>Réception · 30 janvier · 20h00</span><span>4°07'19.3&quot;N 9°46'39.4&quot;E</span><button class="coord-copier" type="button" data-copy="4.1220278,9.7776111">Copier les coordonnées</button><a href="https://www.google.com/maps/search/?api=1&amp;query=4.1220278%2C9.7776111" target="_blank" rel="noopener">Ouvrir dans Maps</a></li>
       </ol>
       <p class="chapeau">Thème : bleu ciel et blanc, amour et royauté.</p>
       <div class="btn-ligne">
@@ -959,6 +1197,7 @@ input:focus-visible + .case{outline:2px solid var(--azur);outline-offset:3px}
 
 <!-- ================= Tenue ================= -->
 <section class="section" id="tenue" aria-labelledby="tenue-titre">
+  <div class="deco deco--hg" aria-hidden="true"><svg viewBox="0 0 320 260"><use href="#bouquet"/></svg></div>
   <div class="shell">
     <div class="entete reveal">
       <p class="capitales">Dress code</p>
@@ -966,24 +1205,39 @@ input:focus-visible + .case{outline:2px solid var(--azur);outline-offset:3px}
       <p class="chapeau">Nous serions ravis que vos tenues rappellent les couleurs de notre journée.</p>
       <svg class="fleuron" aria-hidden="true"><use href="#fleuron"/></svg>
     </div>
-    <ul class="rubans reveal">
+    <!-- <ul class="rubans reveal">
       <li class="ruban-ech"><span class="ruban-ombre"><span class="ruban-bande" style="--c:#FFFFFF;--dl:0s"></span></span><span class="ruban-nom">Blanc nacré</span></li>
       <li class="ruban-ech"><span class="ruban-ombre"><span class="ruban-bande" style="--c:#BFDDF2;--dl:-1.1s"></span></span><span class="ruban-nom">Bleu ciel</span></li>
       <li class="ruban-ech"><span class="ruban-ombre"><span class="ruban-bande" style="--c:#9CC3E0;--dl:-2.2s"></span></span><span class="ruban-nom">Bleu poudré</span></li>
       <li class="ruban-ech"><span class="ruban-ombre"><span class="ruban-bande" style="--c:#5E97C4;--dl:-3.3s"></span></span><span class="ruban-nom">Azur</span></li>
       <li class="ruban-ech"><span class="ruban-ombre"><span class="ruban-bande" style="--c:#D9E0E6;--dl:-4.4s"></span></span><span class="ruban-nom">Gris perle</span></li>
-    </ul>
+    </ul> -->
     <div class="notes-tenue">
       <article class="note-tenue papier reveal"><h3>29 janvier</h3><p>Mariage traditionnel et civil : tenue africaine.</p></article>
-      <article class="note-tenue papier reveal" style="--d:.12s"><h3>30 janvier · 10h</h3><p>Mariage religieux à Harvest Ndogpassi : uniforme du mariage.</p></article>
+      <article class="note-tenue papier reveal" style="--d:.12s"><h3>30 janvier · 10h</h3><p>Mariage religieux à l’église Harvest Ndogpassi : uniforme du mariage.</p></article>
       <article class="note-tenue papier reveal" style="--d:.24s"><h3>30 janvier · 20h</h3><p>Réception à Dany Plaza : tenue class et chic.</p></article>
     </div>
     <p class="capitales tenue-rappel reveal">Le blanc intégral est réservé aux mariés</p>
   </div>
 </section>
 
+<!-- ================= Paroles ================= -->
+<section class="citations" id="citations" aria-roledescription="carrousel" aria-label="Paroles de notre histoire">
+  <div class="shell citations-in">
+    <button class="cit-btn cit-prec" type="button" aria-label="Citation précédente"><svg aria-hidden="true"><use href="#i-fleche"/></svg></button>
+    <div class="cit-scene" aria-live="off">
+        <blockquote class="cit-slide is-actif" ><p>« Nous cherchions le Créateur&nbsp;; Il nous offrait Sa promesse. »</p><footer>Notre rencontre · 2019</footer></blockquote>
+        <blockquote class="cit-slide" aria-hidden="true" ><p>« Nos vies n’étaient pas le fruit du hasard, mais le chef-d’œuvre d’un plan parfait. »</p><footer>Notre conviction</footer></blockquote>
+        <blockquote class="cit-slide" aria-hidden="true" ><p>« Pour l’éternité et pour Sa seule gloire. »</p><footer>Notre vœu · 2027</footer></blockquote>
+    </div>
+    <button class="cit-btn cit-suiv" type="button" aria-label="Citation suivante"><svg aria-hidden="true"><use href="#i-fleche"/></svg></button>
+  </div>
+  <div class="cit-points"><button type="button" class="cit-point is-actif" aria-label="Citation 1"></button><button type="button" class="cit-point" aria-label="Citation 2"></button><button type="button" class="cit-point" aria-label="Citation 3"></button></div>
+</section>
+
 <!-- ================= Carton réponse ================= -->
 <section class="section section--brume" id="rsvp" aria-labelledby="rsvp-titre">
+  <div class="deco deco--hd" aria-hidden="true"><svg viewBox="0 0 320 260"><use href="#bouquet"/></svg></div>
   <div class="shell">
     <div class="entete reveal">
       <p class="capitales">Répondez s'il vous plaît</p>
@@ -1000,7 +1254,7 @@ input:focus-visible + .case{outline:2px solid var(--azur);outline-offset:3px}
           <legend class="etape-titre"><span class="etape-num">Étape 1</span> Je serai présent(e)</legend>
           <div class="choix-grille">
             <label class="choix"><input id="rsvp-mairie" type="checkbox" name="evenements" value="mairie"><span class="case" aria-hidden="true"><svg viewBox="0 0 36 36"><path pathLength="1" d="M7 19c3 2 5 5 7 9 4-9 10-17 19-24"/></svg></span><span><span class="choix-nom">Traditionnel et civil</span><span class="choix-heure">Logpom lycée · 29 janvier · 17h00</span></span></label>
-            <label class="choix"><input id="rsvp-eglise" type="checkbox" name="evenements" value="eglise"><span class="case" aria-hidden="true"><svg viewBox="0 0 36 36"><path pathLength="1" d="M7 19c3 2 5 5 7 9 4-9 10-17 19-24"/></svg></span><span><span class="choix-nom">Mariage religieux</span><span class="choix-heure">Harvest Ndogpassi · 30 janvier · 10h00</span></span></label>
+            <label class="choix"><input id="rsvp-eglise" type="checkbox" name="evenements" value="eglise"><span class="case" aria-hidden="true"><svg viewBox="0 0 36 36"><path pathLength="1" d="M7 19c3 2 5 5 7 9 4-9 10-17 19-24"/></svg></span><span><span class="choix-nom">Mariage religieux</span><span class="choix-heure">Église Harvest Ndogpassi · 30 janvier · 10h00</span></span></label>
             <label class="choix"><input id="rsvp-soiree" type="checkbox" name="evenements" value="soiree"><span class="case" aria-hidden="true"><svg viewBox="0 0 36 36"><path pathLength="1" d="M7 19c3 2 5 5 7 9 4-9 10-17 19-24"/></svg></span><span><span class="choix-nom">Réception</span><span class="choix-heure">Salle Dany Plaza · 30 janvier · 20h00</span></span></label>
           </div>
           <label class="absent"><input id="rsvp-absent" type="checkbox" name="absent" value="oui"><span class="case" aria-hidden="true"><svg viewBox="0 0 36 36"><path pathLength="1" d="M7 19c3 2 5 5 7 9 4-9 10-17 19-24"/></svg></span>Je ne pourrai malheureusement pas venir</label>
@@ -1032,11 +1286,19 @@ input:focus-visible + .case{outline:2px solid var(--azur);outline-offset:3px}
 </section>
 
 <!-- ================= Final ================= -->
-<footer class="finale" id="finale" aria-labelledby="fin-titre">
+<footer class="finale" id="finale" aria-label="Levy et Adrienne — 29 et 30 janvier 2027, Douala">
   <div class="aquarelle a1" aria-hidden="true"></div>
   <div class="aquarelle a2" aria-hidden="true"></div>
   <div class="shell finale-in">
-    <svg class="couronne reveal" viewBox="0 0 120 120" aria-hidden="true"><g class="laurier"></g><text class="couronne-mono" x="60" y="69" text-anchor="middle">L&amp;A</text></svg>
+    <div class="portrait reveal">
+      <svg class="portrait-couronne" viewBox="0 0 120 66" aria-hidden="true"><use href="#cr"/></svg>
+      <div class="portrait-photo">
+        <img src="photos/histoire-1-regards.jpg" alt="Levy et Adrienne se font face en souriant" width="1080" height="720" loading="lazy" decoding="async" onerror="this.closest('.portrait').classList.add('is-vide')">
+        <svg class="couronne portrait-mono" viewBox="0 0 120 120" aria-hidden="true"><g class="laurier"></g><text class="couronne-mono" x="60" y="94" text-anchor="middle">L&amp;A</text></svg>
+      </div>
+      <svg class="portrait-fl portrait-fl--g" viewBox="0 0 320 260" aria-hidden="true"><use href="#bouquet"/></svg>
+      <svg class="portrait-fl portrait-fl--d" viewBox="0 0 320 260" aria-hidden="true"><use href="#bouquet"/></svg>
+    </div>
     <p class="capitales reveal">Au plaisir de vous y voir</p>
     <!-- <h2 class="finale-noms reveal" id="fin-titre">Levy &amp; Adrienne</h2> -->
     <p class="finale-date reveal">29 · 30 · 01 · 2027 — Douala</p>
@@ -1157,34 +1419,15 @@ const confettis = (() => {
   };
 })();
 
-/* ---------- Couronnes de laurier ---------- */
+/* ---------- Couronnes royales ---------- */
 function genererCouronnes() {
   const NS = 'http://www.w3.org/2000/svg';
+  const el = (nom, attrs) => { const n = document.createElementNS(NS, nom); Object.entries(attrs).forEach(([k, v]) => n.setAttribute(k, v)); return n; };
   document.querySelectorAll('.couronne .laurier').forEach(g => {
     if (g.childElementCount) return;
-    const R = 44, cx = 60, cy = 60, t0 = .45, t1 = 2.55, n = 9;
-    [-1, 1].forEach(cote => {
-      const p = t => [cx - cote * R * Math.sin(t), cy + R * Math.cos(t)];
-      const [x0, y0] = p(t0), [x1, y1] = p(t1);
-      const tige = document.createElementNS(NS, 'path');
-      tige.setAttribute('class', 'tige');
-      tige.setAttribute('d', `M${x0.toFixed(2)} ${y0.toFixed(2)} A${R} ${R} 0 0 ${cote < 0 ? 0 : 1} ${x1.toFixed(2)} ${y1.toFixed(2)}`);
-      g.appendChild(tige);
-      for (let i = 0; i < n; i++) {
-        const t = t0 + (t1 - t0) * (i + .5) / n;
-        const [x, y] = p(t);
-        const ang = Math.atan2(-R * Math.sin(t), -cote * R * Math.cos(t)) * 180 / Math.PI;
-        const k = 1 - (i / n) * .45;
-        [-1, 1].forEach(s => {
-          const f = document.createElementNS(NS, 'ellipse');
-          f.setAttribute('class', 'feuille');
-          f.setAttribute('rx', (7.5 * k).toFixed(2));
-          f.setAttribute('ry', (2.8 * k).toFixed(2));
-          f.setAttribute('transform', `translate(${x.toFixed(2)} ${y.toFixed(2)}) rotate(${(ang + s * 35).toFixed(1)}) translate(${(6 * k).toFixed(2)} 0)`);
-          g.appendChild(f);
-        });
-      }
-    });
+    g.appendChild(el('use', { href: '#cr', x: 22, y: 12, width: 76, height: 41.8 }));
+    [[10, 32], [88, 110]].forEach(([x0, x1]) => g.appendChild(el('path', { class: 'filet', d: `M${x0} 84H${x1}` })));
+    [[8, 84], [112, 84], [60, 106]].forEach(([cx, cy]) => g.appendChild(el('circle', { class: 'perle', cx, cy, r: cx === 60 ? 1.6 : 1.8 })));
   });
 }
 
@@ -1518,22 +1761,32 @@ function initHistoire() {
 /* ---------- Visionneuse photo ---------- */
 function initVisionneuse() {
   const boite = document.getElementById('lightbox');
-  const boutons = [...document.querySelectorAll('[data-lightbox]')];
-  if (!boite || !boutons.length || typeof boite.showModal !== 'function') return;
+  const declencheurs = [...document.querySelectorAll('[data-lightbox]')];
+  if (!boite || !declencheurs.length || typeof boite.showModal !== 'function') return;
   const image = document.getElementById('lb-img');
   const legende = document.getElementById('lb-caption');
   const compteur = document.getElementById('lb-count');
-  let index = 0, declencheur = null;
+  let groupe = [], index = 0, declencheur = null;
+
   function afficher(i) {
-    index = (i + boutons.length) % boutons.length;
-    const source = boutons[index].closest('.cp-recto').querySelector('img');
+    index = (i + groupe.length) % groupe.length;
+    const bouton = groupe[index];
+    const source = bouton.closest('.cp-recto, .gal-cadre').querySelector('img');
     image.src = source.currentSrc || source.src;
     image.alt = source.alt;
-    legende.textContent = boutons[index].dataset.legende || '';
-    compteur.textContent = `${index + 1} / ${boutons.length}`;
+    legende.textContent = bouton.dataset.legende || '';
+    compteur.textContent = `${index + 1} / ${groupe.length}`;
     image.style.animation = 'none'; void image.offsetWidth; image.style.animation = '';
   }
-  boutons.forEach((b, i) => b.addEventListener('click', e => { e.stopPropagation(); declencheur = b; afficher(i); boite.showModal(); }));
+  declencheurs.forEach(b => b.addEventListener('click', e => {
+    e.stopPropagation();
+    const nom = b.dataset.lightbox;
+    groupe = declencheurs.filter(x => x.dataset.lightbox === nom && !x.closest('.is-vide'));
+    if (!groupe.length) return;
+    declencheur = b;
+    afficher(Math.max(0, groupe.indexOf(b)));
+    boite.showModal();
+  }));
   boite.addEventListener('click', e => {
     const cible = e.target.closest('[data-lb]');
     const action = cible ? cible.dataset.lb : null;
@@ -1545,7 +1798,154 @@ function initVisionneuse() {
     if (e.key === 'ArrowLeft') afficher(index - 1);
     if (e.key === 'ArrowRight') afficher(index + 1);
   });
+  /* Balayage tactile */
+  let departX = null;
+  boite.addEventListener('touchstart', e => { departX = e.touches[0].clientX; }, { passive: true });
+  boite.addEventListener('touchend', e => {
+    if (departX === null) return;
+    const dx = e.changedTouches[0].clientX - departX; departX = null;
+    if (Math.abs(dx) > 50) afficher(index + (dx < 0 ? 1 : -1));
+  }, { passive: true });
   boite.addEventListener('close', () => { if (declencheur) declencheur.focus({ preventScroll: true }); });
+}
+
+/* ---------- Galerie : défilement 3D ---------- */
+function initGalerie() {
+  const zone = document.getElementById('gal');
+  const piste = document.getElementById('gal-piste');
+  if (!zone || !piste) return;
+  const items = [...piste.querySelectorAll('.gal-item')];
+  const prec = document.getElementById('gal-prec');
+  const suiv = document.getElementById('gal-suiv');
+  const compte = document.getElementById('gal-compte');
+  const progres = document.getElementById('gal-progres');
+  const boite = document.getElementById('lightbox');
+  const n = items.length;
+  if (!n) return;
+  let courant = 0, enAttente = false, pauseJusqua = 0, survol = false, visible = false, glisse = null, supprimerClic = false;
+  const pad = v => String(v).padStart(2, '0');
+  const vignettes = document.getElementById('gal-vignettes');
+  const boutonsVig = items.map((el, i) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'gal-vig';
+    b.setAttribute('aria-label', `Voir la photo ${i + 1}`);
+    const im = document.createElement('img');
+    const src = el.querySelector('img');
+    im.src = src.getAttribute('src'); im.alt = ''; im.loading = 'lazy'; im.decoding = 'async';
+    im.addEventListener('error', () => b.classList.add('is-vide'));
+    b.appendChild(im);
+    b.addEventListener('click', () => { pause(); aller(i); });
+    vignettes.appendChild(b);
+    return b;
+  });
+
+  function maj() {
+    enAttente = false;
+    const centre = piste.scrollLeft + piste.clientWidth / 2;
+    let meilleur = 0, min = Infinity;
+    items.forEach((el, i) => {
+      const larg = el.offsetWidth;
+      if (!larg) return;
+      const d = clamp((el.offsetLeft + larg / 2 - centre) / (larg * 1.1), -2, 2);
+      el.style.setProperty('--d', d.toFixed(3));
+      el.style.setProperty('--a', Math.min(Math.abs(d), 1.6).toFixed(3));
+      if (Math.abs(d) < min) { min = Math.abs(d); meilleur = i; }
+    });
+    courant = meilleur;
+    items.forEach((el, i) => el.classList.toggle('is-actif', i === courant));
+    boutonsVig.forEach((b, i) => { b.classList.toggle('is-actif', i === courant); if (i === courant) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current'); });
+    compte.textContent = `${pad(courant + 1)} / ${pad(n)}`;
+    progres.style.setProperty('--p', ((courant + 1) / n).toFixed(3));
+  }
+  const planifier = () => { if (!enAttente) { enAttente = true; requestAnimationFrame(maj); } };
+
+  function aller(i) {
+    const el = items[(i + n) % n];
+    piste.scrollTo({ left: el.offsetLeft + el.offsetWidth / 2 - piste.clientWidth / 2, behavior: reduit ? 'auto' : 'smooth' });
+  }
+  const pause = () => { pauseJusqua = Date.now() + 9000; };
+
+  piste.addEventListener('scroll', planifier, { passive: true });
+  addEventListener('resize', planifier);
+  addEventListener('load', planifier);
+  prec.addEventListener('click', () => { pause(); aller(courant - 1); });
+  suiv.addEventListener('click', () => { pause(); aller(courant + 1); });
+  piste.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') { e.preventDefault(); pause(); aller(courant + 1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); pause(); aller(courant - 1); }
+  });
+
+  /* Glisser à la souris (le tactile utilise le défilement natif) */
+  piste.addEventListener('dragstart', e => e.preventDefault());
+  piste.addEventListener('pointerdown', e => {
+    if (e.pointerType !== 'mouse' || e.button !== 0) return;
+    glisse = { x: e.clientX, left: piste.scrollLeft, bouge: false };
+  });
+  piste.addEventListener('pointermove', e => {
+    if (!glisse) return;
+    const dx = e.clientX - glisse.x;
+    if (!glisse.bouge && Math.abs(dx) > 6) {
+      glisse.bouge = true;
+      piste.classList.add('is-drag');
+      piste.style.scrollSnapType = 'none';
+      try { piste.setPointerCapture(e.pointerId); } catch (err) { /* sans effet */ }
+    }
+    if (glisse.bouge) piste.scrollLeft = glisse.left - dx;
+  });
+  const finGlisse = () => {
+    if (!glisse) return;
+    const avaitBouge = glisse.bouge; glisse = null;
+    if (!avaitBouge) return;
+    piste.classList.remove('is-drag');
+    piste.style.scrollSnapType = '';
+    supprimerClic = true; setTimeout(() => { supprimerClic = false; }, 0);
+    aller(courant);
+  };
+  piste.addEventListener('pointerup', finGlisse);
+  piste.addEventListener('pointercancel', finGlisse);
+  piste.addEventListener('click', e => { if (supprimerClic) { e.stopPropagation(); e.preventDefault(); } }, true);
+
+  /* Défilement doux automatique, suspendu dès que l'invité interagit */
+  ['pointerdown', 'wheel', 'touchstart', 'keydown', 'focusin'].forEach(t => zone.addEventListener(t, pause, { passive: true }));
+  zone.addEventListener('pointerenter', e => { survol = e.pointerType === 'mouse'; });
+  zone.addEventListener('pointerleave', () => { survol = false; });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible) planifier(); }, { threshold: .35 }).observe(piste);
+  } else { visible = true; }
+  if (!reduit) {
+    setInterval(() => {
+      if (!visible || survol || document.hidden || (boite && boite.open) || Date.now() < pauseJusqua || glisse) return;
+      aller(courant + 1);
+    }, 4800);
+  }
+  maj();
+}
+
+/* ---------- Bandeau de citations ---------- */
+function initCitations() {
+  const zone = document.getElementById('citations');
+  if (!zone) return;
+  const slides = [...zone.querySelectorAll('.cit-slide')];
+  const points = [...zone.querySelectorAll('.cit-point')];
+  let i = 0, minuteur = null, debutX = null;
+  function aller(n) {
+    i = (n + slides.length) % slides.length;
+    slides.forEach((el, k) => { el.classList.toggle('is-actif', k === i); if (k === i) el.removeAttribute('aria-hidden'); else el.setAttribute('aria-hidden', 'true'); });
+    points.forEach((p, k) => p.classList.toggle('is-actif', k === i));
+  }
+  function armer() { clearInterval(minuteur); if (!reduit) minuteur = setInterval(() => { if (!document.hidden) aller(i + 1); }, 7000); }
+  zone.querySelector('.cit-prec').addEventListener('click', () => { aller(i - 1); armer(); });
+  zone.querySelector('.cit-suiv').addEventListener('click', () => { aller(i + 1); armer(); });
+  points.forEach((p, k) => p.addEventListener('click', () => { aller(k); armer(); }));
+  zone.addEventListener('touchstart', e => { debutX = e.touches[0].clientX; }, { passive: true });
+  zone.addEventListener('touchend', e => {
+    if (debutX === null) return;
+    const dx = e.changedTouches[0].clientX - debutX; debutX = null;
+    if (Math.abs(dx) > 45) { aller(i + (dx < 0 ? 1 : -1)); armer(); }
+  }, { passive: true });
+  zone.addEventListener('mouseenter', () => clearInterval(minuteur));
+  zone.addEventListener('mouseleave', armer);
+  armer();
 }
 
 /* ---------- Carte d'accès : se redresse au défilement ---------- */
@@ -1626,13 +2026,22 @@ function initRSVP() {
     envoyer.textContent = 'Envoi en cours…';
     try {
       const destination = MARIAGE.googleSheets || form.action;
-      const reponse = await fetch(destination, {
-        method: 'POST',
-        body: donnees,
-        headers: { Accept: 'application/json' }
-      });
-      const resultat = await reponse.json();
-      if (!reponse.ok || resultat.success === false) throw new Error('Envoi impossible');
+      const versSheets = Boolean(MARIAGE.googleSheets);
+      const controle = new AbortController();
+      const minuteur = setTimeout(() => controle.abort(), 25000);
+      let reponse;
+      try {
+        reponse = await fetch(destination, {
+          method: 'POST',
+          body: versSheets ? new URLSearchParams(donnees) : donnees,
+          headers: versSheets ? undefined : { Accept: 'application/json' },
+          signal: controle.signal
+        });
+      } finally { clearTimeout(minuteur); }
+      if (!reponse.ok) throw new Error('Envoi impossible');
+      let resultat = null;
+      try { resultat = await reponse.json(); } catch (err) { throw new Error('Réponse illisible'); }
+      if (!resultat || resultat.success === false || resultat.success === 'false') throw new Error('Envoi refusé');
     } catch (e) {
       erreur.textContent = 'L’envoi a échoué. Vérifiez votre connexion et réessayez.';
       envoyer.disabled = false;
@@ -2019,6 +2428,8 @@ initDecompte();
 initCopie();
 initHistoire();
 initVisionneuse();
+initGalerie();
+initCitations();
 initCarte();
 initRSVP();
 initInclinaison();
